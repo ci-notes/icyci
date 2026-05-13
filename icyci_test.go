@@ -2090,6 +2090,20 @@ func TestCliArgs(t *testing.T) {
 		t.Fatalf("unexpected pollInterval %v\n", params.pollInterval)
 	}
 
+	// zero poll interval (single-shot)
+	os.Args = []string{"icyci",
+		"--source-repo", "/source.git", "--source-branch", "test",
+		"--test-script", "/test.sh", "--results-repo", "/results.git",
+		"--poll-interval", "0",
+	}
+	flag.CommandLine = flag.NewFlagSet(os.Args[0], flag.ContinueOnError)
+	params = parseCliArgs(func(exitCode int) {
+		t.Fatalf("unexpected exit request: %d", exitCode)
+	})
+	if params.pollInterval != 0 {
+		t.Fatalf("unexpected pollInterval %v\n", params.pollInterval)
+	}
+
 	// negative poll interval
 	os.Args = []string{"icyci",
 		"--source-repo", "/source.git", "--source-branch", "test",
