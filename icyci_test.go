@@ -2923,3 +2923,94 @@ func TestAwaitPollReset(t *testing.T) {
 		}
 	}
 }
+
+// when run with pollInterval=0, icyci should run once and exit without any polling
+func TestSingleShot(t *testing.T) {
+	tdir := t.TempDir()
+	gpgInit(t, tdir)
+
+	srdir := path.Join(tdir, "test_src_and_rslt")
+	gitReposInit(t, tdir, nil, srdir)
+	gitCmd(t, srdir, "checkout", "-b", "mybranch")
+
+	curCommit := fileWriteSignedCommit(t, srdir, "t.sh", "echo hi_stdout")
+
+	srurl, err := url.Parse(srdir)
+	if err != nil {
+		t.Fatal(err)
+	}
+	params := cliParams{
+		sourceUrl:      srurl,
+		sourceBranch:   "mybranch",
+		testScript:     "./t.sh",
+		resultsUrl:     srurl,
+		pushSrcToRslts: false,
+		pollInterval:   0,
+		notesNS:        defNotesNS,
+	}
+
+	evSigChan := make(chan os.Signal)
+	exitCmpl := make(chan int)
+	go func() {
+		eventLoop(&params, tdir, evSigChan)
+		exitCmpl <- 1
+	}()
+
+	notesChan := make(chan bytes.Buffer)
+	go func() {
+		waitNotesLocal(t, srdir, stdoutNotesRef, curCommit,
+			time.Duration(300*time.Millisecond), notesChan)
+	}()
+
+	waitTimer := time.NewTimer(time.Second * 10)
+	// wait for single-shot event loop to push notes *and* exit
+	got_notes := false
+	for done := false; !done || !got_notes; {
+		var expected string
+		select {
+		case notes := <-notesChan:
+			snotes := string(bytes.TrimRight(notes.Bytes(), "\n"))
+			expected = "hi_stdout"
+			if snotes != expected {
+				t.Fatalf("Note %s does not match expected %s\n",
+					snotes, expected)
+			}
+			got_notes = true
+		case <-exitCmpl:
+			done = true
+		case <-waitTimer.C:
+			evSigChan <- syscall.SIGTERM
+			t.Fatal("timeout while waiting for icyCI\n")
+		}
+	}
+	if !waitTimer.Stop() {
+		<-waitTimer.C
+	}
+
+	// Rerun event loop with an unsigned HEAD. Should exit immediately.
+	curCommit = fileWriteUnsignedCommit(t, srdir, "t.sh", "echo not_gonna_run")
+	go func() {
+		rerun_workdir := t.TempDir()
+		eventLoop(&params, rerun_workdir, evSigChan)
+		exitCmpl <- 1
+	}()
+	waitTimer.Reset(time.Second * 10)
+	for done := false; !done; {
+		select {
+		case <-exitCmpl:
+			done = true
+		case <-waitTimer.C:
+			evSigChan <- syscall.SIGTERM
+			t.Fatal("timeout while waiting for icyCI\n")
+		}
+	}
+
+	// Confirm that we didn't get any notes for the unsigned commit
+	cmd := exec.Command("git", "notes", "--ref="+stdoutNotesRef, "show",
+		"--", curCommit)
+	cmd.Dir = srdir
+	err = cmd.Run()
+	if err == nil {
+		t.Fatal("notes present for unsigned commit\n")
+	}
+}
