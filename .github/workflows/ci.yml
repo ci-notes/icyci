@@ -1,0 +1,19 @@
+name: CI
+
+on:
+  push:
+
+jobs:
+  test:
+    runs-on: ubuntu-slim
+    steps:
+      - uses: actions/checkout@v4
+      - name: install go toolchain
+        run: |
+          sudo apt-get update -y
+          sudo apt-get install -y --no-install-recommends golang
+          sudo lsblk
+          df
+      - name: go test
+        run: |
+          go test
