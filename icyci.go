@@ -685,6 +685,9 @@ func eventLoop(params *cliParams, workDir string, evSigChan chan os.Signal) {
 					states[ls.state].desc, err)
 				if ls.state == lock {
 					// lock errors transition to poll state
+					if params.pollInterval == 0 {
+						return
+					}
 					transitionState(poll, &ls)
 					go func() {
 						pollSource(cmplChan,
@@ -726,6 +729,9 @@ func eventLoop(params *cliParams, workDir string, evSigChan chan os.Signal) {
 						notesDir)
 				}()
 			case cleanup:
+				if params.pollInterval == 0 {
+					return
+				}
 				transitionState(poll, &ls)
 				go func() {
 					pollSource(cmplChan, childExitChan,
@@ -746,6 +752,9 @@ func eventLoop(params *cliParams, workDir string, evSigChan chan os.Signal) {
 		case verifyCmpl := <-verifyChan:
 			ls.verifiedTag = ""
 			if verifyCmpl.err != nil {
+				if params.pollInterval == 0 {
+					return
+				}
 				transitionState(poll, &ls)
 				go func() {
 					pollSource(cmplChan, childExitChan,
@@ -875,25 +884,22 @@ func parseCliArgs(exit func(int)) *cliParams {
 		"Push source-branch and any tag to results-repo, in addition to notes")
 	flag.Func("poll-interval",
 		"While idle, poll source-repo for changes at every `duration` "+
-			"(s)econds. (m)inute or (h)our units are also valid, "+
-			"e.g. 1h30m",
+			"(s)econds. (m)inute or (h)our units are also valid. "+
+			"(default 1m).\n"+
+			"A duration of zero disables polling; icyci exits "+
+			"after running once.",
 		func(s string) error {
 			// if no suffix then assume seconds for backwards compat
 			if _, err = strconv.ParseUint(s, 10, 64); err == nil {
 				s += "s"
 			}
 			params.pollInterval, err = time.ParseDuration(s)
-			if err != nil {
+			if err != nil || params.pollInterval < 0 {
 				log.Printf("invalid poll-interval \"%s\": %v\n",
 					s, err)
 				exit(1)
 			}
-			if params.pollInterval <= 0 {
-				// TODO: run as single shot if interval is 0
-				err = errors.New("negative or zero poll-interval")
-				exit(1)
-			}
-			return err
+			return nil
 		})
 	flag.BoolVar(&printVers, "v", false, "print version and then exit")
 	flag.BoolVar(&params.disableTimeouts, "disable-timeouts", false,
