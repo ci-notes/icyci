@@ -14,6 +14,23 @@ jobs:
           sudo apt-get install -y --no-install-recommends golang
           sudo lsblk
           df
-      - name: go test
+      - name: selftest
+        shell: bash
         run: |
-          go test
+          # with ICYCI_RESULTS_REPO and _CREDS set we use icyci single-shot to
+          # test icyci and push the captured results.
+          if [[ -n "${{ secrets.ICYCI_RESULTS_REPO }}" ]] && \
+             [[ -n "${{ secrets.ICYCI_RESULTS_REPO_CREDS }}" ]]; then
+            go build || exit 1
+            git config --global credential.helper 'store --file=/tmp/creds'
+            echo "${{ secrets.ICYCI_RESULTS_REPO_CREDS }}" > /tmp/creds
+            ./icyci -source-repo . \
+              -source-branch "${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" \
+              -test-script .github/workflows/selftest.sh \
+              -results-repo "${{ secrets.ICYCI_RESULTS_REPO }}" \
+              -poll-interval 0
+            dd if=/dev/zero of=/tmp/creds bs=8k count=1
+          else
+            echo "ICYCI_RESULTS_REPO secrets not set; results gathering skipped"
+            .github/workflows/selftest.sh
+          fi
