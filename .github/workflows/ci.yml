@@ -24,7 +24,7 @@ jobs:
             go build || exit 1
             git config --global credential.helper 'store --file=/tmp/creds'
             echo "${{ secrets.ICYCI_RESULTS_REPO_CREDS }}" > /tmp/creds
-            ./icyci -source-repo . \
+            ./icyci -source-repo "$PWD" \
               -source-branch "${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" \
               -test-script .github/workflows/selftest.sh \
               -results-repo "${{ secrets.ICYCI_RESULTS_REPO }}" \
