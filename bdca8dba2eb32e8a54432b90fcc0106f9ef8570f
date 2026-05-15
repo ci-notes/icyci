@@ -1,0 +1,2701 @@
+gpg: keybox '/tmp/icyci-test1157198326/gpg/pubring.kbx' created
+gpg: starting keygen
+gpg: /tmp/icyci-test1157198326/gpg/trustdb.gpg: trustdb created
+gpg: directory '/tmp/icyci-test1157198326/gpg/openpgp-revocs.d' created
+gpg: revocation certificate stored as '/tmp/icyci-test1157198326/gpg/openpgp-revocs.d/8DF04782BF2F7CD04ECA95417AB9CA6D43D15753.rev'
+gpg: done
+2026/05/15 01:46:06 Test GPG key-pair created. Creating ssh key-pair...
+gpg: keybox '/tmp/TestSeparateSrcRslt136332753/001/gpg/pubring.kbx' created
+gpg: /tmp/TestSeparateSrcRslt136332753/001/gpg/trustdb.gpg: trustdb created
+gpg: key 7AB9CA6D43D15753: public key "icyCI test (test user) <icyci@example.com>" imported
+gpg: key 7AB9CA6D43D15753: secret key imported
+gpg: Total number processed: 1
+gpg:               imported: 1
+gpg:       secret keys read: 1
+gpg:   secret keys imported: 1
+Initialized empty Git repository in /tmp/TestSeparateSrcRslt136332753/001/test_src/.git/
+Initialized empty Git repository in /tmp/TestSeparateSrcRslt136332753/001/test_rslt/.git/
+Switched to a new branch 'mybranch'
+[mybranch (root-commit) 8f5b639] signed source commit
+ 1 file changed, 2 insertions(+)
+ create mode 100755 src_test.sh
+2026/05/15 01:46:08 transitioning from state 0: uninitialized -> 1: clone source repository
+Cloning into '/tmp/TestSeparateSrcRslt136332753/001/test_clone_both'...
+Cloning into '/tmp/TestSeparateSrcRslt136332753/001/source'...
+done.
+done.
+2026/05/15 01:46:08 clone source repository completed successfully
+2026/05/15 01:46:08 transitioning from state 1: clone source repository -> 2: verify branch HEAD
+fatal: No names found, cannot describe anything.
+2026/05/15 01:46:08 GPG verifying commit at origin/mybranch tip
+Fetching origin
+gpg: Signature made Fri May 15 01:46:08 2026 UTC
+gpg:                using EDDSA key 8DF04782BF2F7CD04ECA95417AB9CA6D43D15753
+gpg:                issuer "icyci@example.com"
+gpg: Good signature from "icyCI test (test user) <icyci@example.com>" [unknown]
+gpg: WARNING: The key's User ID is not certified with a trusted signature!
+gpg:          There is no indication that the signature belongs to the owner.
+Primary key fingerprint: 8DF0 4782 BF2F 7CD0 4ECA  9541 7AB9 CA6D 43D1 5753
+2026/05/15 01:46:08 verify completed successfully
+2026/05/15 01:46:08 transitioning from state 2: verify branch HEAD -> 3: lock commit for testing
+fatal: couldn't find remote ref refs/notes/icyci.locked
+2026/05/15 01:46:08 ignoring failure to fetch git notes lock
+Fetching results
+error: no note found for object 8f5b6391e3f10c18cc54c3c96e9df5e6fec3b55d.
+To /tmp/TestSeparateSrcRslt136332753/001/test_rslt
+ * [new reference]   refs/notes/icyci.locked -> refs/notes/icyci.locked
+2026/05/15 01:46:08 successfully pushed git notes lock
+2026/05/15 01:46:08 lock commit for testing completed successfully
+2026/05/15 01:46:08 transitioning from state 3: lock commit for testing -> 4: start test command
+2026/05/15 01:46:08 transitioning from state 4: start test command -> 5: await test completion
+this has been run by icyci
+2026/05/15 01:46:08 ./src_test.sh completed successfully
+2026/05/15 01:46:08 transitioning from state 5: await test completion -> 6: push test output notes
+fatal: couldn't find remote ref refs/notes/icyci.output.stdout
+2026/05/15 01:46:08 ignoring failure to fetch output git notes
+To /tmp/TestSeparateSrcRslt136332753/001/test_rslt
+ * [new reference]   refs/notes/icyci.output.stdout -> refs/notes/icyci.output.stdout
+ * [new reference]   refs/notes/icyci.result.passed -> refs/notes/icyci.result.passed
+ * [new reference]   refs/notes/icyci.output.stderr -> refs/notes/icyci.output.stderr
+2026/05/15 01:46:08 successfully pushed git notes lock
+2026/05/15 01:46:08 push test output notes completed successfully
+2026/05/15 01:46:08 transitioning from state 6: push test output notes -> 7: cleanup test artifacts
+2026/05/15 01:46:08 cleanup test artifacts completed successfully
+2026/05/15 01:46:08 transitioning from state 7: cleanup test artifacts -> 8: poll source for new commits
+2026/05/15 01:46:08 Entering poll loop awaiting new mybranch commits at 8f5b6391e3f10c18cc54c3c96e9df5e6fec3b55d
+Fetching origin
+Fetching results
+From /tmp/TestSeparateSrcRslt136332753/001/test_rslt
+ * [new ref]         refs/notes/icyci.locked -> refs/notes/icyci.locked
+ * [new ref]         refs/notes/icyci.output.stderr -> refs/notes/icyci.output.stderr
+ * [new ref]         refs/notes/icyci.output.stdout -> refs/notes/icyci.output.stdout
+ * [new ref]         refs/notes/icyci.result.passed -> refs/notes/icyci.result.passed
+2026/05/15 01:46:09 Got signal 15 while in state 8
+2026/05/15 01:46:09 Got exit message while in state 8
+2026/05/15 01:46:09 waiting for poll routine to exit
+gpg: keybox '/tmp/TestNewHeadSameSrcRslt3758109510/001/gpg/pubring.kbx' created
+gpg: /tmp/TestNewHeadSameSrcRslt3758109510/001/gpg/trustdb.gpg: trustdb created
+gpg: key 7AB9CA6D43D15753: public key "icyCI test (test user) <icyci@example.com>" imported
+gpg: key 7AB9CA6D43D15753: secret key imported
+gpg: Total number processed: 1
+gpg:               imported: 1
+gpg:       secret keys read: 1
+gpg:   secret keys imported: 1
+Initialized empty Git repository in /tmp/TestNewHeadSameSrcRslt3758109510/001/test_src_and_rslt/.git/
+Switched to a new branch 'mybranch'
+[mybranch (root-commit) b38c0e1] signed source commit
+ 1 file changed, 2 insertions(+)
+ create mode 100755 src_test.sh
+2026/05/15 01:46:09 transitioning from state 0: uninitialized -> 1: clone source repository
+Cloning into '/tmp/TestNewHeadSameSrcRslt3758109510/001/test_clone_both'...
+Cloning into '/tmp/TestNewHeadSameSrcRslt3758109510/001/source'...
+done.
+done.
+error: no note found for object b38c0e1c73f60b5e53a9ec62f987bafd46e0d348.
+2026/05/15 01:46:09 clone source repository completed successfully
+2026/05/15 01:46:09 transitioning from state 1: clone source repository -> 2: verify branch HEAD
+fatal: No names found, cannot describe anything.
+2026/05/15 01:46:09 GPG verifying commit at origin/mybranch tip
+gpg: Signature made Fri May 15 01:46:09 2026 UTC
+gpg:                using EDDSA key 8DF04782BF2F7CD04ECA95417AB9CA6D43D15753
+gpg:                issuer "icyci@example.com"
+gpg: Good signature from "icyCI test (test user) <icyci@example.com>" [unknown]
+gpg: WARNING: The key's User ID is not certified with a trusted signature!
+gpg:          There is no indication that the signature belongs to the owner.
+Primary key fingerprint: 8DF0 4782 BF2F 7CD0 4ECA  9541 7AB9 CA6D 43D1 5753
+2026/05/15 01:46:09 verify completed successfully
+2026/05/15 01:46:09 transitioning from state 2: verify branch HEAD -> 3: lock commit for testing
+fatal: couldn't find remote ref refs/notes/icyci.locked
+2026/05/15 01:46:09 ignoring failure to fetch git notes lock
+To /tmp/TestNewHeadSameSrcRslt3758109510/001/test_src_and_rslt
+ * [new reference]   refs/notes/icyci.locked -> refs/notes/icyci.locked
+2026/05/15 01:46:09 successfully pushed git notes lock
+2026/05/15 01:46:09 lock commit for testing completed successfully
+2026/05/15 01:46:09 transitioning from state 3: lock commit for testing -> 4: start test command
+2026/05/15 01:46:09 transitioning from state 4: start test command -> 5: await test completion
+commitI: 0
+2026/05/15 01:46:09 ./src_test.sh completed successfully
+2026/05/15 01:46:09 transitioning from state 5: await test completion -> 6: push test output notes
+fatal: couldn't find remote ref refs/notes/icyci.output.stdout
+2026/05/15 01:46:09 ignoring failure to fetch output git notes
+From /tmp/TestNewHeadSameSrcRslt3758109510/001/test_src_and_rslt
+ * [new ref]         refs/notes/icyci.locked -> refs/notes/icyci.locked
+error: no note found for object b38c0e1c73f60b5e53a9ec62f987bafd46e0d348.
+To /tmp/TestNewHeadSameSrcRslt3758109510/001/test_src_and_rslt
+ * [new reference]   refs/notes/icyci.output.stdout -> refs/notes/icyci.output.stdout
+ * [new reference]   refs/notes/icyci.result.passed -> refs/notes/icyci.result.passed
+ * [new reference]   refs/notes/icyci.output.stderr -> refs/notes/icyci.output.stderr
+2026/05/15 01:46:09 successfully pushed git notes lock
+2026/05/15 01:46:09 push test output notes completed successfully
+2026/05/15 01:46:09 transitioning from state 6: push test output notes -> 7: cleanup test artifacts
+2026/05/15 01:46:09 cleanup test artifacts completed successfully
+2026/05/15 01:46:09 transitioning from state 7: cleanup test artifacts -> 8: poll source for new commits
+2026/05/15 01:46:09 Entering poll loop awaiting new mybranch commits at b38c0e1c73f60b5e53a9ec62f987bafd46e0d348
+From /tmp/TestNewHeadSameSrcRslt3758109510/001/test_src_and_rslt
+ * [new ref]         refs/notes/icyci.output.stderr -> refs/notes/icyci.output.stderr
+ * [new ref]         refs/notes/icyci.output.stdout -> refs/notes/icyci.output.stdout
+ * [new ref]         refs/notes/icyci.result.passed -> refs/notes/icyci.result.passed
+[mybranch 60877be] signed source commit
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+From /tmp/TestNewHeadSameSrcRslt3758109510/001/test_src_and_rslt
+   b38c0e1..60877be  mybranch   -> origin/mybranch
+error: no note found for object 60877be913cdd4c45f38f89f2b60abf5c65b842f.
+From /tmp/TestNewHeadSameSrcRslt3758109510/001/test_src_and_rslt
+   b38c0e1..60877be  mybranch   -> origin/mybranch
+2026/05/15 01:46:10 detected branch mybranch change b38c0e1c73f60b5e53a9ec62f987bafd46e0d348 -> 60877be913cdd4c45f38f89f2b60abf5c65b842f
+2026/05/15 01:46:10 poll source for new commits completed successfully
+2026/05/15 01:46:10 transitioning from state 8: poll source for new commits -> 2: verify branch HEAD
+fatal: No names found, cannot describe anything.
+2026/05/15 01:46:10 GPG verifying commit at origin/mybranch tip
+gpg: Signature made Fri May 15 01:46:10 2026 UTC
+gpg:                using EDDSA key 8DF04782BF2F7CD04ECA95417AB9CA6D43D15753
+gpg:                issuer "icyci@example.com"
+gpg: Good signature from "icyCI test (test user) <icyci@example.com>" [unknown]
+gpg: WARNING: The key's User ID is not certified with a trusted signature!
+gpg:          There is no indication that the signature belongs to the owner.
+Primary key fingerprint: 8DF0 4782 BF2F 7CD0 4ECA  9541 7AB9 CA6D 43D1 5753
+2026/05/15 01:46:10 verify completed successfully
+2026/05/15 01:46:10 transitioning from state 2: verify branch HEAD -> 3: lock commit for testing
+error: no note found for object 60877be913cdd4c45f38f89f2b60abf5c65b842f.
+To /tmp/TestNewHeadSameSrcRslt3758109510/001/test_src_and_rslt
+   a1a1c7b..5ea4a0e  refs/notes/icyci.locked -> refs/notes/icyci.locked
+2026/05/15 01:46:10 successfully pushed git notes lock
+2026/05/15 01:46:10 lock commit for testing completed successfully
+2026/05/15 01:46:10 transitioning from state 3: lock commit for testing -> 4: start test command
+2026/05/15 01:46:10 transitioning from state 4: start test command -> 5: await test completion
+commitI: 1
+2026/05/15 01:46:10 ./src_test.sh completed successfully
+2026/05/15 01:46:10 transitioning from state 5: await test completion -> 6: push test output notes
+To /tmp/TestNewHeadSameSrcRslt3758109510/001/test_src_and_rslt
+   b18321c..8258f35  refs/notes/icyci.output.stderr -> refs/notes/icyci.output.stderr
+   c0cccde..1faef8c  refs/notes/icyci.output.stdout -> refs/notes/icyci.output.stdout
+   4d3ec72..309e4d8  refs/notes/icyci.result.passed -> refs/notes/icyci.result.passed
+2026/05/15 01:46:10 successfully pushed git notes lock
+2026/05/15 01:46:10 push test output notes completed successfully
+2026/05/15 01:46:10 transitioning from state 6: push test output notes -> 7: cleanup test artifacts
+2026/05/15 01:46:10 cleanup test artifacts completed successfully
+2026/05/15 01:46:10 transitioning from state 7: cleanup test artifacts -> 8: poll source for new commits
+2026/05/15 01:46:10 Entering poll loop awaiting new mybranch commits at 60877be913cdd4c45f38f89f2b60abf5c65b842f
+From /tmp/TestNewHeadSameSrcRslt3758109510/001/test_src_and_rslt
+   a1a1c7b..5ea4a0e  refs/notes/icyci.locked -> refs/notes/icyci.locked
+   b18321c..8258f35  refs/notes/icyci.output.stderr -> refs/notes/icyci.output.stderr
+   c0cccde..1faef8c  refs/notes/icyci.output.stdout -> refs/notes/icyci.output.stdout
+   4d3ec72..309e4d8  refs/notes/icyci.result.passed -> refs/notes/icyci.result.passed
+[mybranch 2fc6a4c] signed source commit
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+From /tmp/TestNewHeadSameSrcRslt3758109510/001/test_src_and_rslt
+   60877be..2fc6a4c  mybranch   -> origin/mybranch
+error: no note found for object 2fc6a4c0cd330eedc6a60a7e4c71ed824a61e1c6.
+From /tmp/TestNewHeadSameSrcRslt3758109510/001/test_src_and_rslt
+   60877be..2fc6a4c  mybranch   -> origin/mybranch
+2026/05/15 01:46:10 detected branch mybranch change 60877be913cdd4c45f38f89f2b60abf5c65b842f -> 2fc6a4c0cd330eedc6a60a7e4c71ed824a61e1c6
+2026/05/15 01:46:10 poll source for new commits completed successfully
+2026/05/15 01:46:10 transitioning from state 8: poll source for new commits -> 2: verify branch HEAD
+fatal: No names found, cannot describe anything.
+2026/05/15 01:46:10 GPG verifying commit at origin/mybranch tip
+gpg: Signature made Fri May 15 01:46:10 2026 UTC
+gpg:                using EDDSA key 8DF04782BF2F7CD04ECA95417AB9CA6D43D15753
+gpg:                issuer "icyci@example.com"
+gpg: Good signature from "icyCI test (test user) <icyci@example.com>" [unknown]
+gpg: WARNING: The key's User ID is not certified with a trusted signature!
+gpg:          There is no indication that the signature belongs to the owner.
+Primary key fingerprint: 8DF0 4782 BF2F 7CD0 4ECA  9541 7AB9 CA6D 43D1 5753
+2026/05/15 01:46:10 verify completed successfully
+2026/05/15 01:46:10 transitioning from state 2: verify branch HEAD -> 3: lock commit for testing
+To /tmp/TestNewHeadSameSrcRslt3758109510/001/test_src_and_rslt
+   5ea4a0e..c932c2b  refs/notes/icyci.locked -> refs/notes/icyci.locked
+2026/05/15 01:46:11 successfully pushed git notes lock
+2026/05/15 01:46:11 lock commit for testing completed successfully
+2026/05/15 01:46:11 transitioning from state 3: lock commit for testing -> 4: start test command
+2026/05/15 01:46:11 transitioning from state 4: start test command -> 5: await test completion
+commitI: 2
+2026/05/15 01:46:11 ./src_test.sh completed successfully
+2026/05/15 01:46:11 transitioning from state 5: await test completion -> 6: push test output notes
+To /tmp/TestNewHeadSameSrcRslt3758109510/001/test_src_and_rslt
+   8258f35..edfefcd  refs/notes/icyci.output.stderr -> refs/notes/icyci.output.stderr
+   1faef8c..3f4f318  refs/notes/icyci.output.stdout -> refs/notes/icyci.output.stdout
+   309e4d8..5a1cce8  refs/notes/icyci.result.passed -> refs/notes/icyci.result.passed
+2026/05/15 01:46:11 successfully pushed git notes lock
+2026/05/15 01:46:11 push test output notes completed successfully
+2026/05/15 01:46:11 transitioning from state 6: push test output notes -> 7: cleanup test artifacts
+2026/05/15 01:46:11 cleanup test artifacts completed successfully
+2026/05/15 01:46:11 transitioning from state 7: cleanup test artifacts -> 8: poll source for new commits
+2026/05/15 01:46:11 Entering poll loop awaiting new mybranch commits at 2fc6a4c0cd330eedc6a60a7e4c71ed824a61e1c6
+From /tmp/TestNewHeadSameSrcRslt3758109510/001/test_src_and_rslt
+   5ea4a0e..c932c2b  refs/notes/icyci.locked -> refs/notes/icyci.locked
+   8258f35..edfefcd  refs/notes/icyci.output.stderr -> refs/notes/icyci.output.stderr
+   1faef8c..3f4f318  refs/notes/icyci.output.stdout -> refs/notes/icyci.output.stdout
+   309e4d8..5a1cce8  refs/notes/icyci.result.passed -> refs/notes/icyci.result.passed
+2026/05/15 01:46:11 Got signal 15 while in state 8
+2026/05/15 01:46:11 Got exit message while in state 8
+2026/05/15 01:46:11 waiting for poll routine to exit
+gpg: keybox '/tmp/TestNewHeadWhileStopped4231664995/001/gpg/pubring.kbx' created
+gpg: /tmp/TestNewHeadWhileStopped4231664995/001/gpg/trustdb.gpg: trustdb created
+gpg: key 7AB9CA6D43D15753: public key "icyCI test (test user) <icyci@example.com>" imported
+gpg: key 7AB9CA6D43D15753: secret key imported
+gpg: Total number processed: 1
+gpg:               imported: 1
+gpg:       secret keys read: 1
+gpg:   secret keys imported: 1
+Initialized empty Git repository in /tmp/TestNewHeadWhileStopped4231664995/001/test_src_and_rslt/.git/
+Switched to a new branch 'mybranch'
+[mybranch (root-commit) e3d71b8] signed source commit
+ 1 file changed, 2 insertions(+)
+ create mode 100755 src_test.sh
+2026/05/15 01:46:11 transitioning from state 0: uninitialized -> 1: clone source repository
+Cloning into '/tmp/TestNewHeadWhileStopped4231664995/001/test_clone_both'...
+Cloning into '/tmp/TestNewHeadWhileStopped4231664995/001/source'...
+done.
+done.
+error: no note found for object e3d71b8b916f21dc85e561719a1be0c4005ea919.
+2026/05/15 01:46:11 clone source repository completed successfully
+2026/05/15 01:46:11 transitioning from state 1: clone source repository -> 2: verify branch HEAD
+fatal: No names found, cannot describe anything.
+2026/05/15 01:46:11 GPG verifying commit at origin/mybranch tip
+gpg: Signature made Fri May 15 01:46:11 2026 UTC
+gpg:                using EDDSA key 8DF04782BF2F7CD04ECA95417AB9CA6D43D15753
+gpg:                issuer "icyci@example.com"
+gpg: Good signature from "icyCI test (test user) <icyci@example.com>" [unknown]
+gpg: WARNING: The key's User ID is not certified with a trusted signature!
+gpg:          There is no indication that the signature belongs to the owner.
+Primary key fingerprint: 8DF0 4782 BF2F 7CD0 4ECA  9541 7AB9 CA6D 43D1 5753
+2026/05/15 01:46:11 verify completed successfully
+2026/05/15 01:46:11 transitioning from state 2: verify branch HEAD -> 3: lock commit for testing
+fatal: couldn't find remote ref refs/notes/icyci.locked
+2026/05/15 01:46:11 ignoring failure to fetch git notes lock
+To /tmp/TestNewHeadWhileStopped4231664995/001/test_src_and_rslt
+ * [new reference]   refs/notes/icyci.locked -> refs/notes/icyci.locked
+2026/05/15 01:46:11 successfully pushed git notes lock
+2026/05/15 01:46:11 lock commit for testing completed successfully
+2026/05/15 01:46:11 transitioning from state 3: lock commit for testing -> 4: start test command
+2026/05/15 01:46:11 transitioning from state 4: start test command -> 5: await test completion
+commitI: 0
+2026/05/15 01:46:11 ./src_test.sh completed successfully
+2026/05/15 01:46:11 transitioning from state 5: await test completion -> 6: push test output notes
+fatal: couldn't find remote ref refs/notes/icyci.output.stdout
+2026/05/15 01:46:11 ignoring failure to fetch output git notes
+To /tmp/TestNewHeadWhileStopped4231664995/001/test_src_and_rslt
+ * [new reference]   refs/notes/icyci.output.stdout -> refs/notes/icyci.output.stdout
+ * [new reference]   refs/notes/icyci.result.passed -> refs/notes/icyci.result.passed
+ * [new reference]   refs/notes/icyci.output.stderr -> refs/notes/icyci.output.stderr
+2026/05/15 01:46:11 successfully pushed git notes lock
+2026/05/15 01:46:11 push test output notes completed successfully
+2026/05/15 01:46:11 transitioning from state 6: push test output notes -> 7: cleanup test artifacts
+2026/05/15 01:46:11 cleanup test artifacts completed successfully
+2026/05/15 01:46:11 transitioning from state 7: cleanup test artifacts -> 8: poll source for new commits
+2026/05/15 01:46:11 Entering poll loop awaiting new mybranch commits at e3d71b8b916f21dc85e561719a1be0c4005ea919
+From /tmp/TestNewHeadWhileStopped4231664995/001/test_src_and_rslt
+ * [new ref]         refs/notes/icyci.locked -> refs/notes/icyci.locked
+ * [new ref]         refs/notes/icyci.output.stderr -> refs/notes/icyci.output.stderr
+ * [new ref]         refs/notes/icyci.output.stdout -> refs/notes/icyci.output.stdout
+ * [new ref]         refs/notes/icyci.result.passed -> refs/notes/icyci.result.passed
+2026/05/15 01:46:11 Got signal 15 while in state 8
+2026/05/15 01:46:11 Got exit message while in state 8
+2026/05/15 01:46:11 waiting for poll routine to exit
+[mybranch 720a7c7] signed source commit
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+[mybranch 9abad1f] signed source commit
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+2026/05/15 01:46:11 transitioning from state 0: uninitialized -> 1: clone source repository
+Cloning into '/tmp/TestNewHeadWhileStopped4231664995/001/source'...
+done.
+From /tmp/TestNewHeadWhileStopped4231664995/001/test_src_and_rslt
+   e3d71b8..9abad1f  mybranch   -> origin/mybranch
+error: no note found for object 9abad1fa603c32864f0170a4bc51285b39de9543.
+2026/05/15 01:46:11 clone source repository completed successfully
+2026/05/15 01:46:11 transitioning from state 1: clone source repository -> 2: verify branch HEAD
+fatal: No names found, cannot describe anything.
+2026/05/15 01:46:11 GPG verifying commit at origin/mybranch tip
+gpg: Signature made Fri May 15 01:46:11 2026 UTC
+gpg:                using EDDSA key 8DF04782BF2F7CD04ECA95417AB9CA6D43D15753
+gpg:                issuer "icyci@example.com"
+gpg: Good signature from "icyCI test (test user) <icyci@example.com>" [unknown]
+gpg: WARNING: The key's User ID is not certified with a trusted signature!
+gpg:          There is no indication that the signature belongs to the owner.
+Primary key fingerprint: 8DF0 4782 BF2F 7CD0 4ECA  9541 7AB9 CA6D 43D1 5753
+2026/05/15 01:46:11 verify completed successfully
+2026/05/15 01:46:11 transitioning from state 2: verify branch HEAD -> 3: lock commit for testing
+From /tmp/TestNewHeadWhileStopped4231664995/001/test_src_and_rslt
+ * [new ref]         refs/notes/icyci.locked -> refs/notes/icyci.locked
+To /tmp/TestNewHeadWhileStopped4231664995/001/test_src_and_rslt
+   e0d2291..0a204bc  refs/notes/icyci.locked -> refs/notes/icyci.locked
+2026/05/15 01:46:11 successfully pushed git notes lock
+2026/05/15 01:46:11 lock commit for testing completed successfully
+2026/05/15 01:46:11 transitioning from state 3: lock commit for testing -> 4: start test command
+2026/05/15 01:46:11 transitioning from state 4: start test command -> 5: await test completion
+commitI: 2
+2026/05/15 01:46:11 ./src_test.sh completed successfully
+2026/05/15 01:46:11 transitioning from state 5: await test completion -> 6: push test output notes
+From /tmp/TestNewHeadWhileStopped4231664995/001/test_src_and_rslt
+ * [new ref]         refs/notes/icyci.output.stdout -> refs/notes/icyci.output.stdout
+ * [new ref]         refs/notes/icyci.result.passed -> refs/notes/icyci.result.passed
+ * [new ref]         refs/notes/icyci.output.stderr -> refs/notes/icyci.output.stderr
+To /tmp/TestNewHeadWhileStopped4231664995/001/test_src_and_rslt
+   e555376..1aa78d7  refs/notes/icyci.output.stderr -> refs/notes/icyci.output.stderr
+   7f5ab05..28dd70b  refs/notes/icyci.output.stdout -> refs/notes/icyci.output.stdout
+   6991b9b..e147441  refs/notes/icyci.result.passed -> refs/notes/icyci.result.passed
+2026/05/15 01:46:11 successfully pushed git notes lock
+2026/05/15 01:46:11 push test output notes completed successfully
+2026/05/15 01:46:11 transitioning from state 6: push test output notes -> 7: cleanup test artifacts
+2026/05/15 01:46:11 cleanup test artifacts completed successfully
+2026/05/15 01:46:11 transitioning from state 7: cleanup test artifacts -> 8: poll source for new commits
+2026/05/15 01:46:11 Entering poll loop awaiting new mybranch commits at 9abad1fa603c32864f0170a4bc51285b39de9543
+From /tmp/TestNewHeadWhileStopped4231664995/001/test_src_and_rslt
+   e0d2291..0a204bc  refs/notes/icyci.locked -> refs/notes/icyci.locked
+   e555376..1aa78d7  refs/notes/icyci.output.stderr -> refs/notes/icyci.output.stderr
+   7f5ab05..28dd70b  refs/notes/icyci.output.stdout -> refs/notes/icyci.output.stdout
+   6991b9b..e147441  refs/notes/icyci.result.passed -> refs/notes/icyci.result.passed
+2026/05/15 01:46:12 Got signal 15 while in state 8
+2026/05/15 01:46:12 Got exit message while in state 8
+2026/05/15 01:46:12 waiting for poll routine to exit
+gpg: keybox '/tmp/TestStopStart574312965/001/gpg/pubring.kbx' created
+gpg: /tmp/TestStopStart574312965/001/gpg/trustdb.gpg: trustdb created
+gpg: key 7AB9CA6D43D15753: public key "icyCI test (test user) <icyci@example.com>" imported
+gpg: key 7AB9CA6D43D15753: secret key imported
+gpg: Total number processed: 1
+gpg:               imported: 1
+gpg:       secret keys read: 1
+gpg:   secret keys imported: 1
+Initialized empty Git repository in /tmp/TestStopStart574312965/001/test_src_and_rslt/.git/
+Switched to a new branch 'mybranch'
+[mybranch (root-commit) c0e33f0] signed source commit
+ 1 file changed, 2 insertions(+)
+ create mode 100755 src_test.sh
+2026/05/15 01:46:12 transitioning from state 0: uninitialized -> 1: clone source repository
+Cloning into '/tmp/TestStopStart574312965/001/test_clone_both'...
+Cloning into '/tmp/TestStopStart574312965/001/source'...
+done.
+done.
+2026/05/15 01:46:12 clone source repository completed successfully
+2026/05/15 01:46:12 transitioning from state 1: clone source repository -> 2: verify branch HEAD
+fatal: No names found, cannot describe anything.
+2026/05/15 01:46:12 GPG verifying commit at origin/mybranch tip
+error: no note found for object c0e33f0eecf1b48e64ae4b50913014d58ff531fb.
+gpg: Signature made Fri May 15 01:46:12 2026 UTC
+gpg:                using EDDSA key 8DF04782BF2F7CD04ECA95417AB9CA6D43D15753
+gpg:                issuer "icyci@example.com"
+gpg: Good signature from "icyCI test (test user) <icyci@example.com>" [unknown]
+gpg: WARNING: The key's User ID is not certified with a trusted signature!
+gpg:          There is no indication that the signature belongs to the owner.
+Primary key fingerprint: 8DF0 4782 BF2F 7CD0 4ECA  9541 7AB9 CA6D 43D1 5753
+2026/05/15 01:46:12 verify completed successfully
+2026/05/15 01:46:12 transitioning from state 2: verify branch HEAD -> 3: lock commit for testing
+fatal: couldn't find remote ref refs/notes/icyci.locked
+2026/05/15 01:46:12 ignoring failure to fetch git notes lock
+To /tmp/TestStopStart574312965/001/test_src_and_rslt
+ * [new reference]   refs/notes/icyci.locked -> refs/notes/icyci.locked
+2026/05/15 01:46:12 successfully pushed git notes lock
+2026/05/15 01:46:12 lock commit for testing completed successfully
+2026/05/15 01:46:12 transitioning from state 3: lock commit for testing -> 4: start test command
+2026/05/15 01:46:12 transitioning from state 4: start test command -> 5: await test completion
+commitI: 0
+2026/05/15 01:46:12 ./src_test.sh completed successfully
+2026/05/15 01:46:12 transitioning from state 5: await test completion -> 6: push test output notes
+fatal: couldn't find remote ref refs/notes/icyci.output.stdout
+2026/05/15 01:46:12 ignoring failure to fetch output git notes
+To /tmp/TestStopStart574312965/001/test_src_and_rslt
+ * [new reference]   refs/notes/icyci.output.stdout -> refs/notes/icyci.output.stdout
+ * [new reference]   refs/notes/icyci.result.passed -> refs/notes/icyci.result.passed
+ * [new reference]   refs/notes/icyci.output.stderr -> refs/notes/icyci.output.stderr
+2026/05/15 01:46:12 successfully pushed git notes lock
+2026/05/15 01:46:12 push test output notes completed successfully
+2026/05/15 01:46:12 transitioning from state 6: push test output notes -> 7: cleanup test artifacts
+2026/05/15 01:46:12 cleanup test artifacts completed successfully
+2026/05/15 01:46:12 transitioning from state 7: cleanup test artifacts -> 8: poll source for new commits
+2026/05/15 01:46:12 Entering poll loop awaiting new mybranch commits at c0e33f0eecf1b48e64ae4b50913014d58ff531fb
+From /tmp/TestStopStart574312965/001/test_src_and_rslt
+ * [new ref]         refs/notes/icyci.locked -> refs/notes/icyci.locked
+ * [new ref]         refs/notes/icyci.output.stderr -> refs/notes/icyci.output.stderr
+ * [new ref]         refs/notes/icyci.output.stdout -> refs/notes/icyci.output.stdout
+ * [new ref]         refs/notes/icyci.result.passed -> refs/notes/icyci.result.passed
+2026/05/15 01:46:12 Got signal 15 while in state 8
+2026/05/15 01:46:12 Got exit message while in state 8
+2026/05/15 01:46:12 waiting for poll routine to exit
+Cloning into '/tmp/TestStopStart574312965/001/source'...
+done.
+fatal: No names found, cannot describe anything.
+gpg: Signature made Fri May 15 01:46:12 2026 UTC
+gpg:                using EDDSA key 8DF04782BF2F7CD04ECA95417AB9CA6D43D15753
+gpg:                issuer "icyci@example.com"
+gpg: Good signature from "icyCI test (test user) <icyci@example.com>" [unknown]
+gpg: WARNING: The key's User ID is not certified with a trusted signature!
+gpg:          There is no indication that the signature belongs to the owner.
+Primary key fingerprint: 8DF0 4782 BF2F 7CD0 4ECA  9541 7AB9 CA6D 43D1 5753
+From /tmp/TestStopStart574312965/001/test_src_and_rslt
+ * [new ref]         refs/notes/icyci.locked -> refs/notes/icyci.locked
+error: Cannot add notes. Found existing notes for object c0e33f0eecf1b48e64ae4b50913014d58ff531fb. Use '-f' to overwrite existing notes
+2026/05/15 01:46:12 Entering poll loop awaiting new mybranch commits at c0e33f0eecf1b48e64ae4b50913014d58ff531fb
+[mybranch 5f3e878] signed source commit
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+From /tmp/TestStopStart574312965/001/test_src_and_rslt
+   c0e33f0..5f3e878  mybranch   -> origin/mybranch
+error: no note found for object 5f3e878994ef8f94544b66b8e822671530445639.
+From /tmp/TestStopStart574312965/001/test_src_and_rslt
+   c0e33f0..5f3e878  mybranch   -> origin/mybranch
+2026/05/15 01:46:12 detected branch mybranch change c0e33f0eecf1b48e64ae4b50913014d58ff531fb -> 5f3e878994ef8f94544b66b8e822671530445639
+2026/05/15 01:46:12 poll source for new commits completed successfully
+2026/05/15 01:46:12 transitioning from state 8: poll source for new commits -> 2: verify branch HEAD
+fatal: No names found, cannot describe anything.
+2026/05/15 01:46:12 GPG verifying commit at origin/mybranch tip
+gpg: Signature made Fri May 15 01:46:12 2026 UTC
+gpg:                using EDDSA key 8DF04782BF2F7CD04ECA95417AB9CA6D43D15753
+gpg:                issuer "icyci@example.com"
+gpg: Good signature from "icyCI test (test user) <icyci@example.com>" [unknown]
+gpg: WARNING: The key's User ID is not certified with a trusted signature!
+gpg:          There is no indication that the signature belongs to the owner.
+Primary key fingerprint: 8DF0 4782 BF2F 7CD0 4ECA  9541 7AB9 CA6D 43D1 5753
+2026/05/15 01:46:12 verify completed successfully
+2026/05/15 01:46:12 transitioning from state 2: verify branch HEAD -> 3: lock commit for testing
+error: no note found for object 5f3e878994ef8f94544b66b8e822671530445639.
+To /tmp/TestStopStart574312965/001/test_src_and_rslt
+   a1be556..b648783  refs/notes/icyci.locked -> refs/notes/icyci.locked
+2026/05/15 01:46:12 successfully pushed git notes lock
+2026/05/15 01:46:12 lock commit for testing completed successfully
+2026/05/15 01:46:12 transitioning from state 3: lock commit for testing -> 4: start test command
+2026/05/15 01:46:12 transitioning from state 4: start test command -> 5: await test completion
+commitI: 1
+2026/05/15 01:46:12 ./src_test.sh completed successfully
+2026/05/15 01:46:12 transitioning from state 5: await test completion -> 6: push test output notes
+From /tmp/TestStopStart574312965/001/test_src_and_rslt
+ * [new ref]         refs/notes/icyci.output.stdout -> refs/notes/icyci.output.stdout
+ * [new ref]         refs/notes/icyci.result.passed -> refs/notes/icyci.result.passed
+ * [new ref]         refs/notes/icyci.output.stderr -> refs/notes/icyci.output.stderr
+To /tmp/TestStopStart574312965/001/test_src_and_rslt
+   2bcef63..2b5b51f  refs/notes/icyci.output.stderr -> refs/notes/icyci.output.stderr
+   deda7bd..0891d9c  refs/notes/icyci.output.stdout -> refs/notes/icyci.output.stdout
+   c1a696e..cac6b01  refs/notes/icyci.result.passed -> refs/notes/icyci.result.passed
+2026/05/15 01:46:12 successfully pushed git notes lock
+2026/05/15 01:46:12 push test output notes completed successfully
+2026/05/15 01:46:12 transitioning from state 6: push test output notes -> 7: cleanup test artifacts
+2026/05/15 01:46:12 cleanup test artifacts completed successfully
+2026/05/15 01:46:12 transitioning from state 7: cleanup test artifacts -> 8: poll source for new commits
+2026/05/15 01:46:12 Entering poll loop awaiting new mybranch commits at 5f3e878994ef8f94544b66b8e822671530445639
+From /tmp/TestStopStart574312965/001/test_src_and_rslt
+   a1be556..b648783  refs/notes/icyci.locked -> refs/notes/icyci.locked
+   2bcef63..2b5b51f  refs/notes/icyci.output.stderr -> refs/notes/icyci.output.stderr
+   deda7bd..0891d9c  refs/notes/icyci.output.stdout -> refs/notes/icyci.output.stdout
+   c1a696e..cac6b01  refs/notes/icyci.result.passed -> refs/notes/icyci.result.passed
+2026/05/15 01:46:13 Got signal 15 while in state 8
+2026/05/15 01:46:13 Got exit message while in state 8
+2026/05/15 01:46:13 waiting for poll routine to exit
+Cloning into '/tmp/TestStopStart574312965/001/source'...
+done.
+fatal: No names found, cannot describe anything.
+gpg: Signature made Fri May 15 01:46:12 2026 UTC
+gpg:                using EDDSA key 8DF04782BF2F7CD04ECA95417AB9CA6D43D15753
+gpg:                issuer "icyci@example.com"
+gpg: Good signature from "icyCI test (test user) <icyci@example.com>" [unknown]
+gpg: WARNING: The key's User ID is not certified with a trusted signature!
+gpg:          There is no indication that the signature belongs to the owner.
+Primary key fingerprint: 8DF0 4782 BF2F 7CD0 4ECA  9541 7AB9 CA6D 43D1 5753
+From /tmp/TestStopStart574312965/001/test_src_and_rslt
+ * [new ref]         refs/notes/icyci.locked -> refs/notes/icyci.locked
+error: Cannot add notes. Found existing notes for object 5f3e878994ef8f94544b66b8e822671530445639. Use '-f' to overwrite existing notes
+2026/05/15 01:46:13 Entering poll loop awaiting new mybranch commits at 5f3e878994ef8f94544b66b8e822671530445639
+[mybranch 622517b] signed source commit
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+From /tmp/TestStopStart574312965/001/test_src_and_rslt
+   5f3e878..622517b  mybranch   -> origin/mybranch
+error: no note found for object 622517be8021cdeeb717f929e6d2a4a9a9bc51d9.
+From /tmp/TestStopStart574312965/001/test_src_and_rslt
+   5f3e878..622517b  mybranch   -> origin/mybranch
+2026/05/15 01:46:13 detected branch mybranch change 5f3e878994ef8f94544b66b8e822671530445639 -> 622517be8021cdeeb717f929e6d2a4a9a9bc51d9
+2026/05/15 01:46:13 poll source for new commits completed successfully
+2026/05/15 01:46:13 transitioning from state 8: poll source for new commits -> 2: verify branch HEAD
+fatal: No names found, cannot describe anything.
+2026/05/15 01:46:13 GPG verifying commit at origin/mybranch tip
+gpg: Signature made Fri May 15 01:46:13 2026 UTC
+gpg:                using EDDSA key 8DF04782BF2F7CD04ECA95417AB9CA6D43D15753
+gpg:                issuer "icyci@example.com"
+gpg: Good signature from "icyCI test (test user) <icyci@example.com>" [unknown]
+gpg: WARNING: The key's User ID is not certified with a trusted signature!
+gpg:          There is no indication that the signature belongs to the owner.
+Primary key fingerprint: 8DF0 4782 BF2F 7CD0 4ECA  9541 7AB9 CA6D 43D1 5753
+2026/05/15 01:46:13 verify completed successfully
+2026/05/15 01:46:13 transitioning from state 2: verify branch HEAD -> 3: lock commit for testing
+error: no note found for object 622517be8021cdeeb717f929e6d2a4a9a9bc51d9.
+To /tmp/TestStopStart574312965/001/test_src_and_rslt
+   b648783..3163b63  refs/notes/icyci.locked -> refs/notes/icyci.locked
+2026/05/15 01:46:13 successfully pushed git notes lock
+2026/05/15 01:46:13 lock commit for testing completed successfully
+2026/05/15 01:46:13 transitioning from state 3: lock commit for testing -> 4: start test command
+2026/05/15 01:46:13 transitioning from state 4: start test command -> 5: await test completion
+commitI: 2
+2026/05/15 01:46:13 ./src_test.sh completed successfully
+2026/05/15 01:46:13 transitioning from state 5: await test completion -> 6: push test output notes
+From /tmp/TestStopStart574312965/001/test_src_and_rslt
+ * [new ref]         refs/notes/icyci.output.stdout -> refs/notes/icyci.output.stdout
+ * [new ref]         refs/notes/icyci.result.passed -> refs/notes/icyci.result.passed
+ * [new ref]         refs/notes/icyci.output.stderr -> refs/notes/icyci.output.stderr
+To /tmp/TestStopStart574312965/001/test_src_and_rslt
+   2b5b51f..27e3fcd  refs/notes/icyci.output.stderr -> refs/notes/icyci.output.stderr
+   0891d9c..d807666  refs/notes/icyci.output.stdout -> refs/notes/icyci.output.stdout
+   cac6b01..c5a86ff  refs/notes/icyci.result.passed -> refs/notes/icyci.result.passed
+2026/05/15 01:46:13 successfully pushed git notes lock
+2026/05/15 01:46:13 push test output notes completed successfully
+2026/05/15 01:46:13 transitioning from state 6: push test output notes -> 7: cleanup test artifacts
+2026/05/15 01:46:13 cleanup test artifacts completed successfully
+2026/05/15 01:46:13 transitioning from state 7: cleanup test artifacts -> 8: poll source for new commits
+2026/05/15 01:46:13 Entering poll loop awaiting new mybranch commits at 622517be8021cdeeb717f929e6d2a4a9a9bc51d9
+From /tmp/TestStopStart574312965/001/test_src_and_rslt
+   b648783..3163b63  refs/notes/icyci.locked -> refs/notes/icyci.locked
+   2b5b51f..27e3fcd  refs/notes/icyci.output.stderr -> refs/notes/icyci.output.stderr
+   0891d9c..d807666  refs/notes/icyci.output.stdout -> refs/notes/icyci.output.stdout
+   cac6b01..c5a86ff  refs/notes/icyci.result.passed -> refs/notes/icyci.result.passed
+2026/05/15 01:46:13 Got signal 15 while in state 8
+2026/05/15 01:46:13 Got exit message while in state 8
+2026/05/15 01:46:13 waiting for poll routine to exit
+gpg: keybox '/tmp/TestSignedTagUnsignedCommit543482062/001/gpg/pubring.kbx' created
+gpg: /tmp/TestSignedTagUnsignedCommit543482062/001/gpg/trustdb.gpg: trustdb created
+gpg: key 7AB9CA6D43D15753: public key "icyCI test (test user) <icyci@example.com>" imported
+gpg: key 7AB9CA6D43D15753: secret key imported
+gpg: Total number processed: 1
+gpg:               imported: 1
+gpg:       secret keys read: 1
+gpg:   secret keys imported: 1
+Initialized empty Git repository in /tmp/TestSignedTagUnsignedCommit543482062/001/test_src_and_rslt/.git/
+Cloning into '/tmp/TestSignedTagUnsignedCommit543482062/001/test_clone_both'...
+warning: You appear to have cloned an empty repository.
+done.
+Switched to a new branch 'mybranch'
+[mybranch (root-commit) 36e7622] unsigned source commit
+ 1 file changed, 2 insertions(+)
+ create mode 100755 src_test.sh
+To /tmp/TestSignedTagUnsignedCommit543482062/001/test_src_and_rslt
+ * [new tag]         mytag1 -> mytag1
+ * [new branch]      mybranch -> mybranch
+2026/05/15 01:46:13 transitioning from state 0: uninitialized -> 1: clone source repository
+Cloning into '/tmp/TestSignedTagUnsignedCommit543482062/001/source'...
+From /tmp/TestSignedTagUnsignedCommit543482062/001/test_src_and_rslt
+ * [new branch]      mybranch   -> origin/mybranch
+error: no note found for object 36e762296957a8acf2d6d8ff81201939ba6268c3.
+done.
+2026/05/15 01:46:13 clone source repository completed successfully
+2026/05/15 01:46:13 transitioning from state 1: clone source repository -> 2: verify branch HEAD
+2026/05/15 01:46:13 GPG verifying tag mytag1 at origin/mybranch
+gpg: Signature made Fri May 15 01:46:13 2026 UTC
+gpg:                using EDDSA key 8DF04782BF2F7CD04ECA95417AB9CA6D43D15753
+gpg:                issuer "icyci@example.com"
+gpg: Good signature from "icyCI test (test user) <icyci@example.com>" [unknown]
+gpg: WARNING: The key's User ID is not certified with a trusted signature!
+gpg:          There is no indication that the signature belongs to the owner.
+Primary key fingerprint: 8DF0 4782 BF2F 7CD0 4ECA  9541 7AB9 CA6D 43D1 5753
+object 36e762296957a8acf2d6d8ff81201939ba6268c3
+type commit
+tag mytag1
+tagger icyCI test <icyci@example.com> 1778809573 +0000
+
+signed tag
+2026/05/15 01:46:13 verify completed successfully
+2026/05/15 01:46:13 transitioning from state 2: verify branch HEAD -> 3: lock commit for testing
+fatal: couldn't find remote ref refs/notes/icyci.locked
+2026/05/15 01:46:14 ignoring failure to fetch git notes lock
+To /tmp/TestSignedTagUnsignedCommit543482062/001/test_src_and_rslt
+ * [new reference]   refs/notes/icyci.locked -> refs/notes/icyci.locked
+2026/05/15 01:46:14 successfully pushed git notes lock
+2026/05/15 01:46:14 lock commit for testing completed successfully
+2026/05/15 01:46:14 transitioning from state 3: lock commit for testing -> 4: start test command
+2026/05/15 01:46:14 transitioning from state 4: start test command -> 5: await test completion
+commitI: 0
+2026/05/15 01:46:14 ./src_test.sh completed successfully
+2026/05/15 01:46:14 transitioning from state 5: await test completion -> 6: push test output notes
+fatal: couldn't find remote ref refs/notes/icyci.output.stdout
+2026/05/15 01:46:14 ignoring failure to fetch output git notes
+To /tmp/TestSignedTagUnsignedCommit543482062/001/test_src_and_rslt
+ * [new reference]   refs/notes/icyci.output.stdout -> refs/notes/icyci.output.stdout
+ * [new reference]   refs/notes/icyci.result.passed -> refs/notes/icyci.result.passed
+ * [new reference]   refs/notes/icyci.output.stderr -> refs/notes/icyci.output.stderr
+2026/05/15 01:46:14 successfully pushed git notes lock
+2026/05/15 01:46:14 push test output notes completed successfully
+2026/05/15 01:46:14 transitioning from state 6: push test output notes -> 7: cleanup test artifacts
+2026/05/15 01:46:14 cleanup test artifacts completed successfully
+2026/05/15 01:46:14 transitioning from state 7: cleanup test artifacts -> 8: poll source for new commits
+2026/05/15 01:46:14 Entering poll loop awaiting new mybranch commits at 36e762296957a8acf2d6d8ff81201939ba6268c3
+From /tmp/TestSignedTagUnsignedCommit543482062/001/test_src_and_rslt
+ * [new ref]         refs/notes/icyci.locked -> refs/notes/icyci.locked
+ * [new ref]         refs/notes/icyci.output.stderr -> refs/notes/icyci.output.stderr
+ * [new ref]         refs/notes/icyci.output.stdout -> refs/notes/icyci.output.stdout
+ * [new ref]         refs/notes/icyci.result.passed -> refs/notes/icyci.result.passed
+[mybranch d488979] unsigned source commit
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+To /tmp/TestSignedTagUnsignedCommit543482062/001/test_src_and_rslt
+   36e7622..d488979  mybranch -> mybranch
+ * [new tag]         mytag2 -> mytag2
+From /tmp/TestSignedTagUnsignedCommit543482062/001/test_src_and_rslt
+   36e7622..d488979  mybranch   -> origin/mybranch
+error: no note found for object d488979af57c8ccd5e7a149f8d8dab76efee64cb.
+From /tmp/TestSignedTagUnsignedCommit543482062/001/test_src_and_rslt
+   36e7622..d488979  mybranch   -> origin/mybranch
+ * [new tag]         mytag2     -> mytag2
+2026/05/15 01:46:14 detected branch mybranch change 36e762296957a8acf2d6d8ff81201939ba6268c3 -> d488979af57c8ccd5e7a149f8d8dab76efee64cb
+2026/05/15 01:46:14 poll source for new commits completed successfully
+2026/05/15 01:46:14 transitioning from state 8: poll source for new commits -> 2: verify branch HEAD
+2026/05/15 01:46:14 GPG verifying tag mytag2 at origin/mybranch
+gpg: Signature made Fri May 15 01:46:14 2026 UTC
+gpg:                using EDDSA key 8DF04782BF2F7CD04ECA95417AB9CA6D43D15753
+gpg:                issuer "icyci@example.com"
+gpg: Good signature from "icyCI test (test user) <icyci@example.com>" [unknown]
+gpg: WARNING: The key's User ID is not certified with a trusted signature!
+gpg:          There is no indication that the signature belongs to the owner.
+Primary key fingerprint: 8DF0 4782 BF2F 7CD0 4ECA  9541 7AB9 CA6D 43D1 5753
+object d488979af57c8ccd5e7a149f8d8dab76efee64cb
+type commit
+tag mytag2
+tagger icyCI test <icyci@example.com> 1778809574 +0000
+
+signed tag
+2026/05/15 01:46:14 verify completed successfully
+2026/05/15 01:46:14 transitioning from state 2: verify branch HEAD -> 3: lock commit for testing
+To /tmp/TestSignedTagUnsignedCommit543482062/001/test_src_and_rslt
+   c67885b..9ce97e9  refs/notes/icyci.locked -> refs/notes/icyci.locked
+2026/05/15 01:46:14 successfully pushed git notes lock
+2026/05/15 01:46:14 lock commit for testing completed successfully
+2026/05/15 01:46:14 transitioning from state 3: lock commit for testing -> 4: start test command
+2026/05/15 01:46:14 transitioning from state 4: start test command -> 5: await test completion
+commitI: 1
+2026/05/15 01:46:14 ./src_test.sh completed successfully
+2026/05/15 01:46:14 transitioning from state 5: await test completion -> 6: push test output notes
+To /tmp/TestSignedTagUnsignedCommit543482062/001/test_src_and_rslt
+   f76f5e0..40ce2ad  refs/notes/icyci.output.stderr -> refs/notes/icyci.output.stderr
+   7a7c71e..8d9ba7d  refs/notes/icyci.output.stdout -> refs/notes/icyci.output.stdout
+   8acb6af..b3471a2  refs/notes/icyci.result.passed -> refs/notes/icyci.result.passed
+2026/05/15 01:46:14 successfully pushed git notes lock
+2026/05/15 01:46:14 push test output notes completed successfully
+2026/05/15 01:46:14 transitioning from state 6: push test output notes -> 7: cleanup test artifacts
+2026/05/15 01:46:14 cleanup test artifacts completed successfully
+2026/05/15 01:46:14 transitioning from state 7: cleanup test artifacts -> 8: poll source for new commits
+2026/05/15 01:46:14 Entering poll loop awaiting new mybranch commits at d488979af57c8ccd5e7a149f8d8dab76efee64cb
+From /tmp/TestSignedTagUnsignedCommit543482062/001/test_src_and_rslt
+   c67885b..9ce97e9  refs/notes/icyci.locked -> refs/notes/icyci.locked
+   f76f5e0..40ce2ad  refs/notes/icyci.output.stderr -> refs/notes/icyci.output.stderr
+   7a7c71e..8d9ba7d  refs/notes/icyci.output.stdout -> refs/notes/icyci.output.stdout
+   8acb6af..b3471a2  refs/notes/icyci.result.passed -> refs/notes/icyci.result.passed
+[mybranch dcf6736] unsigned source commit
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+To /tmp/TestSignedTagUnsignedCommit543482062/001/test_src_and_rslt
+   d488979..dcf6736  mybranch -> mybranch
+ * [new tag]         mytag3 -> mytag3
+From /tmp/TestSignedTagUnsignedCommit543482062/001/test_src_and_rslt
+   d488979..dcf6736  mybranch   -> origin/mybranch
+error: no note found for object dcf6736ca4437891304971754b6929d9bdbe36bd.
+From /tmp/TestSignedTagUnsignedCommit543482062/001/test_src_and_rslt
+   d488979..dcf6736  mybranch   -> origin/mybranch
+ * [new tag]         mytag3     -> mytag3
+2026/05/15 01:46:14 detected branch mybranch change d488979af57c8ccd5e7a149f8d8dab76efee64cb -> dcf6736ca4437891304971754b6929d9bdbe36bd
+2026/05/15 01:46:14 poll source for new commits completed successfully
+2026/05/15 01:46:14 transitioning from state 8: poll source for new commits -> 2: verify branch HEAD
+2026/05/15 01:46:14 GPG verifying tag mytag3 at origin/mybranch
+gpg: Signature made Fri May 15 01:46:14 2026 UTC
+gpg:                using EDDSA key 8DF04782BF2F7CD04ECA95417AB9CA6D43D15753
+gpg:                issuer "icyci@example.com"
+gpg: Good signature from "icyCI test (test user) <icyci@example.com>" [unknown]
+gpg: WARNING: The key's User ID is not certified with a trusted signature!
+gpg:          There is no indication that the signature belongs to the owner.
+Primary key fingerprint: 8DF0 4782 BF2F 7CD0 4ECA  9541 7AB9 CA6D 43D1 5753
+object dcf6736ca4437891304971754b6929d9bdbe36bd
+type commit
+tag mytag3
+tagger icyCI test <icyci@example.com> 1778809574 +0000
+
+signed tag
+2026/05/15 01:46:14 verify completed successfully
+2026/05/15 01:46:14 transitioning from state 2: verify branch HEAD -> 3: lock commit for testing
+To /tmp/TestSignedTagUnsignedCommit543482062/001/test_src_and_rslt
+   9ce97e9..44a77d5  refs/notes/icyci.locked -> refs/notes/icyci.locked
+2026/05/15 01:46:14 successfully pushed git notes lock
+2026/05/15 01:46:14 lock commit for testing completed successfully
+2026/05/15 01:46:14 transitioning from state 3: lock commit for testing -> 4: start test command
+2026/05/15 01:46:14 transitioning from state 4: start test command -> 5: await test completion
+commitI: 2
+2026/05/15 01:46:14 ./src_test.sh completed successfully
+2026/05/15 01:46:14 transitioning from state 5: await test completion -> 6: push test output notes
+To /tmp/TestSignedTagUnsignedCommit543482062/001/test_src_and_rslt
+   40ce2ad..bde51ff  refs/notes/icyci.output.stderr -> refs/notes/icyci.output.stderr
+   8d9ba7d..fb64e62  refs/notes/icyci.output.stdout -> refs/notes/icyci.output.stdout
+   b3471a2..a21fcba  refs/notes/icyci.result.passed -> refs/notes/icyci.result.passed
+2026/05/15 01:46:14 successfully pushed git notes lock
+2026/05/15 01:46:14 push test output notes completed successfully
+2026/05/15 01:46:14 transitioning from state 6: push test output notes -> 7: cleanup test artifacts
+2026/05/15 01:46:14 cleanup test artifacts completed successfully
+2026/05/15 01:46:14 transitioning from state 7: cleanup test artifacts -> 8: poll source for new commits
+2026/05/15 01:46:14 Entering poll loop awaiting new mybranch commits at dcf6736ca4437891304971754b6929d9bdbe36bd
+From /tmp/TestSignedTagUnsignedCommit543482062/001/test_src_and_rslt
+   9ce97e9..44a77d5  refs/notes/icyci.locked -> refs/notes/icyci.locked
+   40ce2ad..bde51ff  refs/notes/icyci.output.stderr -> refs/notes/icyci.output.stderr
+   8d9ba7d..fb64e62  refs/notes/icyci.output.stdout -> refs/notes/icyci.output.stdout
+   b3471a2..a21fcba  refs/notes/icyci.result.passed -> refs/notes/icyci.result.passed
+2026/05/15 01:46:15 Got signal 15 while in state 8
+2026/05/15 01:46:15 Got exit message while in state 8
+2026/05/15 01:46:15 waiting for poll routine to exit
+gpg: keybox '/tmp/TestMixUnsignedSigned3664313501/001/gpg/pubring.kbx' created
+gpg: /tmp/TestMixUnsignedSigned3664313501/001/gpg/trustdb.gpg: trustdb created
+gpg: key 7AB9CA6D43D15753: public key "icyCI test (test user) <icyci@example.com>" imported
+gpg: key 7AB9CA6D43D15753: secret key imported
+gpg: Total number processed: 1
+gpg:               imported: 1
+gpg:       secret keys read: 1
+gpg:   secret keys imported: 1
+Initialized empty Git repository in /tmp/TestMixUnsignedSigned3664313501/001/test_src_and_rslt/.git/
+Switched to a new branch 'mybranch'
+[mybranch (root-commit) 21ec63e] signed source commit
+ 1 file changed, 2 insertions(+)
+ create mode 100755 src_test.sh
+2026/05/15 01:46:15 transitioning from state 0: uninitialized -> 1: clone source repository
+Cloning into '/tmp/TestMixUnsignedSigned3664313501/001/test_clone_both'...
+Cloning into '/tmp/TestMixUnsignedSigned3664313501/001/source'...
+done.
+done.
+2026/05/15 01:46:15 clone source repository completed successfully
+2026/05/15 01:46:15 transitioning from state 1: clone source repository -> 2: verify branch HEAD
+fatal: No names found, cannot describe anything.
+2026/05/15 01:46:15 GPG verifying commit at origin/mybranch tip
+gpg: Signature made Fri May 15 01:46:15 2026 UTC
+gpg:                using EDDSA key 8DF04782BF2F7CD04ECA95417AB9CA6D43D15753
+gpg:                issuer "icyci@example.com"
+gpg: Good signature from "icyCI test (test user) <icyci@example.com>" [unknown]
+gpg: WARNING: The key's User ID is not certified with a trusted signature!
+gpg:          There is no indication that the signature belongs to the owner.
+Primary key fingerprint: 8DF0 4782 BF2F 7CD0 4ECA  9541 7AB9 CA6D 43D1 5753
+2026/05/15 01:46:15 verify completed successfully
+2026/05/15 01:46:15 transitioning from state 2: verify branch HEAD -> 3: lock commit for testing
+error: no note found for object 21ec63ee7c39a8a650dae1b68496ab4687a0ef35.
+fatal: couldn't find remote ref refs/notes/icyci.locked
+2026/05/15 01:46:15 ignoring failure to fetch git notes lock
+To /tmp/TestMixUnsignedSigned3664313501/001/test_src_and_rslt
+ * [new reference]   refs/notes/icyci.locked -> refs/notes/icyci.locked
+2026/05/15 01:46:15 successfully pushed git notes lock
+2026/05/15 01:46:15 lock commit for testing completed successfully
+2026/05/15 01:46:15 transitioning from state 3: lock commit for testing -> 4: start test command
+2026/05/15 01:46:15 transitioning from state 4: start test command -> 5: await test completion
+commitI: 0
+2026/05/15 01:46:15 ./src_test.sh completed successfully
+2026/05/15 01:46:15 transitioning from state 5: await test completion -> 6: push test output notes
+fatal: couldn't find remote ref refs/notes/icyci.output.stdout
+2026/05/15 01:46:15 ignoring failure to fetch output git notes
+To /tmp/TestMixUnsignedSigned3664313501/001/test_src_and_rslt
+ * [new reference]   refs/notes/icyci.output.stdout -> refs/notes/icyci.output.stdout
+ * [new reference]   refs/notes/icyci.result.passed -> refs/notes/icyci.result.passed
+ * [new reference]   refs/notes/icyci.output.stderr -> refs/notes/icyci.output.stderr
+2026/05/15 01:46:15 successfully pushed git notes lock
+2026/05/15 01:46:15 push test output notes completed successfully
+2026/05/15 01:46:15 transitioning from state 6: push test output notes -> 7: cleanup test artifacts
+2026/05/15 01:46:15 cleanup test artifacts completed successfully
+2026/05/15 01:46:15 transitioning from state 7: cleanup test artifacts -> 8: poll source for new commits
+2026/05/15 01:46:15 Entering poll loop awaiting new mybranch commits at 21ec63ee7c39a8a650dae1b68496ab4687a0ef35
+From /tmp/TestMixUnsignedSigned3664313501/001/test_src_and_rslt
+ * [new ref]         refs/notes/icyci.locked -> refs/notes/icyci.locked
+ * [new ref]         refs/notes/icyci.output.stderr -> refs/notes/icyci.output.stderr
+ * [new ref]         refs/notes/icyci.output.stdout -> refs/notes/icyci.output.stdout
+ * [new ref]         refs/notes/icyci.result.passed -> refs/notes/icyci.result.passed
+[mybranch 0701e72] unsigned source commit
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+From /tmp/TestMixUnsignedSigned3664313501/001/test_src_and_rslt
+   21ec63e..0701e72  mybranch   -> origin/mybranch
+fatal: No names found, cannot describe anything.
+2026/05/15 01:46:15 Entering poll loop awaiting new mybranch commits at 0701e720e1be737bcb293b83eba09a4cce662be7
+[mybranch b315c25] signed source commit
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+From /tmp/TestMixUnsignedSigned3664313501/001/test_src_and_rslt
+   21ec63e..b315c25  mybranch   -> origin/mybranch
+error: no note found for object b315c250ac3228e795a0b8e753875e515432f429.
+From /tmp/TestMixUnsignedSigned3664313501/001/test_src_and_rslt
+   0701e72..b315c25  mybranch   -> origin/mybranch
+2026/05/15 01:46:15 detected branch mybranch change 0701e720e1be737bcb293b83eba09a4cce662be7 -> b315c250ac3228e795a0b8e753875e515432f429
+2026/05/15 01:46:15 poll source for new commits completed successfully
+2026/05/15 01:46:15 transitioning from state 8: poll source for new commits -> 2: verify branch HEAD
+fatal: No names found, cannot describe anything.
+2026/05/15 01:46:15 GPG verifying commit at origin/mybranch tip
+gpg: Signature made Fri May 15 01:46:15 2026 UTC
+gpg:                using EDDSA key 8DF04782BF2F7CD04ECA95417AB9CA6D43D15753
+gpg:                issuer "icyci@example.com"
+gpg: Good signature from "icyCI test (test user) <icyci@example.com>" [unknown]
+gpg: WARNING: The key's User ID is not certified with a trusted signature!
+gpg:          There is no indication that the signature belongs to the owner.
+Primary key fingerprint: 8DF0 4782 BF2F 7CD0 4ECA  9541 7AB9 CA6D 43D1 5753
+2026/05/15 01:46:15 verify completed successfully
+2026/05/15 01:46:15 transitioning from state 2: verify branch HEAD -> 3: lock commit for testing
+error: no note found for object b315c250ac3228e795a0b8e753875e515432f429.
+To /tmp/TestMixUnsignedSigned3664313501/001/test_src_and_rslt
+   3a54e82..7d6c59a  refs/notes/icyci.locked -> refs/notes/icyci.locked
+2026/05/15 01:46:15 successfully pushed git notes lock
+2026/05/15 01:46:15 lock commit for testing completed successfully
+2026/05/15 01:46:15 transitioning from state 3: lock commit for testing -> 4: start test command
+2026/05/15 01:46:15 transitioning from state 4: start test command -> 5: await test completion
+commitI: 2
+2026/05/15 01:46:15 ./src_test.sh completed successfully
+2026/05/15 01:46:15 transitioning from state 5: await test completion -> 6: push test output notes
+To /tmp/TestMixUnsignedSigned3664313501/001/test_src_and_rslt
+   2d90b4d..57f9510  refs/notes/icyci.output.stderr -> refs/notes/icyci.output.stderr
+   edece19..f849b58  refs/notes/icyci.output.stdout -> refs/notes/icyci.output.stdout
+   74f9bb7..f645c12  refs/notes/icyci.result.passed -> refs/notes/icyci.result.passed
+2026/05/15 01:46:15 successfully pushed git notes lock
+2026/05/15 01:46:15 push test output notes completed successfully
+2026/05/15 01:46:15 transitioning from state 6: push test output notes -> 7: cleanup test artifacts
+2026/05/15 01:46:15 cleanup test artifacts completed successfully
+2026/05/15 01:46:15 transitioning from state 7: cleanup test artifacts -> 8: poll source for new commits
+2026/05/15 01:46:15 Entering poll loop awaiting new mybranch commits at b315c250ac3228e795a0b8e753875e515432f429
+From /tmp/TestMixUnsignedSigned3664313501/001/test_src_and_rslt
+   3a54e82..7d6c59a  refs/notes/icyci.locked -> refs/notes/icyci.locked
+   2d90b4d..57f9510  refs/notes/icyci.output.stderr -> refs/notes/icyci.output.stderr
+   edece19..f849b58  refs/notes/icyci.output.stdout -> refs/notes/icyci.output.stdout
+   74f9bb7..f645c12  refs/notes/icyci.result.passed -> refs/notes/icyci.result.passed
+[mybranch 88c4cb1] unsigned source commit
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+From /tmp/TestMixUnsignedSigned3664313501/001/test_src_and_rslt
+   b315c25..88c4cb1  mybranch   -> origin/mybranch
+fatal: No names found, cannot describe anything.
+2026/05/15 01:46:16 Entering poll loop awaiting new mybranch commits at 88c4cb158a39157c2c3db3225395ba1454e1227e
+[mybranch 08d424e] signed source commit
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+From /tmp/TestMixUnsignedSigned3664313501/001/test_src_and_rslt
+   b315c25..08d424e  mybranch   -> origin/mybranch
+error: no note found for object 08d424ea789e0118e682a3b5b2a50ec1909fdaf8.
+From /tmp/TestMixUnsignedSigned3664313501/001/test_src_and_rslt
+   88c4cb1..08d424e  mybranch   -> origin/mybranch
+2026/05/15 01:46:16 detected branch mybranch change 88c4cb158a39157c2c3db3225395ba1454e1227e -> 08d424ea789e0118e682a3b5b2a50ec1909fdaf8
+2026/05/15 01:46:16 poll source for new commits completed successfully
+2026/05/15 01:46:16 transitioning from state 8: poll source for new commits -> 2: verify branch HEAD
+fatal: No names found, cannot describe anything.
+2026/05/15 01:46:16 GPG verifying commit at origin/mybranch tip
+gpg: Signature made Fri May 15 01:46:16 2026 UTC
+gpg:                using EDDSA key 8DF04782BF2F7CD04ECA95417AB9CA6D43D15753
+gpg:                issuer "icyci@example.com"
+gpg: Good signature from "icyCI test (test user) <icyci@example.com>" [unknown]
+gpg: WARNING: The key's User ID is not certified with a trusted signature!
+gpg:          There is no indication that the signature belongs to the owner.
+Primary key fingerprint: 8DF0 4782 BF2F 7CD0 4ECA  9541 7AB9 CA6D 43D1 5753
+2026/05/15 01:46:16 verify completed successfully
+2026/05/15 01:46:16 transitioning from state 2: verify branch HEAD -> 3: lock commit for testing
+error: no note found for object 08d424ea789e0118e682a3b5b2a50ec1909fdaf8.
+To /tmp/TestMixUnsignedSigned3664313501/001/test_src_and_rslt
+   7d6c59a..790a188  refs/notes/icyci.locked -> refs/notes/icyci.locked
+2026/05/15 01:46:16 successfully pushed git notes lock
+2026/05/15 01:46:16 lock commit for testing completed successfully
+2026/05/15 01:46:16 transitioning from state 3: lock commit for testing -> 4: start test command
+2026/05/15 01:46:16 transitioning from state 4: start test command -> 5: await test completion
+commitI: 4
+2026/05/15 01:46:16 ./src_test.sh completed successfully
+2026/05/15 01:46:16 transitioning from state 5: await test completion -> 6: push test output notes
+To /tmp/TestMixUnsignedSigned3664313501/001/test_src_and_rslt
+   57f9510..577e226  refs/notes/icyci.output.stderr -> refs/notes/icyci.output.stderr
+   f849b58..d2977ec  refs/notes/icyci.output.stdout -> refs/notes/icyci.output.stdout
+   f645c12..a738a60  refs/notes/icyci.result.passed -> refs/notes/icyci.result.passed
+2026/05/15 01:46:16 successfully pushed git notes lock
+2026/05/15 01:46:16 push test output notes completed successfully
+2026/05/15 01:46:16 transitioning from state 6: push test output notes -> 7: cleanup test artifacts
+2026/05/15 01:46:16 cleanup test artifacts completed successfully
+2026/05/15 01:46:16 transitioning from state 7: cleanup test artifacts -> 8: poll source for new commits
+2026/05/15 01:46:16 Entering poll loop awaiting new mybranch commits at 08d424ea789e0118e682a3b5b2a50ec1909fdaf8
+From /tmp/TestMixUnsignedSigned3664313501/001/test_src_and_rslt
+   7d6c59a..790a188  refs/notes/icyci.locked -> refs/notes/icyci.locked
+   57f9510..577e226  refs/notes/icyci.output.stderr -> refs/notes/icyci.output.stderr
+   f849b58..d2977ec  refs/notes/icyci.output.stdout -> refs/notes/icyci.output.stdout
+   f645c12..a738a60  refs/notes/icyci.result.passed -> refs/notes/icyci.result.passed
+2026/05/15 01:46:16 Got signal 15 while in state 8
+2026/05/15 01:46:16 Got exit message while in state 8
+2026/05/15 01:46:16 waiting for poll routine to exit
+gpg: keybox '/tmp/TestMultiInstance675778214/001/gpg/pubring.kbx' created
+gpg: /tmp/TestMultiInstance675778214/001/gpg/trustdb.gpg: trustdb created
+gpg: key 7AB9CA6D43D15753: public key "icyCI test (test user) <icyci@example.com>" imported
+gpg: key 7AB9CA6D43D15753: secret key imported
+gpg: Total number processed: 1
+gpg:               imported: 1
+gpg:       secret keys read: 1
+gpg:   secret keys imported: 1
+Initialized empty Git repository in /tmp/TestMultiInstance675778214/001/test_src_and_rslt/.git/
+Switched to a new branch 'mybranch'
+[mybranch (root-commit) 56e90be] commit
+ 2 files changed, 8 insertions(+)
+ create mode 100755 i1_test.sh
+ create mode 100755 i2_test.sh
+2026/05/15 01:46:17 transitioning from state 0: uninitialized -> 1: clone source repository
+Cloning into '/tmp/TestMultiInstance675778214/001/test_clone_both'...
+2026/05/15 01:46:17 transitioning from state 0: uninitialized -> 1: clone source repository
+Cloning into '/tmp/TestMultiInstance675778214/001/i2/source'...
+Cloning into '/tmp/TestMultiInstance675778214/001/i1/source'...
+done.
+done.
+done.
+2026/05/15 01:46:17 clone source repository completed successfully
+2026/05/15 01:46:17 transitioning from state 1: clone source repository -> 2: verify branch HEAD
+fatal: No names found, cannot describe anything.
+2026/05/15 01:46:17 GPG verifying commit at origin/mybranch tip
+2026/05/15 01:46:17 clone source repository completed successfully
+2026/05/15 01:46:17 transitioning from state 1: clone source repository -> 2: verify branch HEAD
+fatal: No names found, cannot describe anything.
+2026/05/15 01:46:17 GPG verifying commit at origin/mybranch tip
+gpg: Signature made Fri May 15 01:46:17 2026 UTC
+gpg:                using EDDSA key 8DF04782BF2F7CD04ECA95417AB9CA6D43D15753
+gpg:                issuer "icyci@example.com"
+gpg: Good signature from "icyCI test (test user) <icyci@example.com>" [unknown]
+gpg: WARNING: The key's User ID is not certified with a trusted signature!
+gpg:          There is no indication that the signature belongs to the owner.
+Primary key fingerprint: 8DF0 4782 BF2F 7CD0 4ECA  9541 7AB9 CA6D 43D1 5753
+2026/05/15 01:46:17 verify completed successfully
+2026/05/15 01:46:17 transitioning from state 2: verify branch HEAD -> 3: lock commit for testing
+gpg: Signature made Fri May 15 01:46:17 2026 UTC
+gpg:                using EDDSA key 8DF04782BF2F7CD04ECA95417AB9CA6D43D15753
+gpg:                issuer "icyci@example.com"
+gpg: Good signature from "icyCI test (test user) <icyci@example.com>" [unknown]
+gpg: WARNING: The key's User ID is not certified with a trusted signature!
+gpg:          There is no indication that the signature belongs to the owner.
+Primary key fingerprint: 8DF0 4782 BF2F 7CD0 4ECA  9541 7AB9 CA6D 43D1 5753
+2026/05/15 01:46:17 verify completed successfully
+2026/05/15 01:46:17 transitioning from state 2: verify branch HEAD -> 3: lock commit for testing
+fatal: couldn't find remote ref refs/notes/icyci.locked
+2026/05/15 01:46:17 ignoring failure to fetch git notes lock
+fatal: couldn't find remote ref refs/notes/icyci.locked
+2026/05/15 01:46:17 ignoring failure to fetch git notes lock
+To /tmp/TestMultiInstance675778214/001/test_src_and_rslt
+ * [new reference]   refs/notes/icyci.locked -> refs/notes/icyci.locked
+2026/05/15 01:46:17 successfully pushed git notes lock
+2026/05/15 01:46:17 lock commit for testing completed successfully
+2026/05/15 01:46:17 transitioning from state 3: lock commit for testing -> 4: start test command
+remote: error: cannot lock ref 'refs/notes/icyci.locked': reference already exists        
+2026/05/15 01:46:17 transitioning from state 4: start test command -> 5: await test completion
+i2: commitI: 0
+To /tmp/TestMultiInstance675778214/001/test_src_and_rslt
+ ! [remote rejected] refs/notes/icyci.locked -> refs/notes/icyci.locked (failed to update ref)
+error: failed to push some refs to '/tmp/TestMultiInstance675778214/001/test_src_and_rslt'
+2026/05/15 01:46:17 retrying git notes lock after sleep
+[mybranch 6e3d10a] commit
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+From /tmp/TestMultiInstance675778214/001/test_src_and_rslt
+ + 150b301...33c5f66 refs/notes/icyci.locked -> refs/notes/icyci.locked  (forced update)
+error: Cannot add notes. Found existing notes for object 56e90be26c24978970431e02faabbe8aa7a03bd5. Use '-f' to overwrite existing notes
+2026/05/15 01:46:18 couldn't add git notes lock: exit status 1
+2026/05/15 01:46:18 lock commit for testing failed with exit status 1
+2026/05/15 01:46:18 transitioning from state 3: lock commit for testing -> 8: poll source for new commits
+2026/05/15 01:46:18 Entering poll loop awaiting new mybranch commits at 56e90be26c24978970431e02faabbe8aa7a03bd5
+From /tmp/TestMultiInstance675778214/001/test_src_and_rslt
+   56e90be..6e3d10a  mybranch   -> origin/mybranch
+2026/05/15 01:46:18 detected branch mybranch change 56e90be26c24978970431e02faabbe8aa7a03bd5 -> 6e3d10a77c11ab80553b014f067a84bdab158fb8
+2026/05/15 01:46:18 poll source for new commits completed successfully
+2026/05/15 01:46:18 transitioning from state 8: poll source for new commits -> 2: verify branch HEAD
+fatal: No names found, cannot describe anything.
+2026/05/15 01:46:18 GPG verifying commit at origin/mybranch tip
+gpg: Signature made Fri May 15 01:46:18 2026 UTC
+gpg:                using EDDSA key 8DF04782BF2F7CD04ECA95417AB9CA6D43D15753
+gpg:                issuer "icyci@example.com"
+gpg: Good signature from "icyCI test (test user) <icyci@example.com>" [unknown]
+gpg: WARNING: The key's User ID is not certified with a trusted signature!
+gpg:          There is no indication that the signature belongs to the owner.
+Primary key fingerprint: 8DF0 4782 BF2F 7CD0 4ECA  9541 7AB9 CA6D 43D1 5753
+2026/05/15 01:46:18 verify completed successfully
+2026/05/15 01:46:18 transitioning from state 2: verify branch HEAD -> 3: lock commit for testing
+To /tmp/TestMultiInstance675778214/001/test_src_and_rslt
+   33c5f66..24a1919  refs/notes/icyci.locked -> refs/notes/icyci.locked
+2026/05/15 01:46:18 successfully pushed git notes lock
+2026/05/15 01:46:18 lock commit for testing completed successfully
+2026/05/15 01:46:18 transitioning from state 3: lock commit for testing -> 4: start test command
+2026/05/15 01:46:18 transitioning from state 4: start test command -> 5: await test completion
+i1: commitI: 1
+From /tmp/TestMultiInstance675778214/001/test_src_and_rslt
+   56e90be..6e3d10a  mybranch                -> origin/mybranch
+ * [new ref]         refs/notes/icyci.locked -> refs/notes/icyci.locked
+error: no note found for object 6e3d10a77c11ab80553b014f067a84bdab158fb8.
+2026/05/15 01:46:19 ./i2_test.sh completed successfully
+2026/05/15 01:46:19 transitioning from state 5: await test completion -> 6: push test output notes
+fatal: couldn't find remote ref refs/notes/icyci.output.stdout
+2026/05/15 01:46:19 ignoring failure to fetch output git notes
+To /tmp/TestMultiInstance675778214/001/test_src_and_rslt
+ * [new reference]   refs/notes/icyci.output.stdout -> refs/notes/icyci.output.stdout
+ * [new reference]   refs/notes/icyci.result.passed -> refs/notes/icyci.result.passed
+ * [new reference]   refs/notes/icyci.output.stderr -> refs/notes/icyci.output.stderr
+2026/05/15 01:46:19 successfully pushed git notes lock
+2026/05/15 01:46:19 push test output notes completed successfully
+2026/05/15 01:46:19 transitioning from state 6: push test output notes -> 7: cleanup test artifacts
+2026/05/15 01:46:19 cleanup test artifacts completed successfully
+2026/05/15 01:46:19 transitioning from state 7: cleanup test artifacts -> 8: poll source for new commits
+2026/05/15 01:46:19 Entering poll loop awaiting new mybranch commits at 56e90be26c24978970431e02faabbe8aa7a03bd5
+From /tmp/TestMultiInstance675778214/001/test_src_and_rslt
+ * [new ref]         refs/notes/icyci.output.stderr -> refs/notes/icyci.output.stderr
+ * [new ref]         refs/notes/icyci.output.stdout -> refs/notes/icyci.output.stdout
+ * [new ref]         refs/notes/icyci.result.passed -> refs/notes/icyci.result.passed
+error: no note found for object 6e3d10a77c11ab80553b014f067a84bdab158fb8.
+From /tmp/TestMultiInstance675778214/001/test_src_and_rslt
+   56e90be..6e3d10a  mybranch   -> origin/mybranch
+2026/05/15 01:46:19 detected branch mybranch change 56e90be26c24978970431e02faabbe8aa7a03bd5 -> 6e3d10a77c11ab80553b014f067a84bdab158fb8
+2026/05/15 01:46:19 poll source for new commits completed successfully
+2026/05/15 01:46:19 transitioning from state 8: poll source for new commits -> 2: verify branch HEAD
+fatal: No names found, cannot describe anything.
+2026/05/15 01:46:19 GPG verifying commit at origin/mybranch tip
+gpg: Signature made Fri May 15 01:46:18 2026 UTC
+gpg:                using EDDSA key 8DF04782BF2F7CD04ECA95417AB9CA6D43D15753
+gpg:                issuer "icyci@example.com"
+gpg: Good signature from "icyCI test (test user) <icyci@example.com>" [unknown]
+gpg: WARNING: The key's User ID is not certified with a trusted signature!
+gpg:          There is no indication that the signature belongs to the owner.
+Primary key fingerprint: 8DF0 4782 BF2F 7CD0 4ECA  9541 7AB9 CA6D 43D1 5753
+2026/05/15 01:46:19 verify completed successfully
+2026/05/15 01:46:19 transitioning from state 2: verify branch HEAD -> 3: lock commit for testing
+From /tmp/TestMultiInstance675778214/001/test_src_and_rslt
+   33c5f66..24a1919  refs/notes/icyci.locked -> refs/notes/icyci.locked
+error: Cannot add notes. Found existing notes for object 6e3d10a77c11ab80553b014f067a84bdab158fb8. Use '-f' to overwrite existing notes
+2026/05/15 01:46:19 couldn't add git notes lock: exit status 1
+2026/05/15 01:46:19 lock commit for testing failed with exit status 1
+2026/05/15 01:46:19 transitioning from state 3: lock commit for testing -> 8: poll source for new commits
+2026/05/15 01:46:19 Entering poll loop awaiting new mybranch commits at 6e3d10a77c11ab80553b014f067a84bdab158fb8
+error: no note found for object 6e3d10a77c11ab80553b014f067a84bdab158fb8.
+error: no note found for object 6e3d10a77c11ab80553b014f067a84bdab158fb8.
+error: no note found for object 6e3d10a77c11ab80553b014f067a84bdab158fb8.
+error: no note found for object 6e3d10a77c11ab80553b014f067a84bdab158fb8.
+2026/05/15 01:46:20 ./i1_test.sh completed successfully
+2026/05/15 01:46:20 transitioning from state 5: await test completion -> 6: push test output notes
+From /tmp/TestMultiInstance675778214/001/test_src_and_rslt
+ * [new ref]         refs/notes/icyci.output.stdout -> refs/notes/icyci.output.stdout
+ * [new ref]         refs/notes/icyci.result.passed -> refs/notes/icyci.result.passed
+ * [new ref]         refs/notes/icyci.output.stderr -> refs/notes/icyci.output.stderr
+error: no note found for object 6e3d10a77c11ab80553b014f067a84bdab158fb8.
+error: no note found for object 6e3d10a77c11ab80553b014f067a84bdab158fb8.
+To /tmp/TestMultiInstance675778214/001/test_src_and_rslt
+   651d3f9..7f90d44  refs/notes/icyci.output.stderr -> refs/notes/icyci.output.stderr
+   9ea4488..8a1bb71  refs/notes/icyci.output.stdout -> refs/notes/icyci.output.stdout
+   5ac39b7..4c7d0e2  refs/notes/icyci.result.passed -> refs/notes/icyci.result.passed
+2026/05/15 01:46:21 successfully pushed git notes lock
+2026/05/15 01:46:21 push test output notes completed successfully
+2026/05/15 01:46:21 transitioning from state 6: push test output notes -> 7: cleanup test artifacts
+2026/05/15 01:46:21 cleanup test artifacts completed successfully
+2026/05/15 01:46:21 transitioning from state 7: cleanup test artifacts -> 8: poll source for new commits
+2026/05/15 01:46:21 Entering poll loop awaiting new mybranch commits at 6e3d10a77c11ab80553b014f067a84bdab158fb8
+From /tmp/TestMultiInstance675778214/001/test_src_and_rslt
+   651d3f9..7f90d44  refs/notes/icyci.output.stderr -> refs/notes/icyci.output.stderr
+   9ea4488..8a1bb71  refs/notes/icyci.output.stdout -> refs/notes/icyci.output.stdout
+   5ac39b7..4c7d0e2  refs/notes/icyci.result.passed -> refs/notes/icyci.result.passed
+2026/05/15 01:46:21 Got signal 15 while in state 8
+2026/05/15 01:46:21 Got exit message while in state 8
+2026/05/15 01:46:21 waiting for poll routine to exit
+2026/05/15 01:46:21 Got signal 15 while in state 8
+2026/05/15 01:46:21 Got exit message while in state 8
+2026/05/15 01:46:21 waiting for poll routine to exit
+gpg: keybox '/tmp/TestScriptEnv848182334/001/gpg/pubring.kbx' created
+gpg: /tmp/TestScriptEnv848182334/001/gpg/trustdb.gpg: trustdb created
+gpg: key 7AB9CA6D43D15753: public key "icyCI test (test user) <icyci@example.com>" imported
+gpg: key 7AB9CA6D43D15753: secret key imported
+gpg: Total number processed: 1
+gpg:               imported: 1
+gpg:       secret keys read: 1
+gpg:   secret keys imported: 1
+Initialized empty Git repository in /tmp/TestScriptEnv848182334/001/test_src_and_rslt/.git/
+Switched to a new branch 'mybranch'
+[mybranch (root-commit) 9babecd] signed source commit
+ 1 file changed, 2 insertions(+)
+ create mode 100755 src_test.sh
+2026/05/15 01:46:23 transitioning from state 0: uninitialized -> 1: clone source repository
+Cloning into '/tmp/TestScriptEnv848182334/001/test_clone_both'...
+Cloning into '/tmp/TestScriptEnv848182334/001/source'...
+done.
+done.
+2026/05/15 01:46:23 clone source repository completed successfully
+2026/05/15 01:46:23 transitioning from state 1: clone source repository -> 2: verify branch HEAD
+fatal: No names found, cannot describe anything.
+2026/05/15 01:46:23 GPG verifying commit at origin/mybranch tip
+error: no note found for object 9babecd4c5cc566776c911ffa01af9d54515060c.
+gpg: Signature made Fri May 15 01:46:23 2026 UTC
+gpg:                using EDDSA key 8DF04782BF2F7CD04ECA95417AB9CA6D43D15753
+gpg:                issuer "icyci@example.com"
+gpg: Good signature from "icyCI test (test user) <icyci@example.com>" [unknown]
+gpg: WARNING: The key's User ID is not certified with a trusted signature!
+gpg:          There is no indication that the signature belongs to the owner.
+Primary key fingerprint: 8DF0 4782 BF2F 7CD0 4ECA  9541 7AB9 CA6D 43D1 5753
+2026/05/15 01:46:23 verify completed successfully
+2026/05/15 01:46:23 transitioning from state 2: verify branch HEAD -> 3: lock commit for testing
+fatal: couldn't find remote ref refs/notes/icyci.locked
+2026/05/15 01:46:23 ignoring failure to fetch git notes lock
+To /tmp/TestScriptEnv848182334/001/test_src_and_rslt
+ * [new reference]   refs/notes/icyci.locked -> refs/notes/icyci.locked
+2026/05/15 01:46:23 successfully pushed git notes lock
+2026/05/15 01:46:23 lock commit for testing completed successfully
+2026/05/15 01:46:23 transitioning from state 3: lock commit for testing -> 4: start test command
+2026/05/15 01:46:23 transitioning from state 4: start test command -> 5: await test completion
+ICYCI_PID: 1528
+2026/05/15 01:46:23 ./src_test.sh completed successfully
+2026/05/15 01:46:23 transitioning from state 5: await test completion -> 6: push test output notes
+fatal: couldn't find remote ref refs/notes/icyci.output.stdout
+2026/05/15 01:46:23 ignoring failure to fetch output git notes
+To /tmp/TestScriptEnv848182334/001/test_src_and_rslt
+ * [new reference]   refs/notes/icyci.output.stdout -> refs/notes/icyci.output.stdout
+ * [new reference]   refs/notes/icyci.result.passed -> refs/notes/icyci.result.passed
+ * [new reference]   refs/notes/icyci.output.stderr -> refs/notes/icyci.output.stderr
+2026/05/15 01:46:23 successfully pushed git notes lock
+2026/05/15 01:46:23 push test output notes completed successfully
+2026/05/15 01:46:23 transitioning from state 6: push test output notes -> 7: cleanup test artifacts
+2026/05/15 01:46:23 cleanup test artifacts completed successfully
+2026/05/15 01:46:23 transitioning from state 7: cleanup test artifacts -> 8: poll source for new commits
+2026/05/15 01:46:23 Entering poll loop awaiting new mybranch commits at 9babecd4c5cc566776c911ffa01af9d54515060c
+From /tmp/TestScriptEnv848182334/001/test_src_and_rslt
+ * [new ref]         refs/notes/icyci.locked -> refs/notes/icyci.locked
+ * [new ref]         refs/notes/icyci.output.stderr -> refs/notes/icyci.output.stderr
+ * [new ref]         refs/notes/icyci.output.stdout -> refs/notes/icyci.output.stdout
+ * [new ref]         refs/notes/icyci.result.passed -> refs/notes/icyci.result.passed
+2026/05/15 01:46:23 Got signal 15 while in state 8
+2026/05/15 01:46:23 Got exit message while in state 8
+2026/05/15 01:46:23 waiting for poll routine to exit
+gpg: keybox '/tmp/TestScriptSignalLog2792582374/001/gpg/pubring.kbx' created
+gpg: /tmp/TestScriptSignalLog2792582374/001/gpg/trustdb.gpg: trustdb created
+gpg: key 7AB9CA6D43D15753: public key "icyCI test (test user) <icyci@example.com>" imported
+gpg: key 7AB9CA6D43D15753: secret key imported
+gpg: Total number processed: 1
+gpg:               imported: 1
+gpg:       secret keys read: 1
+gpg:   secret keys imported: 1
+Initialized empty Git repository in /tmp/TestScriptSignalLog2792582374/001/test_src_and_rslt/.git/
+Switched to a new branch 'mybranch'
+[mybranch (root-commit) b9d8c9f] signed source commit
+ 1 file changed, 2 insertions(+)
+ create mode 100755 src_test.sh
+Cloning into '/tmp/TestScriptSignalLog2792582374/001/source'...
+done.
+fatal: No names found, cannot describe anything.
+gpg: Signature made Fri May 15 01:46:23 2026 UTC
+gpg:                using EDDSA key 8DF04782BF2F7CD04ECA95417AB9CA6D43D15753
+gpg:                issuer "icyci@example.com"
+gpg: Good signature from "icyCI test (test user) <icyci@example.com>" [unknown]
+gpg: WARNING: The key's User ID is not certified with a trusted signature!
+gpg:          There is no indication that the signature belongs to the owner.
+Primary key fingerprint: 8DF0 4782 BF2F 7CD0 4ECA  9541 7AB9 CA6D 43D1 5753
+fatal: couldn't find remote ref refs/notes/icyci.locked
+To /tmp/TestScriptSignalLog2792582374/001/test_src_and_rslt
+ * [new reference]   refs/notes/icyci.locked -> refs/notes/icyci.locked
+2026/05/15 01:46:24 Got signal 15 while in state 5
+2026/05/15 01:46:24 Got exit message while in state 5
+2026/05/15 01:46:24 waiting for cmd to exit via SIGKILL
+2026/05/15 01:46:24 killed PGID 3394 due to exit request: exit requested
+2026/05/15 01:46:24 ./src_test.sh failed: exit requested
+See refs/notes/icyci.output.stdout and refs/notes/icyci.output.stderr for details
+gpg: keybox '/tmp/TestForcePushSrc4108203150/001/gpg/pubring.kbx' created
+gpg: /tmp/TestForcePushSrc4108203150/001/gpg/trustdb.gpg: trustdb created
+gpg: key 7AB9CA6D43D15753: public key "icyCI test (test user) <icyci@example.com>" imported
+gpg: key 7AB9CA6D43D15753: secret key imported
+gpg: Total number processed: 1
+gpg:               imported: 1
+gpg:       secret keys read: 1
+gpg:   secret keys imported: 1
+Initialized empty Git repository in /tmp/TestForcePushSrc4108203150/001/test_src/.git/
+Initialized empty Git repository in /tmp/TestForcePushSrc4108203150/001/test_rslt/.git/
+Switched to a new branch 'mybranch'
+[mybranch (root-commit) 86372cd] signed source commit
+ 1 file changed, 2 insertions(+)
+ create mode 100755 src_test.sh
+2026/05/15 01:46:24 transitioning from state 0: uninitialized -> 1: clone source repository
+Cloning into '/tmp/TestForcePushSrc4108203150/001/test_clone_both'...
+Cloning into '/tmp/TestForcePushSrc4108203150/001/source'...
+done.
+done.
+2026/05/15 01:46:24 clone source repository completed successfully
+2026/05/15 01:46:24 transitioning from state 1: clone source repository -> 2: verify branch HEAD
+fatal: No names found, cannot describe anything.
+2026/05/15 01:46:24 GPG verifying commit at origin/mybranch tip
+Fetching origin
+gpg: Signature made Fri May 15 01:46:24 2026 UTC
+gpg:                using EDDSA key 8DF04782BF2F7CD04ECA95417AB9CA6D43D15753
+gpg:                issuer "icyci@example.com"
+gpg: Good signature from "icyCI test (test user) <icyci@example.com>" [unknown]
+gpg: WARNING: The key's User ID is not certified with a trusted signature!
+gpg:          There is no indication that the signature belongs to the owner.
+Primary key fingerprint: 8DF0 4782 BF2F 7CD0 4ECA  9541 7AB9 CA6D 43D1 5753
+2026/05/15 01:46:24 verify completed successfully
+2026/05/15 01:46:24 transitioning from state 2: verify branch HEAD -> 3: lock commit for testing
+Fetching results
+fatal: couldn't find remote ref refs/notes/icyci.locked
+2026/05/15 01:46:24 ignoring failure to fetch git notes lock
+error: no note found for object 86372cde22e397e4b10eba92bfb2c92d4ddb0127.
+To /tmp/TestForcePushSrc4108203150/001/test_rslt
+ * [new reference]   refs/notes/icyci.locked -> refs/notes/icyci.locked
+2026/05/15 01:46:24 successfully pushed git notes lock
+2026/05/15 01:46:24 lock commit for testing completed successfully
+2026/05/15 01:46:24 transitioning from state 3: lock commit for testing -> 4: start test command
+2026/05/15 01:46:24 transitioning from state 4: start test command -> 5: await test completion
+commitI: 0
+2026/05/15 01:46:24 ./src_test.sh completed successfully
+2026/05/15 01:46:24 transitioning from state 5: await test completion -> 6: push test output notes
+fatal: couldn't find remote ref refs/notes/icyci.output.stdout
+2026/05/15 01:46:24 ignoring failure to fetch output git notes
+To /tmp/TestForcePushSrc4108203150/001/test_rslt
+ * [new reference]   refs/notes/icyci.output.stdout -> refs/notes/icyci.output.stdout
+ * [new reference]   refs/notes/icyci.result.passed -> refs/notes/icyci.result.passed
+ * [new reference]   refs/notes/icyci.output.stderr -> refs/notes/icyci.output.stderr
+ * [new branch]      HEAD -> mybranch
+2026/05/15 01:46:24 successfully pushed git notes lock
+2026/05/15 01:46:24 push test output notes completed successfully
+2026/05/15 01:46:24 transitioning from state 6: push test output notes -> 7: cleanup test artifacts
+2026/05/15 01:46:24 cleanup test artifacts completed successfully
+2026/05/15 01:46:24 transitioning from state 7: cleanup test artifacts -> 8: poll source for new commits
+2026/05/15 01:46:24 Entering poll loop awaiting new mybranch commits at 86372cde22e397e4b10eba92bfb2c92d4ddb0127
+Fetching origin
+Fetching results
+From /tmp/TestForcePushSrc4108203150/001/test_rslt
+ * [new branch]      mybranch                -> results/mybranch
+ * [new ref]         refs/notes/icyci.locked -> refs/notes/icyci.locked
+ * [new ref]         refs/notes/icyci.output.stderr -> refs/notes/icyci.output.stderr
+ * [new ref]         refs/notes/icyci.output.stdout -> refs/notes/icyci.output.stdout
+ * [new ref]         refs/notes/icyci.result.passed -> refs/notes/icyci.result.passed
+[mybranch e6673da] signed source commit
+ Date: Fri May 15 01:46:24 2026 +0000
+ 1 file changed, 2 insertions(+)
+ create mode 100755 src_test.sh
+Fetching origin
+From /tmp/TestForcePushSrc4108203150/001/test_src
+ + 86372cd...e6673da mybranch   -> origin/mybranch  (forced update)
+Fetching results
+error: no note found for object e6673da2d150aa14b13046488d04a37b89fdb37c.
+From /tmp/TestForcePushSrc4108203150/001/test_src
+ + 86372cd...e6673da mybranch   -> origin/mybranch  (forced update)
+2026/05/15 01:46:24 detected branch mybranch change 86372cde22e397e4b10eba92bfb2c92d4ddb0127 -> e6673da2d150aa14b13046488d04a37b89fdb37c
+2026/05/15 01:46:24 poll source for new commits completed successfully
+2026/05/15 01:46:24 transitioning from state 8: poll source for new commits -> 2: verify branch HEAD
+fatal: No names found, cannot describe anything.
+2026/05/15 01:46:24 GPG verifying commit at origin/mybranch tip
+gpg: Signature made Fri May 15 01:46:24 2026 UTC
+gpg:                using EDDSA key 8DF04782BF2F7CD04ECA95417AB9CA6D43D15753
+gpg:                issuer "icyci@example.com"
+gpg: Good signature from "icyCI test (test user) <icyci@example.com>" [unknown]
+gpg: WARNING: The key's User ID is not certified with a trusted signature!
+gpg:          There is no indication that the signature belongs to the owner.
+Primary key fingerprint: 8DF0 4782 BF2F 7CD0 4ECA  9541 7AB9 CA6D 43D1 5753
+2026/05/15 01:46:24 verify completed successfully
+2026/05/15 01:46:24 transitioning from state 2: verify branch HEAD -> 3: lock commit for testing
+To /tmp/TestForcePushSrc4108203150/001/test_rslt
+   1b122e3..e466a2b  refs/notes/icyci.locked -> refs/notes/icyci.locked
+2026/05/15 01:46:24 successfully pushed git notes lock
+2026/05/15 01:46:24 lock commit for testing completed successfully
+2026/05/15 01:46:24 transitioning from state 3: lock commit for testing -> 4: start test command
+2026/05/15 01:46:24 transitioning from state 4: start test command -> 5: await test completion
+commitI: 1
+2026/05/15 01:46:24 ./src_test.sh completed successfully
+2026/05/15 01:46:24 transitioning from state 5: await test completion -> 6: push test output notes
+To /tmp/TestForcePushSrc4108203150/001/test_rslt
+ + 86372cd...e6673da HEAD -> mybranch (forced update)
+   fb5c223..7fbc316  refs/notes/icyci.output.stderr -> refs/notes/icyci.output.stderr
+   641f0ff..bbb26a6  refs/notes/icyci.output.stdout -> refs/notes/icyci.output.stdout
+   6e0b33c..05c6ba4  refs/notes/icyci.result.passed -> refs/notes/icyci.result.passed
+2026/05/15 01:46:24 successfully pushed git notes lock
+2026/05/15 01:46:24 push test output notes completed successfully
+2026/05/15 01:46:24 transitioning from state 6: push test output notes -> 7: cleanup test artifacts
+2026/05/15 01:46:24 cleanup test artifacts completed successfully
+2026/05/15 01:46:24 transitioning from state 7: cleanup test artifacts -> 8: poll source for new commits
+2026/05/15 01:46:24 Entering poll loop awaiting new mybranch commits at e6673da2d150aa14b13046488d04a37b89fdb37c
+Fetching origin
+Fetching results
+From /tmp/TestForcePushSrc4108203150/001/test_rslt
+ + 86372cd...e6673da mybranch                -> results/mybranch  (forced update)
+   1b122e3..e466a2b  refs/notes/icyci.locked -> refs/notes/icyci.locked
+   fb5c223..7fbc316  refs/notes/icyci.output.stderr -> refs/notes/icyci.output.stderr
+   641f0ff..bbb26a6  refs/notes/icyci.output.stdout -> refs/notes/icyci.output.stdout
+   6e0b33c..05c6ba4  refs/notes/icyci.result.passed -> refs/notes/icyci.result.passed
+[mybranch 69d42f1] signed source commit
+ Date: Fri May 15 01:46:24 2026 +0000
+ 1 file changed, 2 insertions(+)
+ create mode 100755 src_test.sh
+Fetching origin
+From /tmp/TestForcePushSrc4108203150/001/test_src
+ + e6673da...69d42f1 mybranch   -> origin/mybranch  (forced update)
+Fetching results
+error: no note found for object 69d42f1567a62717a001ddd05e8a0cef810cae8b.
+From /tmp/TestForcePushSrc4108203150/001/test_src
+ + e6673da...69d42f1 mybranch   -> origin/mybranch  (forced update)
+2026/05/15 01:46:24 detected branch mybranch change e6673da2d150aa14b13046488d04a37b89fdb37c -> 69d42f1567a62717a001ddd05e8a0cef810cae8b
+2026/05/15 01:46:24 poll source for new commits completed successfully
+2026/05/15 01:46:24 transitioning from state 8: poll source for new commits -> 2: verify branch HEAD
+fatal: No names found, cannot describe anything.
+2026/05/15 01:46:24 GPG verifying commit at origin/mybranch tip
+gpg: Signature made Fri May 15 01:46:24 2026 UTC
+gpg:                using EDDSA key 8DF04782BF2F7CD04ECA95417AB9CA6D43D15753
+gpg:                issuer "icyci@example.com"
+gpg: Good signature from "icyCI test (test user) <icyci@example.com>" [unknown]
+gpg: WARNING: The key's User ID is not certified with a trusted signature!
+gpg:          There is no indication that the signature belongs to the owner.
+Primary key fingerprint: 8DF0 4782 BF2F 7CD0 4ECA  9541 7AB9 CA6D 43D1 5753
+2026/05/15 01:46:24 verify completed successfully
+2026/05/15 01:46:24 transitioning from state 2: verify branch HEAD -> 3: lock commit for testing
+To /tmp/TestForcePushSrc4108203150/001/test_rslt
+   e466a2b..57b5ed2  refs/notes/icyci.locked -> refs/notes/icyci.locked
+2026/05/15 01:46:24 successfully pushed git notes lock
+2026/05/15 01:46:24 lock commit for testing completed successfully
+2026/05/15 01:46:24 transitioning from state 3: lock commit for testing -> 4: start test command
+2026/05/15 01:46:24 transitioning from state 4: start test command -> 5: await test completion
+commitI: 2
+2026/05/15 01:46:25 ./src_test.sh completed successfully
+2026/05/15 01:46:25 transitioning from state 5: await test completion -> 6: push test output notes
+To /tmp/TestForcePushSrc4108203150/001/test_rslt
+ + e6673da...69d42f1 HEAD -> mybranch (forced update)
+   7fbc316..c40700b  refs/notes/icyci.output.stderr -> refs/notes/icyci.output.stderr
+   bbb26a6..c861026  refs/notes/icyci.output.stdout -> refs/notes/icyci.output.stdout
+   05c6ba4..3cb059e  refs/notes/icyci.result.passed -> refs/notes/icyci.result.passed
+2026/05/15 01:46:25 successfully pushed git notes lock
+2026/05/15 01:46:25 push test output notes completed successfully
+2026/05/15 01:46:25 transitioning from state 6: push test output notes -> 7: cleanup test artifacts
+2026/05/15 01:46:25 cleanup test artifacts completed successfully
+2026/05/15 01:46:25 transitioning from state 7: cleanup test artifacts -> 8: poll source for new commits
+2026/05/15 01:46:25 Entering poll loop awaiting new mybranch commits at 69d42f1567a62717a001ddd05e8a0cef810cae8b
+Fetching origin
+Fetching results
+From /tmp/TestForcePushSrc4108203150/001/test_rslt
+ + e6673da...69d42f1 mybranch                -> results/mybranch  (forced update)
+   e466a2b..57b5ed2  refs/notes/icyci.locked -> refs/notes/icyci.locked
+   7fbc316..c40700b  refs/notes/icyci.output.stderr -> refs/notes/icyci.output.stderr
+   bbb26a6..c861026  refs/notes/icyci.output.stdout -> refs/notes/icyci.output.stdout
+   05c6ba4..3cb059e  refs/notes/icyci.result.passed -> refs/notes/icyci.result.passed
+[mybranch 7b8d206] signed source commit
+ Date: Fri May 15 01:46:24 2026 +0000
+ 1 file changed, 2 insertions(+)
+ create mode 100755 src_test.sh
+Fetching origin
+From /tmp/TestForcePushSrc4108203150/001/test_src
+ + 69d42f1...7b8d206 mybranch   -> origin/mybranch  (forced update)
+Fetching results
+error: no note found for object 7b8d2065acc0b06c590ca87030b9571d85d41afa.
+From /tmp/TestForcePushSrc4108203150/001/test_src
+ + 69d42f1...7b8d206 mybranch   -> origin/mybranch  (forced update)
+2026/05/15 01:46:25 detected branch mybranch change 69d42f1567a62717a001ddd05e8a0cef810cae8b -> 7b8d2065acc0b06c590ca87030b9571d85d41afa
+2026/05/15 01:46:25 poll source for new commits completed successfully
+2026/05/15 01:46:25 transitioning from state 8: poll source for new commits -> 2: verify branch HEAD
+fatal: No names found, cannot describe anything.
+2026/05/15 01:46:25 GPG verifying commit at origin/mybranch tip
+gpg: Signature made Fri May 15 01:46:25 2026 UTC
+gpg:                using EDDSA key 8DF04782BF2F7CD04ECA95417AB9CA6D43D15753
+gpg:                issuer "icyci@example.com"
+gpg: Good signature from "icyCI test (test user) <icyci@example.com>" [unknown]
+gpg: WARNING: The key's User ID is not certified with a trusted signature!
+gpg:          There is no indication that the signature belongs to the owner.
+Primary key fingerprint: 8DF0 4782 BF2F 7CD0 4ECA  9541 7AB9 CA6D 43D1 5753
+2026/05/15 01:46:25 verify completed successfully
+2026/05/15 01:46:25 transitioning from state 2: verify branch HEAD -> 3: lock commit for testing
+To /tmp/TestForcePushSrc4108203150/001/test_rslt
+   57b5ed2..65a2b4b  refs/notes/icyci.locked -> refs/notes/icyci.locked
+2026/05/15 01:46:25 successfully pushed git notes lock
+2026/05/15 01:46:25 lock commit for testing completed successfully
+2026/05/15 01:46:25 transitioning from state 3: lock commit for testing -> 4: start test command
+2026/05/15 01:46:25 transitioning from state 4: start test command -> 5: await test completion
+commitI: 3
+2026/05/15 01:46:25 ./src_test.sh completed successfully
+2026/05/15 01:46:25 transitioning from state 5: await test completion -> 6: push test output notes
+To /tmp/TestForcePushSrc4108203150/001/test_rslt
+ + 69d42f1...7b8d206 HEAD -> mybranch (forced update)
+   c40700b..bc22c57  refs/notes/icyci.output.stderr -> refs/notes/icyci.output.stderr
+   c861026..f25a784  refs/notes/icyci.output.stdout -> refs/notes/icyci.output.stdout
+   3cb059e..30b7a91  refs/notes/icyci.result.passed -> refs/notes/icyci.result.passed
+2026/05/15 01:46:25 successfully pushed git notes lock
+2026/05/15 01:46:25 push test output notes completed successfully
+2026/05/15 01:46:25 transitioning from state 6: push test output notes -> 7: cleanup test artifacts
+2026/05/15 01:46:25 cleanup test artifacts completed successfully
+2026/05/15 01:46:25 transitioning from state 7: cleanup test artifacts -> 8: poll source for new commits
+2026/05/15 01:46:25 Entering poll loop awaiting new mybranch commits at 7b8d2065acc0b06c590ca87030b9571d85d41afa
+Fetching origin
+Fetching results
+From /tmp/TestForcePushSrc4108203150/001/test_rslt
+ + 69d42f1...7b8d206 mybranch                -> results/mybranch  (forced update)
+   57b5ed2..65a2b4b  refs/notes/icyci.locked -> refs/notes/icyci.locked
+   c40700b..bc22c57  refs/notes/icyci.output.stderr -> refs/notes/icyci.output.stderr
+   c861026..f25a784  refs/notes/icyci.output.stdout -> refs/notes/icyci.output.stdout
+   3cb059e..30b7a91  refs/notes/icyci.result.passed -> refs/notes/icyci.result.passed
+2026/05/15 01:46:25 Got signal 15 while in state 8
+2026/05/15 01:46:25 Got exit message while in state 8
+2026/05/15 01:46:25 waiting for poll routine to exit
+gpg: keybox '/tmp/TestMultiInstanceSeparateNS3011967739/001/gpg/pubring.kbx' created
+gpg: /tmp/TestMultiInstanceSeparateNS3011967739/001/gpg/trustdb.gpg: trustdb created
+gpg: key 7AB9CA6D43D15753: public key "icyCI test (test user) <icyci@example.com>" imported
+gpg: key 7AB9CA6D43D15753: secret key imported
+gpg: Total number processed: 1
+gpg:               imported: 1
+gpg:       secret keys read: 1
+gpg:   secret keys imported: 1
+Initialized empty Git repository in /tmp/TestMultiInstanceSeparateNS3011967739/001/test_src_and_rslt/.git/
+Switched to a new branch 'mybranch'
+[mybranch (root-commit) cfd09d0] commit
+ 2 files changed, 8 insertions(+)
+ create mode 100755 i1_test.sh
+ create mode 100755 i2_test.sh
+2026/05/15 01:46:25 transitioning from state 0: uninitialized -> 1: clone source repository
+Cloning into '/tmp/TestMultiInstanceSeparateNS3011967739/001/test_clone_both'...
+2026/05/15 01:46:25 transitioning from state 0: uninitialized -> 1: clone source repository
+Cloning into '/tmp/TestMultiInstanceSeparateNS3011967739/001/i2/source'...
+Cloning into '/tmp/TestMultiInstanceSeparateNS3011967739/001/i1/source'...
+done.
+done.
+done.
+2026/05/15 01:46:25 clone source repository completed successfully
+2026/05/15 01:46:25 transitioning from state 1: clone source repository -> 2: verify branch HEAD
+fatal: No names found, cannot describe anything.
+2026/05/15 01:46:25 GPG verifying commit at origin/mybranch tip
+2026/05/15 01:46:25 clone source repository completed successfully
+2026/05/15 01:46:25 transitioning from state 1: clone source repository -> 2: verify branch HEAD
+fatal: No names found, cannot describe anything.
+2026/05/15 01:46:25 GPG verifying commit at origin/mybranch tip
+gpg: Signature made Fri May 15 01:46:25 2026 UTC
+gpg:                using EDDSA key 8DF04782BF2F7CD04ECA95417AB9CA6D43D15753
+gpg:                issuer "icyci@example.com"
+gpg: Good signature from "icyCI test (test user) <icyci@example.com>" [unknown]
+gpg: WARNING: The key's User ID is not certified with a trusted signature!
+gpg:          There is no indication that the signature belongs to the owner.
+Primary key fingerprint: 8DF0 4782 BF2F 7CD0 4ECA  9541 7AB9 CA6D 43D1 5753
+2026/05/15 01:46:25 verify completed successfully
+2026/05/15 01:46:25 transitioning from state 2: verify branch HEAD -> 3: lock commit for testing
+gpg: Signature made Fri May 15 01:46:25 2026 UTC
+gpg:                using EDDSA key 8DF04782BF2F7CD04ECA95417AB9CA6D43D15753
+gpg:                issuer "icyci@example.com"
+gpg: Good signature from "icyCI test (test user) <icyci@example.com>" [unknown]
+gpg: WARNING: The key's User ID is not certified with a trusted signature!
+gpg:          There is no indication that the signature belongs to the owner.
+Primary key fingerprint: 8DF0 4782 BF2F 7CD0 4ECA  9541 7AB9 CA6D 43D1 5753
+2026/05/15 01:46:25 verify completed successfully
+2026/05/15 01:46:25 transitioning from state 2: verify branch HEAD -> 3: lock commit for testing
+fatal: couldn't find remote ref refs/notes/icyci-i2.locked
+2026/05/15 01:46:25 ignoring failure to fetch git notes lock
+fatal: couldn't find remote ref refs/notes/icyci-i1.locked
+2026/05/15 01:46:25 ignoring failure to fetch git notes lock
+To /tmp/TestMultiInstanceSeparateNS3011967739/001/test_src_and_rslt
+ * [new reference]   refs/notes/icyci-i2.locked -> refs/notes/icyci-i2.locked
+2026/05/15 01:46:25 successfully pushed git notes lock
+2026/05/15 01:46:25 lock commit for testing completed successfully
+2026/05/15 01:46:25 transitioning from state 3: lock commit for testing -> 4: start test command
+2026/05/15 01:46:25 transitioning from state 4: start test command -> 5: await test completion
+i2: commitI: 0
+To /tmp/TestMultiInstanceSeparateNS3011967739/001/test_src_and_rslt
+ * [new reference]   refs/notes/icyci-i1.locked -> refs/notes/icyci-i1.locked
+2026/05/15 01:46:25 successfully pushed git notes lock
+2026/05/15 01:46:25 lock commit for testing completed successfully
+2026/05/15 01:46:25 transitioning from state 3: lock commit for testing -> 4: start test command
+2026/05/15 01:46:25 transitioning from state 4: start test command -> 5: await test completion
+i1: commitI: 0
+From /tmp/TestMultiInstanceSeparateNS3011967739/001/test_src_and_rslt
+ * [new ref]         refs/notes/icyci-i1.locked -> refs/notes/icyci-i1.locked
+ * [new ref]         refs/notes/icyci-i2.locked -> refs/notes/icyci-i2.locked
+error: no note found for object cfd09d022d5f2fb559cd1d2c524bf1311e563a7a.
+2026/05/15 01:46:26 ./i2_test.sh completed successfully
+2026/05/15 01:46:26 transitioning from state 5: await test completion -> 6: push test output notes
+2026/05/15 01:46:26 ./i1_test.sh completed successfully
+2026/05/15 01:46:26 transitioning from state 5: await test completion -> 6: push test output notes
+fatal: couldn't find remote ref refs/notes/icyci-i2.output.stdout
+2026/05/15 01:46:26 ignoring failure to fetch output git notes
+fatal: couldn't find remote ref refs/notes/icyci-i1.output.stdout
+2026/05/15 01:46:26 ignoring failure to fetch output git notes
+To /tmp/TestMultiInstanceSeparateNS3011967739/001/test_src_and_rslt
+ * [new reference]   refs/notes/icyci-i2.output.stdout -> refs/notes/icyci-i2.output.stdout
+ * [new reference]   refs/notes/icyci-i2.result.passed -> refs/notes/icyci-i2.result.passed
+ * [new reference]   refs/notes/icyci-i2.output.stderr -> refs/notes/icyci-i2.output.stderr
+2026/05/15 01:46:26 successfully pushed git notes lock
+2026/05/15 01:46:26 push test output notes completed successfully
+2026/05/15 01:46:26 transitioning from state 6: push test output notes -> 7: cleanup test artifacts
+2026/05/15 01:46:26 cleanup test artifacts completed successfully
+2026/05/15 01:46:26 transitioning from state 7: cleanup test artifacts -> 8: poll source for new commits
+2026/05/15 01:46:26 Entering poll loop awaiting new mybranch commits at cfd09d022d5f2fb559cd1d2c524bf1311e563a7a
+To /tmp/TestMultiInstanceSeparateNS3011967739/001/test_src_and_rslt
+ * [new reference]   refs/notes/icyci-i1.output.stdout -> refs/notes/icyci-i1.output.stdout
+ * [new reference]   refs/notes/icyci-i1.result.passed -> refs/notes/icyci-i1.result.passed
+ * [new reference]   refs/notes/icyci-i1.output.stderr -> refs/notes/icyci-i1.output.stderr
+2026/05/15 01:46:26 successfully pushed git notes lock
+2026/05/15 01:46:26 push test output notes completed successfully
+2026/05/15 01:46:26 transitioning from state 6: push test output notes -> 7: cleanup test artifacts
+2026/05/15 01:46:26 cleanup test artifacts completed successfully
+2026/05/15 01:46:26 transitioning from state 7: cleanup test artifacts -> 8: poll source for new commits
+2026/05/15 01:46:26 Entering poll loop awaiting new mybranch commits at cfd09d022d5f2fb559cd1d2c524bf1311e563a7a
+From /tmp/TestMultiInstanceSeparateNS3011967739/001/test_src_and_rslt
+ * [new ref]         refs/notes/icyci-i1.output.stderr -> refs/notes/icyci-i1.output.stderr
+ * [new ref]         refs/notes/icyci-i1.output.stdout -> refs/notes/icyci-i1.output.stdout
+ * [new ref]         refs/notes/icyci-i1.result.passed -> refs/notes/icyci-i1.result.passed
+ * [new ref]         refs/notes/icyci-i2.output.stderr -> refs/notes/icyci-i2.output.stderr
+ * [new ref]         refs/notes/icyci-i2.output.stdout -> refs/notes/icyci-i2.output.stdout
+ * [new ref]         refs/notes/icyci-i2.result.passed -> refs/notes/icyci-i2.result.passed
+2026/05/15 01:46:27 Got signal 15 while in state 8
+2026/05/15 01:46:27 Got exit message while in state 8
+2026/05/15 01:46:27 waiting for poll routine to exit
+2026/05/15 01:46:27 Got signal 15 while in state 8
+2026/05/15 01:46:27 Got exit message while in state 8
+2026/05/15 01:46:27 waiting for poll routine to exit
+2026/05/15 01:46:27 Changing await-command timeout from 2h0m0s to 3s
+2026/05/15 01:46:27 Changing await-command timeout from 3s to 3h0m0s
+2026/05/15 01:46:27 -timeout state Await-command invalid. Supported: await-command (default 3h0m0s).
+gpg: keybox '/tmp/TestScriptTimeout1162434399/001/gpg/pubring.kbx' created
+gpg: /tmp/TestScriptTimeout1162434399/001/gpg/trustdb.gpg: trustdb created
+gpg: key 7AB9CA6D43D15753: public key "icyCI test (test user) <icyci@example.com>" imported
+gpg: key 7AB9CA6D43D15753: secret key imported
+gpg: Total number processed: 1
+gpg:               imported: 1
+gpg:       secret keys read: 1
+gpg:   secret keys imported: 1
+Initialized empty Git repository in /tmp/TestScriptTimeout1162434399/001/test_src_and_rslt/.git/
+Switched to a new branch 'mybranch'
+[mybranch (root-commit) 496dfe7] signed source commit
+ 1 file changed, 2 insertions(+)
+ create mode 100755 src_test.sh
+2026/05/15 01:46:27 Changing await-command timeout from 3h0m0s to 500ms
+2026/05/15 01:46:27 transitioning from state 0: uninitialized -> 1: clone source repository
+Cloning into '/tmp/TestScriptTimeout1162434399/001/test_clone_both'...
+Cloning into '/tmp/TestScriptTimeout1162434399/001/source'...
+done.
+done.
+2026/05/15 01:46:27 clone source repository completed successfully
+2026/05/15 01:46:27 transitioning from state 1: clone source repository -> 2: verify branch HEAD
+fatal: No names found, cannot describe anything.
+2026/05/15 01:46:27 GPG verifying commit at origin/mybranch tip
+error: no note found for object 496dfe79dcb1bd99022c1ad053dfaeb2c4203fd8.
+gpg: Signature made Fri May 15 01:46:27 2026 UTC
+gpg:                using EDDSA key 8DF04782BF2F7CD04ECA95417AB9CA6D43D15753
+gpg:                issuer "icyci@example.com"
+gpg: Good signature from "icyCI test (test user) <icyci@example.com>" [unknown]
+gpg: WARNING: The key's User ID is not certified with a trusted signature!
+gpg:          There is no indication that the signature belongs to the owner.
+Primary key fingerprint: 8DF0 4782 BF2F 7CD0 4ECA  9541 7AB9 CA6D 43D1 5753
+2026/05/15 01:46:27 verify completed successfully
+2026/05/15 01:46:27 transitioning from state 2: verify branch HEAD -> 3: lock commit for testing
+fatal: couldn't find remote ref refs/notes/icyci.locked
+2026/05/15 01:46:27 ignoring failure to fetch git notes lock
+To /tmp/TestScriptTimeout1162434399/001/test_src_and_rslt
+ * [new reference]   refs/notes/icyci.locked -> refs/notes/icyci.locked
+2026/05/15 01:46:27 successfully pushed git notes lock
+2026/05/15 01:46:27 lock commit for testing completed successfully
+2026/05/15 01:46:27 transitioning from state 3: lock commit for testing -> 4: start test command
+2026/05/15 01:46:27 transitioning from state 4: start test command -> 5: await test completion
+From /tmp/TestScriptTimeout1162434399/001/test_src_and_rslt
+ * [new ref]         refs/notes/icyci.locked -> refs/notes/icyci.locked
+error: no note found for object 496dfe79dcb1bd99022c1ad053dfaeb2c4203fd8.
+2026/05/15 01:46:27 killed PGID 3983 due to exit request: 500ms await-command timeout reached
+2026/05/15 01:46:27 ./src_test.sh failed: 500ms await-command timeout reached
+See refs/notes/icyci.output.stdout and refs/notes/icyci.output.stderr for details
+2026/05/15 01:46:27 transitioning from state 5: await test completion -> 6: push test output notes
+fatal: couldn't find remote ref refs/notes/icyci.output.stdout
+2026/05/15 01:46:27 ignoring failure to fetch output git notes
+To /tmp/TestScriptTimeout1162434399/001/test_src_and_rslt
+ * [new reference]   refs/notes/icyci.output.stdout -> refs/notes/icyci.output.stdout
+ * [new reference]   refs/notes/icyci.result.failed -> refs/notes/icyci.result.failed
+ * [new reference]   refs/notes/icyci.output.stderr -> refs/notes/icyci.output.stderr
+2026/05/15 01:46:27 successfully pushed git notes lock
+2026/05/15 01:46:27 push test output notes completed successfully
+2026/05/15 01:46:27 transitioning from state 6: push test output notes -> 7: cleanup test artifacts
+2026/05/15 01:46:27 cleanup test artifacts completed successfully
+2026/05/15 01:46:27 transitioning from state 7: cleanup test artifacts -> 8: poll source for new commits
+2026/05/15 01:46:27 Entering poll loop awaiting new mybranch commits at 496dfe79dcb1bd99022c1ad053dfaeb2c4203fd8
+From /tmp/TestScriptTimeout1162434399/001/test_src_and_rslt
+ * [new ref]         refs/notes/icyci.output.stderr -> refs/notes/icyci.output.stderr
+ * [new ref]         refs/notes/icyci.output.stdout -> refs/notes/icyci.output.stdout
+ * [new ref]         refs/notes/icyci.result.failed -> refs/notes/icyci.result.failed
+2026/05/15 01:46:27 Got signal 15 while in state 8
+2026/05/15 01:46:27 Got exit message while in state 8
+2026/05/15 01:46:27 waiting for poll routine to exit
+gpg: keybox '/tmp/TestScriptExit193684918/001/gpg/pubring.kbx' created
+gpg: /tmp/TestScriptExit193684918/001/gpg/trustdb.gpg: trustdb created
+gpg: key 7AB9CA6D43D15753: public key "icyCI test (test user) <icyci@example.com>" imported
+gpg: key 7AB9CA6D43D15753: secret key imported
+gpg: Total number processed: 1
+gpg:               imported: 1
+gpg:       secret keys read: 1
+gpg:   secret keys imported: 1
+Initialized empty Git repository in /tmp/TestScriptExit193684918/001/test_src_and_rslt/.git/
+Switched to a new branch 'mybranch'
+[mybranch (root-commit) e360332] signed source commit
+ 1 file changed, 2 insertions(+)
+ create mode 100755 src_test.sh
+2026/05/15 01:46:27 transitioning from state 0: uninitialized -> 1: clone source repository
+Cloning into '/tmp/TestScriptExit193684918/001/source'...
+done.
+2026/05/15 01:46:27 clone source repository completed successfully
+2026/05/15 01:46:27 transitioning from state 1: clone source repository -> 2: verify branch HEAD
+fatal: No names found, cannot describe anything.
+2026/05/15 01:46:27 GPG verifying commit at origin/mybranch tip
+gpg: Signature made Fri May 15 01:46:27 2026 UTC
+gpg:                using EDDSA key 8DF04782BF2F7CD04ECA95417AB9CA6D43D15753
+gpg:                issuer "icyci@example.com"
+gpg: Good signature from "icyCI test (test user) <icyci@example.com>" [unknown]
+gpg: WARNING: The key's User ID is not certified with a trusted signature!
+gpg:          There is no indication that the signature belongs to the owner.
+Primary key fingerprint: 8DF0 4782 BF2F 7CD0 4ECA  9541 7AB9 CA6D 43D1 5753
+2026/05/15 01:46:27 verify completed successfully
+2026/05/15 01:46:27 transitioning from state 2: verify branch HEAD -> 3: lock commit for testing
+fatal: couldn't find remote ref refs/notes/icyci.locked
+2026/05/15 01:46:27 ignoring failure to fetch git notes lock
+To /tmp/TestScriptExit193684918/001/test_src_and_rslt
+ * [new reference]   refs/notes/icyci.locked -> refs/notes/icyci.locked
+2026/05/15 01:46:27 successfully pushed git notes lock
+2026/05/15 01:46:27 lock commit for testing completed successfully
+2026/05/15 01:46:27 transitioning from state 3: lock commit for testing -> 4: start test command
+2026/05/15 01:46:27 transitioning from state 4: start test command -> 5: await test completion
+2026/05/15 01:46:28 killed PGID 4068 due to exit request: 500ms await-command timeout reached
+2026/05/15 01:46:28 ./src_test.sh failed: 500ms await-command timeout reached
+See refs/notes/icyci.output.stdout and refs/notes/icyci.output.stderr for details
+2026/05/15 01:46:28 transitioning from state 5: await test completion -> 6: push test output notes
+fatal: couldn't find remote ref refs/notes/icyci.output.stdout
+2026/05/15 01:46:28 ignoring failure to fetch output git notes
+To /tmp/TestScriptExit193684918/001/test_src_and_rslt
+ * [new reference]   refs/notes/icyci.output.stdout -> refs/notes/icyci.output.stdout
+ * [new reference]   refs/notes/icyci.result.failed -> refs/notes/icyci.result.failed
+ * [new reference]   refs/notes/icyci.output.stderr -> refs/notes/icyci.output.stderr
+2026/05/15 01:46:28 successfully pushed git notes lock
+2026/05/15 01:46:28 push test output notes completed successfully
+2026/05/15 01:46:28 transitioning from state 6: push test output notes -> 7: cleanup test artifacts
+2026/05/15 01:46:28 cleanup test artifacts completed successfully
+2026/05/15 01:46:28 transitioning from state 7: cleanup test artifacts -> 8: poll source for new commits
+2026/05/15 01:46:28 Entering poll loop awaiting new mybranch commits at e360332a7b30817a9eca11fedb5044d97ecbbc12
+2026/05/15 01:46:28 Got signal 15 while in state 8
+2026/05/15 01:46:28 Got exit message while in state 8
+2026/05/15 01:46:28 waiting for poll routine to exit
+gpg: keybox '/tmp/TestSrcReference708034526/001/gpg/pubring.kbx' created
+gpg: /tmp/TestSrcReference708034526/001/gpg/trustdb.gpg: trustdb created
+gpg: key 7AB9CA6D43D15753: public key "icyCI test (test user) <icyci@example.com>" imported
+gpg: key 7AB9CA6D43D15753: secret key imported
+gpg: Total number processed: 1
+gpg:               imported: 1
+gpg:       secret keys read: 1
+gpg:   secret keys imported: 1
+Initialized empty Git repository in /tmp/TestSrcReference708034526/001/test_src_and_rslt/.git/
+Switched to a new branch 'mybranch'
+[mybranch (root-commit) 9b6c1d3] signed source commit
+ 1 file changed, 2 insertions(+)
+ create mode 100755 src_test.sh
+Cloning into '/tmp/TestSrcReference708034526/001/src_reference_repo'...
+done.
+[mybranch 6117609] signed source commit
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+2026/05/15 01:46:29 transitioning from state 0: uninitialized -> 1: clone source repository
+Cloning into '/tmp/TestSrcReference708034526/001/test_clone_both'...
+Cloning into '/tmp/TestSrcReference708034526/001/source'...
+done.
+done.
+2026/05/15 01:46:29 clone source repository completed successfully
+2026/05/15 01:46:29 transitioning from state 1: clone source repository -> 2: verify branch HEAD
+fatal: No names found, cannot describe anything.
+2026/05/15 01:46:29 GPG verifying commit at origin/mybranch tip
+error: no note found for object 61176091b9f6c5cd4f80788eed4fbb4af7bd6284.
+gpg: Signature made Fri May 15 01:46:29 2026 UTC
+gpg:                using EDDSA key 8DF04782BF2F7CD04ECA95417AB9CA6D43D15753
+gpg:                issuer "icyci@example.com"
+gpg: Good signature from "icyCI test (test user) <icyci@example.com>" [unknown]
+gpg: WARNING: The key's User ID is not certified with a trusted signature!
+gpg:          There is no indication that the signature belongs to the owner.
+Primary key fingerprint: 8DF0 4782 BF2F 7CD0 4ECA  9541 7AB9 CA6D 43D1 5753
+2026/05/15 01:46:29 verify completed successfully
+2026/05/15 01:46:29 transitioning from state 2: verify branch HEAD -> 3: lock commit for testing
+fatal: couldn't find remote ref refs/notes/icyci.locked
+2026/05/15 01:46:30 ignoring failure to fetch git notes lock
+To /tmp/TestSrcReference708034526/001/test_src_and_rslt
+ * [new reference]   refs/notes/icyci.locked -> refs/notes/icyci.locked
+2026/05/15 01:46:30 successfully pushed git notes lock
+2026/05/15 01:46:30 lock commit for testing completed successfully
+2026/05/15 01:46:30 transitioning from state 3: lock commit for testing -> 4: start test command
+2026/05/15 01:46:30 transitioning from state 4: start test command -> 5: await test completion
+only-in-src
+2026/05/15 01:46:30 ./src_test.sh completed successfully
+2026/05/15 01:46:30 transitioning from state 5: await test completion -> 6: push test output notes
+fatal: couldn't find remote ref refs/notes/icyci.output.stdout
+2026/05/15 01:46:30 ignoring failure to fetch output git notes
+To /tmp/TestSrcReference708034526/001/test_src_and_rslt
+ * [new reference]   refs/notes/icyci.output.stdout -> refs/notes/icyci.output.stdout
+ * [new reference]   refs/notes/icyci.result.passed -> refs/notes/icyci.result.passed
+ * [new reference]   refs/notes/icyci.output.stderr -> refs/notes/icyci.output.stderr
+2026/05/15 01:46:30 successfully pushed git notes lock
+2026/05/15 01:46:30 push test output notes completed successfully
+2026/05/15 01:46:30 transitioning from state 6: push test output notes -> 7: cleanup test artifacts
+2026/05/15 01:46:30 cleanup test artifacts completed successfully
+2026/05/15 01:46:30 transitioning from state 7: cleanup test artifacts -> 8: poll source for new commits
+2026/05/15 01:46:30 Entering poll loop awaiting new mybranch commits at 61176091b9f6c5cd4f80788eed4fbb4af7bd6284
+From /tmp/TestSrcReference708034526/001/test_src_and_rslt
+ * [new ref]         refs/notes/icyci.locked -> refs/notes/icyci.locked
+ * [new ref]         refs/notes/icyci.output.stderr -> refs/notes/icyci.output.stderr
+ * [new ref]         refs/notes/icyci.output.stdout -> refs/notes/icyci.output.stdout
+ * [new ref]         refs/notes/icyci.result.passed -> refs/notes/icyci.result.passed
+2026/05/15 01:46:30 Got signal 15 while in state 8
+2026/05/15 01:46:30 Got exit message while in state 8
+2026/05/15 01:46:30 waiting for poll routine to exit
+gpg: keybox '/tmp/TestMirror1860339610/001/gpg/pubring.kbx' created
+gpg: /tmp/TestMirror1860339610/001/gpg/trustdb.gpg: trustdb created
+gpg: key 7AB9CA6D43D15753: public key "icyCI test (test user) <icyci@example.com>" imported
+gpg: key 7AB9CA6D43D15753: secret key imported
+gpg: Total number processed: 1
+gpg:               imported: 1
+gpg:       secret keys read: 1
+gpg:   secret keys imported: 1
+Initialized empty Git repository in /tmp/TestMirror1860339610/001/test_src/.git/
+Initialized empty Git repository in /tmp/TestMirror1860339610/001/test_rslt/.git/
+Switched to a new branch 'mybranch'
+[mybranch (root-commit) ac00b80] signed source commit
+ 1 file changed, 2 insertions(+)
+ create mode 100755 notrun.sh
+2026/05/15 01:46:30 transitioning from state 0: uninitialized -> 1: clone source repository
+error: no note found for object ac00b80b0a9da758113dcde7f1f5478f9244cd44.
+Cloning into '/tmp/TestMirror1860339610/001/source'...
+done.
+2026/05/15 01:46:30 clone source repository completed successfully
+2026/05/15 01:46:30 transitioning from state 1: clone source repository -> 2: verify branch HEAD
+fatal: No names found, cannot describe anything.
+2026/05/15 01:46:30 GPG verifying commit at origin/mybranch tip
+gpg: Signature made Fri May 15 01:46:30 2026 UTC
+gpg:                using EDDSA key 8DF04782BF2F7CD04ECA95417AB9CA6D43D15753
+gpg:                issuer "icyci@example.com"
+gpg: Good signature from "icyCI test (test user) <icyci@example.com>" [unknown]
+gpg: WARNING: The key's User ID is not certified with a trusted signature!
+gpg:          There is no indication that the signature belongs to the owner.
+Primary key fingerprint: 8DF0 4782 BF2F 7CD0 4ECA  9541 7AB9 CA6D 43D1 5753
+2026/05/15 01:46:30 verify completed successfully
+2026/05/15 01:46:30 transitioning from state 2: verify branch HEAD -> 3: lock commit for testing
+fatal: couldn't find remote ref refs/notes/icyci.locked
+2026/05/15 01:46:30 ignoring failure to fetch git notes lock
+To /tmp/TestMirror1860339610/001/test_rslt
+ * [new reference]   refs/notes/icyci.locked -> refs/notes/icyci.locked
+2026/05/15 01:46:30 successfully pushed git notes lock
+2026/05/15 01:46:30 lock commit for testing completed successfully
+2026/05/15 01:46:30 transitioning from state 3: lock commit for testing -> 4: start test command
+2026/05/15 01:46:30 transitioning from state 4: start test command -> 5: await test completion
+2026/05/15 01:46:30 No -test-script specified
+2026/05/15 01:46:30 transitioning from state 5: await test completion -> 6: push test output notes
+fatal: couldn't find remote ref refs/notes/icyci.result.passed
+2026/05/15 01:46:30 ignoring failure to fetch output git notes
+To /tmp/TestMirror1860339610/001/test_rslt
+ * [new reference]   refs/notes/icyci.result.passed -> refs/notes/icyci.result.passed
+ * [new branch]      HEAD -> mybranch
+2026/05/15 01:46:30 successfully pushed git notes lock
+2026/05/15 01:46:30 push test output notes completed successfully
+2026/05/15 01:46:30 transitioning from state 6: push test output notes -> 7: cleanup test artifacts
+2026/05/15 01:46:30 cleanup test artifacts completed successfully
+2026/05/15 01:46:30 transitioning from state 7: cleanup test artifacts -> 8: poll source for new commits
+2026/05/15 01:46:30 Entering poll loop awaiting new mybranch commits at ac00b80b0a9da758113dcde7f1f5478f9244cd44
+[mybranch 1905d10] unsigned source commit
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+From /tmp/TestMirror1860339610/001/test_src
+   ac00b80..1905d10  mybranch   -> origin/mybranch
+fatal: No names found, cannot describe anything.
+2026/05/15 01:46:30 Entering poll loop awaiting new mybranch commits at 1905d10d454d59604679294ab4d0c14a8cc03e95
+[mybranch 6bdccf8] signed source commit
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+error: no note found for object 6bdccf8f7a5b2e27453f3982b04cc037c5d26b57.
+From /tmp/TestMirror1860339610/001/test_src
+   1905d10..6bdccf8  mybranch   -> origin/mybranch
+2026/05/15 01:46:31 detected branch mybranch change 1905d10d454d59604679294ab4d0c14a8cc03e95 -> 6bdccf8f7a5b2e27453f3982b04cc037c5d26b57
+2026/05/15 01:46:31 poll source for new commits completed successfully
+2026/05/15 01:46:31 transitioning from state 8: poll source for new commits -> 2: verify branch HEAD
+fatal: No names found, cannot describe anything.
+2026/05/15 01:46:31 GPG verifying commit at origin/mybranch tip
+error: no note found for object 6bdccf8f7a5b2e27453f3982b04cc037c5d26b57.
+gpg: Signature made Fri May 15 01:46:30 2026 UTC
+gpg:                using EDDSA key 8DF04782BF2F7CD04ECA95417AB9CA6D43D15753
+gpg:                issuer "icyci@example.com"
+gpg: Good signature from "icyCI test (test user) <icyci@example.com>" [unknown]
+gpg: WARNING: The key's User ID is not certified with a trusted signature!
+gpg:          There is no indication that the signature belongs to the owner.
+Primary key fingerprint: 8DF0 4782 BF2F 7CD0 4ECA  9541 7AB9 CA6D 43D1 5753
+2026/05/15 01:46:31 verify completed successfully
+2026/05/15 01:46:31 transitioning from state 2: verify branch HEAD -> 3: lock commit for testing
+To /tmp/TestMirror1860339610/001/test_rslt
+   673cc3e..1dbdd9d  refs/notes/icyci.locked -> refs/notes/icyci.locked
+2026/05/15 01:46:31 successfully pushed git notes lock
+2026/05/15 01:46:31 lock commit for testing completed successfully
+2026/05/15 01:46:31 transitioning from state 3: lock commit for testing -> 4: start test command
+2026/05/15 01:46:31 transitioning from state 4: start test command -> 5: await test completion
+2026/05/15 01:46:31 No -test-script specified
+2026/05/15 01:46:31 transitioning from state 5: await test completion -> 6: push test output notes
+To /tmp/TestMirror1860339610/001/test_rslt
+   ac00b80..6bdccf8  HEAD -> mybranch
+   a530feb..eb9413a  refs/notes/icyci.result.passed -> refs/notes/icyci.result.passed
+2026/05/15 01:46:31 successfully pushed git notes lock
+2026/05/15 01:46:31 push test output notes completed successfully
+2026/05/15 01:46:31 transitioning from state 6: push test output notes -> 7: cleanup test artifacts
+2026/05/15 01:46:31 cleanup test artifacts completed successfully
+2026/05/15 01:46:31 transitioning from state 7: cleanup test artifacts -> 8: poll source for new commits
+2026/05/15 01:46:31 Entering poll loop awaiting new mybranch commits at 6bdccf8f7a5b2e27453f3982b04cc037c5d26b57
+[mybranch ca17d4f] unsigned source commit
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+From /tmp/TestMirror1860339610/001/test_src
+   6bdccf8..ca17d4f  mybranch   -> origin/mybranch
+fatal: No names found, cannot describe anything.
+2026/05/15 01:46:31 Entering poll loop awaiting new mybranch commits at ca17d4fa17bb9702196ae94ef39cd3ef2f9bea74
+[mybranch 60d2c79] signed source commit
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+error: no note found for object 60d2c79f9aa27ed32bc8b48e0d7419b055140fc7.
+From /tmp/TestMirror1860339610/001/test_src
+   ca17d4f..60d2c79  mybranch   -> origin/mybranch
+2026/05/15 01:46:31 detected branch mybranch change ca17d4fa17bb9702196ae94ef39cd3ef2f9bea74 -> 60d2c79f9aa27ed32bc8b48e0d7419b055140fc7
+2026/05/15 01:46:31 poll source for new commits completed successfully
+2026/05/15 01:46:31 transitioning from state 8: poll source for new commits -> 2: verify branch HEAD
+fatal: No names found, cannot describe anything.
+2026/05/15 01:46:31 GPG verifying commit at origin/mybranch tip
+gpg: Signature made Fri May 15 01:46:31 2026 UTC
+gpg:                using EDDSA key 8DF04782BF2F7CD04ECA95417AB9CA6D43D15753
+gpg:                issuer "icyci@example.com"
+gpg: Good signature from "icyCI test (test user) <icyci@example.com>" [unknown]
+gpg: WARNING: The key's User ID is not certified with a trusted signature!
+gpg:          There is no indication that the signature belongs to the owner.
+Primary key fingerprint: 8DF0 4782 BF2F 7CD0 4ECA  9541 7AB9 CA6D 43D1 5753
+2026/05/15 01:46:31 verify completed successfully
+2026/05/15 01:46:31 transitioning from state 2: verify branch HEAD -> 3: lock commit for testing
+error: no note found for object 60d2c79f9aa27ed32bc8b48e0d7419b055140fc7.
+To /tmp/TestMirror1860339610/001/test_rslt
+   1dbdd9d..041b36b  refs/notes/icyci.locked -> refs/notes/icyci.locked
+2026/05/15 01:46:31 successfully pushed git notes lock
+2026/05/15 01:46:31 lock commit for testing completed successfully
+2026/05/15 01:46:31 transitioning from state 3: lock commit for testing -> 4: start test command
+2026/05/15 01:46:31 transitioning from state 4: start test command -> 5: await test completion
+2026/05/15 01:46:31 No -test-script specified
+2026/05/15 01:46:31 transitioning from state 5: await test completion -> 6: push test output notes
+To /tmp/TestMirror1860339610/001/test_rslt
+   6bdccf8..60d2c79  HEAD -> mybranch
+   eb9413a..a69ce19  refs/notes/icyci.result.passed -> refs/notes/icyci.result.passed
+2026/05/15 01:46:31 successfully pushed git notes lock
+2026/05/15 01:46:31 push test output notes completed successfully
+2026/05/15 01:46:31 transitioning from state 6: push test output notes -> 7: cleanup test artifacts
+2026/05/15 01:46:31 cleanup test artifacts completed successfully
+2026/05/15 01:46:31 transitioning from state 7: cleanup test artifacts -> 8: poll source for new commits
+2026/05/15 01:46:31 Entering poll loop awaiting new mybranch commits at 60d2c79f9aa27ed32bc8b48e0d7419b055140fc7
+2026/05/15 01:46:32 Got signal 15 while in state 8
+2026/05/15 01:46:32 Got exit message while in state 8
+2026/05/15 01:46:32 waiting for poll routine to exit
+2026-05-15 01:46:30.4075516 +0000 UTC m=+23.693407909: this commit is being tested by icyCI
+2026-05-15 01:46:31.116484375 +0000 UTC m=+24.402340684: this commit is being tested by icyCI
+2026-05-15 01:46:31.835264108 +0000 UTC m=+25.121120417: this commit is being tested by icyCI
+2026/05/15 01:46:32 Unprocessed arguments: [true --poll-interval 60]
+2026/05/15 01:46:32 invalid poll-interval "60y": time: unknown unit "y" in duration "60y"
+2026/05/15 01:46:32 invalid poll-interval "-4h": <nil>
+2026/05/15 01:46:32 invalid poll-interval "4hours": time: unknown unit "hours" in duration "4hours"
+gpg: keybox '/tmp/TestScriptSigterm1268857682/001/gpg/pubring.kbx' created
+gpg: /tmp/TestScriptSigterm1268857682/001/gpg/trustdb.gpg: trustdb created
+gpg: key 7AB9CA6D43D15753: public key "icyCI test (test user) <icyci@example.com>" imported
+gpg: key 7AB9CA6D43D15753: secret key imported
+gpg: Total number processed: 1
+gpg:               imported: 1
+gpg:       secret keys read: 1
+gpg:   secret keys imported: 1
+Initialized empty Git repository in /tmp/TestScriptSigterm1268857682/001/test_src_and_rslt/.git/
+Switched to a new branch 'mybranch'
+[mybranch (root-commit) d928e0e] signed source commit
+ 1 file changed, 2 insertions(+)
+ create mode 100755 src_test.sh
+Cloning into '/tmp/TestScriptSigterm1268857682/001/source'...
+done.
+fatal: No names found, cannot describe anything.
+gpg: Signature made Fri May 15 01:46:32 2026 UTC
+gpg:                using EDDSA key 8DF04782BF2F7CD04ECA95417AB9CA6D43D15753
+gpg:                issuer "icyci@example.com"
+gpg: Good signature from "icyCI test (test user) <icyci@example.com>" [unknown]
+gpg: WARNING: The key's User ID is not certified with a trusted signature!
+gpg:          There is no indication that the signature belongs to the owner.
+Primary key fingerprint: 8DF0 4782 BF2F 7CD0 4ECA  9541 7AB9 CA6D 43D1 5753
+fatal: couldn't find remote ref refs/notes/icyci.locked
+To /tmp/TestScriptSigterm1268857682/001/test_src_and_rslt
+ * [new reference]   refs/notes/icyci.locked -> refs/notes/icyci.locked
+2026/05/15 01:46:32 ./src_test.sh failed: exit requested
+See refs/notes/icyci.output.stdout and refs/notes/icyci.output.stderr for details
+gpg: keybox '/tmp/TestBadCmd3486733964/001/gpg/pubring.kbx' created
+gpg: /tmp/TestBadCmd3486733964/001/gpg/trustdb.gpg: trustdb created
+gpg: key 7AB9CA6D43D15753: public key "icyCI test (test user) <icyci@example.com>" imported
+gpg: key 7AB9CA6D43D15753: secret key imported
+gpg: Total number processed: 1
+gpg:               imported: 1
+gpg:       secret keys read: 1
+gpg:   secret keys imported: 1
+Initialized empty Git repository in /tmp/TestBadCmd3486733964/001/test_src_and_rslt/.git/
+Switched to a new branch 'mybranch'
+[mybranch (root-commit) 5375bd7] signed source commit
+ 1 file changed, 2 insertions(+)
+ create mode 100755 notrun.sh
+2026/05/15 01:46:32 transitioning from state 0: uninitialized -> 1: clone source repository
+error: no note found for object 5375bd70cfa82bd3518a276309b713eace307798.
+Cloning into '/tmp/TestBadCmd3486733964/001/source'...
+done.
+2026/05/15 01:46:32 clone source repository completed successfully
+2026/05/15 01:46:32 transitioning from state 1: clone source repository -> 2: verify branch HEAD
+fatal: No names found, cannot describe anything.
+2026/05/15 01:46:32 GPG verifying commit at origin/mybranch tip
+gpg: Signature made Fri May 15 01:46:32 2026 UTC
+gpg:                using EDDSA key 8DF04782BF2F7CD04ECA95417AB9CA6D43D15753
+gpg:                issuer "icyci@example.com"
+gpg: Good signature from "icyCI test (test user) <icyci@example.com>" [unknown]
+gpg: WARNING: The key's User ID is not certified with a trusted signature!
+gpg:          There is no indication that the signature belongs to the owner.
+Primary key fingerprint: 8DF0 4782 BF2F 7CD0 4ECA  9541 7AB9 CA6D 43D1 5753
+2026/05/15 01:46:32 verify completed successfully
+2026/05/15 01:46:32 transitioning from state 2: verify branch HEAD -> 3: lock commit for testing
+fatal: couldn't find remote ref refs/notes/icyci.locked
+2026/05/15 01:46:32 ignoring failure to fetch git notes lock
+To /tmp/TestBadCmd3486733964/001/test_src_and_rslt
+ * [new reference]   refs/notes/icyci.locked -> refs/notes/icyci.locked
+2026/05/15 01:46:32 successfully pushed git notes lock
+2026/05/15 01:46:32 lock commit for testing completed successfully
+2026/05/15 01:46:32 transitioning from state 3: lock commit for testing -> 4: start test command
+2026/05/15 01:46:32 test ./does_not_exist.sh failed to start: fork/exec ./does_not_exist.sh: no such file or directory
+2026/05/15 01:46:32 transitioning from state 4: start test command -> 5: await test completion
+2026/05/15 01:46:32 ./does_not_exist.sh failed: fork/exec ./does_not_exist.sh: no such file or directory
+See refs/notes/icyci.output.stdout and refs/notes/icyci.output.stderr for details
+2026/05/15 01:46:32 transitioning from state 5: await test completion -> 6: push test output notes
+fatal: couldn't find remote ref refs/notes/icyci.output.stdout
+2026/05/15 01:46:32 ignoring failure to fetch output git notes
+To /tmp/TestBadCmd3486733964/001/test_src_and_rslt
+ * [new reference]   refs/notes/icyci.output.stdout -> refs/notes/icyci.output.stdout
+ * [new reference]   refs/notes/icyci.result.failed -> refs/notes/icyci.result.failed
+ * [new reference]   refs/notes/icyci.output.stderr -> refs/notes/icyci.output.stderr
+2026/05/15 01:46:32 successfully pushed git notes lock
+2026/05/15 01:46:32 push test output notes completed successfully
+2026/05/15 01:46:32 transitioning from state 6: push test output notes -> 7: cleanup test artifacts
+2026/05/15 01:46:32 cleanup test artifacts completed successfully
+2026/05/15 01:46:32 transitioning from state 7: cleanup test artifacts -> 8: poll source for new commits
+2026/05/15 01:46:32 Entering poll loop awaiting new mybranch commits at 5375bd70cfa82bd3518a276309b713eace307798
+[mybranch e90f275] signed source commit
+ 1 file changed, 1 deletion(-)
+error: no note found for object e90f27517b96b417c9ff228f24a69e95e0480a60.
+From /tmp/TestBadCmd3486733964/001/test_src_and_rslt
+   5375bd7..e90f275  mybranch   -> origin/mybranch
+2026/05/15 01:46:32 detected branch mybranch change 5375bd70cfa82bd3518a276309b713eace307798 -> e90f27517b96b417c9ff228f24a69e95e0480a60
+2026/05/15 01:46:32 poll source for new commits completed successfully
+2026/05/15 01:46:32 transitioning from state 8: poll source for new commits -> 2: verify branch HEAD
+fatal: No names found, cannot describe anything.
+2026/05/15 01:46:32 GPG verifying commit at origin/mybranch tip
+gpg: Signature made Fri May 15 01:46:32 2026 UTC
+gpg:                using EDDSA key 8DF04782BF2F7CD04ECA95417AB9CA6D43D15753
+gpg:                issuer "icyci@example.com"
+gpg: Good signature from "icyCI test (test user) <icyci@example.com>" [unknown]
+gpg: WARNING: The key's User ID is not certified with a trusted signature!
+gpg:          There is no indication that the signature belongs to the owner.
+Primary key fingerprint: 8DF0 4782 BF2F 7CD0 4ECA  9541 7AB9 CA6D 43D1 5753
+2026/05/15 01:46:32 verify completed successfully
+2026/05/15 01:46:32 transitioning from state 2: verify branch HEAD -> 3: lock commit for testing
+To /tmp/TestBadCmd3486733964/001/test_src_and_rslt
+   c26ac44..84ad701  refs/notes/icyci.locked -> refs/notes/icyci.locked
+2026/05/15 01:46:32 successfully pushed git notes lock
+2026/05/15 01:46:32 lock commit for testing completed successfully
+2026/05/15 01:46:32 transitioning from state 3: lock commit for testing -> 4: start test command
+2026/05/15 01:46:32 test ./does_not_exist.sh failed to start: fork/exec ./does_not_exist.sh: no such file or directory
+2026/05/15 01:46:32 transitioning from state 4: start test command -> 5: await test completion
+2026/05/15 01:46:32 ./does_not_exist.sh failed: fork/exec ./does_not_exist.sh: no such file or directory
+See refs/notes/icyci.output.stdout and refs/notes/icyci.output.stderr for details
+2026/05/15 01:46:32 transitioning from state 5: await test completion -> 6: push test output notes
+To /tmp/TestBadCmd3486733964/001/test_src_and_rslt
+   78520d3..bb0b641  refs/notes/icyci.output.stderr -> refs/notes/icyci.output.stderr
+   78520d3..bb0b641  refs/notes/icyci.output.stdout -> refs/notes/icyci.output.stdout
+   51b9473..8dfb763  refs/notes/icyci.result.failed -> refs/notes/icyci.result.failed
+2026/05/15 01:46:32 successfully pushed git notes lock
+2026/05/15 01:46:32 push test output notes completed successfully
+2026/05/15 01:46:32 transitioning from state 6: push test output notes -> 7: cleanup test artifacts
+2026/05/15 01:46:32 cleanup test artifacts completed successfully
+2026/05/15 01:46:32 transitioning from state 7: cleanup test artifacts -> 8: poll source for new commits
+2026/05/15 01:46:32 Entering poll loop awaiting new mybranch commits at e90f27517b96b417c9ff228f24a69e95e0480a60
+2026/05/15 01:46:32 Got signal 15 while in state 8
+2026/05/15 01:46:32 Got exit message while in state 8
+2026/05/15 01:46:32 waiting for poll routine to exit
+gpg: keybox '/tmp/TestNotesDir1354850796/001/gpg/pubring.kbx' created
+gpg: /tmp/TestNotesDir1354850796/001/gpg/trustdb.gpg: trustdb created
+gpg: key 7AB9CA6D43D15753: public key "icyCI test (test user) <icyci@example.com>" imported
+gpg: key 7AB9CA6D43D15753: secret key imported
+gpg: Total number processed: 1
+gpg:               imported: 1
+gpg:       secret keys read: 1
+gpg:   secret keys imported: 1
+Initialized empty Git repository in /tmp/TestNotesDir1354850796/001/test_src_and_rslt/.git/
+Switched to a new branch 'mybranch'
+[mybranch (root-commit) 6d80da3] signed source commit
+ 1 file changed, 2 insertions(+)
+ create mode 100755 t.sh
+2026/05/15 01:46:32 transitioning from state 0: uninitialized -> 1: clone source repository
+error: no note found for object 6d80da39dd399419c67876741dfa4db3c0c6314f.
+Cloning into '/tmp/TestNotesDir1354850796/001/source'...
+done.
+2026/05/15 01:46:33 clone source repository completed successfully
+2026/05/15 01:46:33 transitioning from state 1: clone source repository -> 2: verify branch HEAD
+fatal: No names found, cannot describe anything.
+2026/05/15 01:46:33 GPG verifying commit at origin/mybranch tip
+gpg: Signature made Fri May 15 01:46:32 2026 UTC
+gpg:                using EDDSA key 8DF04782BF2F7CD04ECA95417AB9CA6D43D15753
+gpg:                issuer "icyci@example.com"
+gpg: Good signature from "icyCI test (test user) <icyci@example.com>" [unknown]
+gpg: WARNING: The key's User ID is not certified with a trusted signature!
+gpg:          There is no indication that the signature belongs to the owner.
+Primary key fingerprint: 8DF0 4782 BF2F 7CD0 4ECA  9541 7AB9 CA6D 43D1 5753
+2026/05/15 01:46:33 verify completed successfully
+2026/05/15 01:46:33 transitioning from state 2: verify branch HEAD -> 3: lock commit for testing
+fatal: couldn't find remote ref refs/notes/icyci.locked
+2026/05/15 01:46:33 ignoring failure to fetch git notes lock
+To /tmp/TestNotesDir1354850796/001/test_src_and_rslt
+ * [new reference]   refs/notes/icyci.locked -> refs/notes/icyci.locked
+2026/05/15 01:46:33 successfully pushed git notes lock
+2026/05/15 01:46:33 lock commit for testing completed successfully
+2026/05/15 01:46:33 transitioning from state 3: lock commit for testing -> 4: start test command
+2026/05/15 01:46:33 transitioning from state 4: start test command -> 5: await test completion
+hi_stdout
+2026/05/15 01:46:33 ./t.sh completed successfully
+2026/05/15 01:46:33 transitioning from state 5: await test completion -> 6: push test output notes
+fatal: couldn't find remote ref refs/notes/icyci.output.stdout
+2026/05/15 01:46:33 ignoring failure to fetch output git notes
+To /tmp/TestNotesDir1354850796/001/test_src_and_rslt
+ * [new reference]   refs/notes/icyci.output.stdout -> refs/notes/icyci.output.stdout
+ * [new reference]   refs/notes/icyci.result.passed -> refs/notes/icyci.result.passed
+ * [new reference]   refs/notes/icyci.output.stderr -> refs/notes/icyci.output.stderr
+ * [new reference]   refs/notes/icyci.extra -> refs/notes/icyci.extra
+2026/05/15 01:46:33 successfully pushed git notes lock
+2026/05/15 01:46:33 push test output notes completed successfully
+2026/05/15 01:46:33 transitioning from state 6: push test output notes -> 7: cleanup test artifacts
+2026/05/15 01:46:33 cleanup test artifacts completed successfully
+2026/05/15 01:46:33 transitioning from state 7: cleanup test artifacts -> 8: poll source for new commits
+2026/05/15 01:46:33 Entering poll loop awaiting new mybranch commits at 6d80da39dd399419c67876741dfa4db3c0c6314f
+2026/05/15 01:46:33 Got signal 15 while in state 8
+2026/05/15 01:46:33 Got exit message while in state 8
+2026/05/15 01:46:33 waiting for poll routine to exit
+gpg: keybox '/tmp/TestStaleNotesDir1646417552/001/gpg/pubring.kbx' created
+gpg: /tmp/TestStaleNotesDir1646417552/001/gpg/trustdb.gpg: trustdb created
+gpg: key 7AB9CA6D43D15753: public key "icyCI test (test user) <icyci@example.com>" imported
+gpg: key 7AB9CA6D43D15753: secret key imported
+gpg: Total number processed: 1
+gpg:               imported: 1
+gpg:       secret keys read: 1
+gpg:   secret keys imported: 1
+Initialized empty Git repository in /tmp/TestStaleNotesDir1646417552/001/test_src_and_rslt/.git/
+Switched to a new branch 'mybranch'
+[mybranch (root-commit) 963339c] signed source commit
+ 1 file changed, 2 insertions(+)
+ create mode 100755 t.sh
+2026/05/15 01:46:33 transitioning from state 0: uninitialized -> 1: clone source repository
+error: no note found for object 963339c807a89972d31e79e539d97b2e12540257.
+Cloning into '/tmp/TestStaleNotesDir1646417552/001/source'...
+done.
+2026/05/15 01:46:33 clone source repository completed successfully
+2026/05/15 01:46:33 transitioning from state 1: clone source repository -> 2: verify branch HEAD
+fatal: No names found, cannot describe anything.
+2026/05/15 01:46:33 GPG verifying commit at origin/mybranch tip
+gpg: Signature made Fri May 15 01:46:33 2026 UTC
+gpg:                using EDDSA key 8DF04782BF2F7CD04ECA95417AB9CA6D43D15753
+gpg:                issuer "icyci@example.com"
+gpg: Good signature from "icyCI test (test user) <icyci@example.com>" [unknown]
+gpg: WARNING: The key's User ID is not certified with a trusted signature!
+gpg:          There is no indication that the signature belongs to the owner.
+Primary key fingerprint: 8DF0 4782 BF2F 7CD0 4ECA  9541 7AB9 CA6D 43D1 5753
+2026/05/15 01:46:33 verify completed successfully
+2026/05/15 01:46:33 transitioning from state 2: verify branch HEAD -> 3: lock commit for testing
+fatal: couldn't find remote ref refs/notes/icyci.locked
+2026/05/15 01:46:33 ignoring failure to fetch git notes lock
+To /tmp/TestStaleNotesDir1646417552/001/test_src_and_rslt
+ * [new reference]   refs/notes/icyci.locked -> refs/notes/icyci.locked
+2026/05/15 01:46:33 successfully pushed git notes lock
+2026/05/15 01:46:33 lock commit for testing completed successfully
+2026/05/15 01:46:33 transitioning from state 3: lock commit for testing -> 4: start test command
+2026/05/15 01:46:33 transitioning from state 4: start test command -> 5: await test completion
+2026/05/15 01:46:33 ./t.sh completed successfully
+2026/05/15 01:46:33 transitioning from state 5: await test completion -> 6: push test output notes
+fatal: couldn't find remote ref refs/notes/icyci.extra_1
+2026/05/15 01:46:33 ignoring failure to fetch output git notes
+To /tmp/TestStaleNotesDir1646417552/001/test_src_and_rslt
+ * [new reference]   refs/notes/icyci.extra_1 -> refs/notes/icyci.extra_1
+ * [new reference]   refs/notes/icyci.output.stdout -> refs/notes/icyci.output.stdout
+ * [new reference]   refs/notes/icyci.result.passed -> refs/notes/icyci.result.passed
+ * [new reference]   refs/notes/icyci.output.stderr -> refs/notes/icyci.output.stderr
+2026/05/15 01:46:33 successfully pushed git notes lock
+2026/05/15 01:46:33 push test output notes completed successfully
+2026/05/15 01:46:33 transitioning from state 6: push test output notes -> 7: cleanup test artifacts
+2026/05/15 01:46:33 cleanup test artifacts completed successfully
+2026/05/15 01:46:33 transitioning from state 7: cleanup test artifacts -> 8: poll source for new commits
+2026/05/15 01:46:33 Entering poll loop awaiting new mybranch commits at 963339c807a89972d31e79e539d97b2e12540257
+[mybranch 03a56ea] signed source commit
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+error: no note found for object 03a56ea69f1ad61c666001abe3662935bf5ece83.
+From /tmp/TestStaleNotesDir1646417552/001/test_src_and_rslt
+   963339c..03a56ea  mybranch   -> origin/mybranch
+2026/05/15 01:46:33 detected branch mybranch change 963339c807a89972d31e79e539d97b2e12540257 -> 03a56ea69f1ad61c666001abe3662935bf5ece83
+2026/05/15 01:46:33 poll source for new commits completed successfully
+2026/05/15 01:46:33 transitioning from state 8: poll source for new commits -> 2: verify branch HEAD
+fatal: No names found, cannot describe anything.
+2026/05/15 01:46:33 GPG verifying commit at origin/mybranch tip
+gpg: Signature made Fri May 15 01:46:33 2026 UTC
+gpg:                using EDDSA key 8DF04782BF2F7CD04ECA95417AB9CA6D43D15753
+gpg:                issuer "icyci@example.com"
+gpg: Good signature from "icyCI test (test user) <icyci@example.com>" [unknown]
+gpg: WARNING: The key's User ID is not certified with a trusted signature!
+gpg:          There is no indication that the signature belongs to the owner.
+Primary key fingerprint: 8DF0 4782 BF2F 7CD0 4ECA  9541 7AB9 CA6D 43D1 5753
+2026/05/15 01:46:33 verify completed successfully
+2026/05/15 01:46:33 transitioning from state 2: verify branch HEAD -> 3: lock commit for testing
+To /tmp/TestStaleNotesDir1646417552/001/test_src_and_rslt
+   191eb9a..0553299  refs/notes/icyci.locked -> refs/notes/icyci.locked
+2026/05/15 01:46:33 successfully pushed git notes lock
+2026/05/15 01:46:33 lock commit for testing completed successfully
+2026/05/15 01:46:33 transitioning from state 3: lock commit for testing -> 4: start test command
+2026/05/15 01:46:33 transitioning from state 4: start test command -> 5: await test completion
+2026/05/15 01:46:33 ./t.sh completed successfully
+2026/05/15 01:46:33 transitioning from state 5: await test completion -> 6: push test output notes
+fatal: couldn't find remote ref refs/notes/icyci.extra_2
+2026/05/15 01:46:33 ignoring failure to fetch output git notes
+To /tmp/TestStaleNotesDir1646417552/001/test_src_and_rslt
+   de2711f..5e40b04  refs/notes/icyci.output.stderr -> refs/notes/icyci.output.stderr
+   de2711f..5e40b04  refs/notes/icyci.output.stdout -> refs/notes/icyci.output.stdout
+   a6e76de..318c745  refs/notes/icyci.result.passed -> refs/notes/icyci.result.passed
+ * [new reference]   refs/notes/icyci.extra_2 -> refs/notes/icyci.extra_2
+2026/05/15 01:46:33 successfully pushed git notes lock
+2026/05/15 01:46:33 push test output notes completed successfully
+2026/05/15 01:46:33 transitioning from state 6: push test output notes -> 7: cleanup test artifacts
+2026/05/15 01:46:33 cleanup test artifacts completed successfully
+2026/05/15 01:46:33 transitioning from state 7: cleanup test artifacts -> 8: poll source for new commits
+2026/05/15 01:46:33 Entering poll loop awaiting new mybranch commits at 03a56ea69f1ad61c666001abe3662935bf5ece83
+error: no note found for object 03a56ea69f1ad61c666001abe3662935bf5ece83.
+2026/05/15 01:46:33 Got signal 15 while in state 8
+2026/05/15 01:46:33 Got exit message while in state 8
+2026/05/15 01:46:33 waiting for poll routine to exit
+gpg: keybox '/tmp/TestSignedMerge2671349813/001/gpg/pubring.kbx' created
+gpg: /tmp/TestSignedMerge2671349813/001/gpg/trustdb.gpg: trustdb created
+gpg: key 7AB9CA6D43D15753: public key "icyCI test (test user) <icyci@example.com>" imported
+gpg: key 7AB9CA6D43D15753: secret key imported
+gpg: Total number processed: 1
+gpg:               imported: 1
+gpg:       secret keys read: 1
+gpg:   secret keys imported: 1
+Initialized empty Git repository in /tmp/TestSignedMerge2671349813/001/test_src_and_rslt/.git/
+Switched to a new branch 'mergedst'
+[mergedst (root-commit) 716a48d] unsigned source commit
+ 1 file changed, 2 insertions(+)
+ create mode 100755 test.sh
+Switched to a new branch 'mergesrc'
+[mergesrc a6d45c1] unsigned source commit
+ 1 file changed, 1 insertion(+)
+ create mode 100755 merged.flag
+Switched to branch 'mergedst'
+Merge made by the 'ort' strategy.
+ merged.flag | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100755 merged.flag
+2026/05/15 01:46:34 transitioning from state 0: uninitialized -> 1: clone source repository
+error: no note found for object 1272035ad4d7ae6dd22465aa6564d098a8903bef.
+Cloning into '/tmp/TestSignedMerge2671349813/001/source'...
+done.
+2026/05/15 01:46:34 clone source repository completed successfully
+2026/05/15 01:46:34 transitioning from state 1: clone source repository -> 2: verify branch HEAD
+fatal: No names found, cannot describe anything.
+2026/05/15 01:46:34 GPG verifying commit at origin/mergedst tip
+gpg: Signature made Fri May 15 01:46:34 2026 UTC
+gpg:                using EDDSA key 8DF04782BF2F7CD04ECA95417AB9CA6D43D15753
+gpg:                issuer "icyci@example.com"
+gpg: Good signature from "icyCI test (test user) <icyci@example.com>" [unknown]
+gpg: WARNING: The key's User ID is not certified with a trusted signature!
+gpg:          There is no indication that the signature belongs to the owner.
+Primary key fingerprint: 8DF0 4782 BF2F 7CD0 4ECA  9541 7AB9 CA6D 43D1 5753
+2026/05/15 01:46:34 verify completed successfully
+2026/05/15 01:46:34 transitioning from state 2: verify branch HEAD -> 3: lock commit for testing
+fatal: couldn't find remote ref refs/notes/icyci.locked
+2026/05/15 01:46:34 ignoring failure to fetch git notes lock
+To /tmp/TestSignedMerge2671349813/001/test_src_and_rslt
+ * [new reference]   refs/notes/icyci.locked -> refs/notes/icyci.locked
+2026/05/15 01:46:34 successfully pushed git notes lock
+2026/05/15 01:46:34 lock commit for testing completed successfully
+2026/05/15 01:46:34 transitioning from state 3: lock commit for testing -> 4: start test command
+2026/05/15 01:46:34 transitioning from state 4: start test command -> 5: await test completion
+flag check:merged
+2026/05/15 01:46:34 ./test.sh completed successfully
+2026/05/15 01:46:34 transitioning from state 5: await test completion -> 6: push test output notes
+fatal: couldn't find remote ref refs/notes/icyci.output.stdout
+2026/05/15 01:46:34 ignoring failure to fetch output git notes
+To /tmp/TestSignedMerge2671349813/001/test_src_and_rslt
+ * [new reference]   refs/notes/icyci.output.stdout -> refs/notes/icyci.output.stdout
+ * [new reference]   refs/notes/icyci.result.passed -> refs/notes/icyci.result.passed
+ * [new reference]   refs/notes/icyci.output.stderr -> refs/notes/icyci.output.stderr
+2026/05/15 01:46:34 successfully pushed git notes lock
+2026/05/15 01:46:34 push test output notes completed successfully
+2026/05/15 01:46:34 transitioning from state 6: push test output notes -> 7: cleanup test artifacts
+2026/05/15 01:46:34 cleanup test artifacts completed successfully
+2026/05/15 01:46:34 transitioning from state 7: cleanup test artifacts -> 8: poll source for new commits
+2026/05/15 01:46:34 Entering poll loop awaiting new mergedst commits at 1272035ad4d7ae6dd22465aa6564d098a8903bef
+2026/05/15 01:46:34 Got signal 15 while in state 8
+2026/05/15 01:46:34 Got exit message while in state 8
+2026/05/15 01:46:34 waiting for poll routine to exit
+gpg: keybox '/tmp/TestMergeSignedTag3511127730/001/gpg/pubring.kbx' created
+gpg: /tmp/TestMergeSignedTag3511127730/001/gpg/trustdb.gpg: trustdb created
+gpg: key 7AB9CA6D43D15753: public key "icyCI test (test user) <icyci@example.com>" imported
+gpg: key 7AB9CA6D43D15753: secret key imported
+gpg: Total number processed: 1
+gpg:               imported: 1
+gpg:       secret keys read: 1
+gpg:   secret keys imported: 1
+Initialized empty Git repository in /tmp/TestMergeSignedTag3511127730/001/test_src_and_rslt/.git/
+Switched to a new branch 'mergedst'
+[mergedst (root-commit) 716a48d] unsigned source commit
+ 1 file changed, 2 insertions(+)
+ create mode 100755 test.sh
+Switched to a new branch 'mergesrc'
+[mergesrc a6d45c1] unsigned source commit
+ 1 file changed, 1 insertion(+)
+ create mode 100755 merged.flag
+Switched to branch 'mergedst'
+Merge made by the 'ort' strategy.
+ merged.flag | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100755 merged.flag
+error: no note found for object 26b02189d711b686ea11bcdc821b440836217784.
+Cloning into '/tmp/TestMergeSignedTag3511127730/001/source'...
+done.
+fatal: no tag exactly matches '26b02189d711b686ea11bcdc821b440836217784'
+2026/05/15 01:46:34 Got signal 15 while in state 8
+2026/05/15 01:46:34 Got exit message while in state 8
+2026/05/15 01:46:34 Entering poll loop awaiting new mergedst commits at 26b02189d711b686ea11bcdc821b440836217784
+2026/05/15 01:46:34 waiting for poll routine to exit
+Initialized empty Git repository in /tmp/TestSshSigs3519760802/001/test_src_and_rslt/.git/
+Switched to a new branch 'mybranch'
+[mybranch (root-commit) e3fd992] signed source commit
+ 1 file changed, 2 insertions(+)
+ create mode 100755 t.sh
+2026/05/15 01:46:34 transitioning from state 0: uninitialized -> 1: clone source repository
+error: no note found for object e3fd992cd681052c71e65fa79ae01ac7be368154.
+Cloning into '/tmp/TestSshSigs3519760802/001/source'...
+done.
+2026/05/15 01:46:34 clone source repository completed successfully
+2026/05/15 01:46:34 transitioning from state 1: clone source repository -> 2: verify branch HEAD
+fatal: No names found, cannot describe anything.
+2026/05/15 01:46:34 GPG verifying commit at origin/mybranch tip
+Good "git" signature for icyci@example.com with RSA key SHA256:Sz5hl8DN9BeryeQoTaAf5XCiOkuZ7P4bg4FxyKP8v/g
+2026/05/15 01:46:34 verify completed successfully
+2026/05/15 01:46:34 transitioning from state 2: verify branch HEAD -> 3: lock commit for testing
+fatal: couldn't find remote ref refs/notes/icyci.locked
+2026/05/15 01:46:34 ignoring failure to fetch git notes lock
+To /tmp/TestSshSigs3519760802/001/test_src_and_rslt
+ * [new reference]   refs/notes/icyci.locked -> refs/notes/icyci.locked
+2026/05/15 01:46:34 successfully pushed git notes lock
+2026/05/15 01:46:34 lock commit for testing completed successfully
+2026/05/15 01:46:34 transitioning from state 3: lock commit for testing -> 4: start test command
+2026/05/15 01:46:34 transitioning from state 4: start test command -> 5: await test completion
+hi
+2026/05/15 01:46:34 ./t.sh completed successfully
+2026/05/15 01:46:34 transitioning from state 5: await test completion -> 6: push test output notes
+fatal: couldn't find remote ref refs/notes/icyci.output.stdout
+2026/05/15 01:46:34 ignoring failure to fetch output git notes
+To /tmp/TestSshSigs3519760802/001/test_src_and_rslt
+ * [new reference]   refs/notes/icyci.output.stdout -> refs/notes/icyci.output.stdout
+ * [new reference]   refs/notes/icyci.result.passed -> refs/notes/icyci.result.passed
+ * [new reference]   refs/notes/icyci.output.stderr -> refs/notes/icyci.output.stderr
+2026/05/15 01:46:34 successfully pushed git notes lock
+2026/05/15 01:46:34 push test output notes completed successfully
+2026/05/15 01:46:34 transitioning from state 6: push test output notes -> 7: cleanup test artifacts
+2026/05/15 01:46:34 cleanup test artifacts completed successfully
+2026/05/15 01:46:34 transitioning from state 7: cleanup test artifacts -> 8: poll source for new commits
+2026/05/15 01:46:34 Entering poll loop awaiting new mybranch commits at e3fd992cd681052c71e65fa79ae01ac7be368154
+[mybranch f1fd56e] signed source commit
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+error: no note found for object f1fd56e21792a3617a7165a116369af5a50e3ccc.
+From /tmp/TestSshSigs3519760802/001/test_src_and_rslt
+   e3fd992..f1fd56e  mybranch   -> origin/mybranch
+2026/05/15 01:46:34 detected branch mybranch change e3fd992cd681052c71e65fa79ae01ac7be368154 -> f1fd56e21792a3617a7165a116369af5a50e3ccc
+2026/05/15 01:46:34 poll source for new commits completed successfully
+2026/05/15 01:46:34 transitioning from state 8: poll source for new commits -> 2: verify branch HEAD
+fatal: No names found, cannot describe anything.
+2026/05/15 01:46:34 GPG verifying commit at origin/mybranch tip
+Good "git" signature for icyci@example.com with RSA key SHA256:Sz5hl8DN9BeryeQoTaAf5XCiOkuZ7P4bg4FxyKP8v/g
+2026/05/15 01:46:34 verify completed successfully
+2026/05/15 01:46:34 transitioning from state 2: verify branch HEAD -> 3: lock commit for testing
+To /tmp/TestSshSigs3519760802/001/test_src_and_rslt
+   89adceb..a8b129f  refs/notes/icyci.locked -> refs/notes/icyci.locked
+2026/05/15 01:46:34 successfully pushed git notes lock
+2026/05/15 01:46:34 lock commit for testing completed successfully
+2026/05/15 01:46:34 transitioning from state 3: lock commit for testing -> 4: start test command
+2026/05/15 01:46:34 transitioning from state 4: start test command -> 5: await test completion
+yo
+2026/05/15 01:46:34 ./t.sh completed successfully
+2026/05/15 01:46:34 transitioning from state 5: await test completion -> 6: push test output notes
+To /tmp/TestSshSigs3519760802/001/test_src_and_rslt
+   5980b98..958e6e9  refs/notes/icyci.output.stderr -> refs/notes/icyci.output.stderr
+   7301426..dfe629d  refs/notes/icyci.output.stdout -> refs/notes/icyci.output.stdout
+   e97801e..647fdaf  refs/notes/icyci.result.passed -> refs/notes/icyci.result.passed
+2026/05/15 01:46:35 successfully pushed git notes lock
+2026/05/15 01:46:35 push test output notes completed successfully
+2026/05/15 01:46:35 transitioning from state 6: push test output notes -> 7: cleanup test artifacts
+2026/05/15 01:46:35 cleanup test artifacts completed successfully
+2026/05/15 01:46:35 transitioning from state 7: cleanup test artifacts -> 8: poll source for new commits
+2026/05/15 01:46:35 Entering poll loop awaiting new mybranch commits at f1fd56e21792a3617a7165a116369af5a50e3ccc
+2026/05/15 01:46:35 Got signal 15 while in state 8
+2026/05/15 01:46:35 Got exit message while in state 8
+2026/05/15 01:46:35 waiting for poll routine to exit
+Initialized empty Git repository in /tmp/TestSshSignedTags3307894057/001/test_src_and_rslt/.git/
+Cloning into '/tmp/TestSshSignedTags3307894057/001/test_clone_both'...
+warning: You appear to have cloned an empty repository.
+done.
+Switched to a new branch 'mybranch'
+[mybranch (root-commit) 5311465] unsigned source commit
+ 1 file changed, 2 insertions(+)
+ create mode 100755 src_test.sh
+To /tmp/TestSshSignedTags3307894057/001/test_src_and_rslt
+ * [new tag]         mytag1 -> mytag1
+ * [new branch]      mybranch -> mybranch
+2026/05/15 01:46:35 transitioning from state 0: uninitialized -> 1: clone source repository
+Cloning into '/tmp/TestSshSignedTags3307894057/001/source'...
+From /tmp/TestSshSignedTags3307894057/001/test_src_and_rslt
+ * [new branch]      mybranch   -> origin/mybranch
+error: no note found for object 53114652672d4fd89287020560669e0f9bf9c531.
+done.
+2026/05/15 01:46:35 clone source repository completed successfully
+2026/05/15 01:46:35 transitioning from state 1: clone source repository -> 2: verify branch HEAD
+2026/05/15 01:46:35 GPG verifying tag mytag1 at origin/mybranch
+Good "git" signature for icyci@example.com with RSA key SHA256:Sz5hl8DN9BeryeQoTaAf5XCiOkuZ7P4bg4FxyKP8v/g
+object 53114652672d4fd89287020560669e0f9bf9c531
+type commit
+tag mytag1
+tagger icyCI test <icyci@example.com> 1778809595 +0000
+
+signed tag
+2026/05/15 01:46:35 verify completed successfully
+2026/05/15 01:46:35 transitioning from state 2: verify branch HEAD -> 3: lock commit for testing
+fatal: couldn't find remote ref refs/notes/icyci.locked
+2026/05/15 01:46:35 ignoring failure to fetch git notes lock
+To /tmp/TestSshSignedTags3307894057/001/test_src_and_rslt
+ * [new reference]   refs/notes/icyci.locked -> refs/notes/icyci.locked
+2026/05/15 01:46:35 successfully pushed git notes lock
+2026/05/15 01:46:35 lock commit for testing completed successfully
+2026/05/15 01:46:35 transitioning from state 3: lock commit for testing -> 4: start test command
+2026/05/15 01:46:35 transitioning from state 4: start test command -> 5: await test completion
+commitI: 0
+2026/05/15 01:46:35 ./src_test.sh completed successfully
+2026/05/15 01:46:35 transitioning from state 5: await test completion -> 6: push test output notes
+fatal: couldn't find remote ref refs/notes/icyci.output.stdout
+2026/05/15 01:46:35 ignoring failure to fetch output git notes
+To /tmp/TestSshSignedTags3307894057/001/test_src_and_rslt
+ * [new reference]   refs/notes/icyci.output.stdout -> refs/notes/icyci.output.stdout
+ * [new reference]   refs/notes/icyci.result.passed -> refs/notes/icyci.result.passed
+ * [new reference]   refs/notes/icyci.output.stderr -> refs/notes/icyci.output.stderr
+2026/05/15 01:46:35 successfully pushed git notes lock
+2026/05/15 01:46:35 push test output notes completed successfully
+2026/05/15 01:46:35 transitioning from state 6: push test output notes -> 7: cleanup test artifacts
+2026/05/15 01:46:35 cleanup test artifacts completed successfully
+2026/05/15 01:46:35 transitioning from state 7: cleanup test artifacts -> 8: poll source for new commits
+2026/05/15 01:46:35 Entering poll loop awaiting new mybranch commits at 53114652672d4fd89287020560669e0f9bf9c531
+From /tmp/TestSshSignedTags3307894057/001/test_src_and_rslt
+ * [new ref]         refs/notes/icyci.locked -> refs/notes/icyci.locked
+ * [new ref]         refs/notes/icyci.output.stderr -> refs/notes/icyci.output.stderr
+ * [new ref]         refs/notes/icyci.output.stdout -> refs/notes/icyci.output.stdout
+ * [new ref]         refs/notes/icyci.result.passed -> refs/notes/icyci.result.passed
+[mybranch 54e1612] unsigned source commit
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+To /tmp/TestSshSignedTags3307894057/001/test_src_and_rslt
+   5311465..54e1612  mybranch -> mybranch
+ * [new tag]         mytag2 -> mytag2
+From /tmp/TestSshSignedTags3307894057/001/test_src_and_rslt
+   5311465..54e1612  mybranch   -> origin/mybranch
+error: no note found for object 54e16121845f749c4a0c27dc7ea46ac0109e64c5.
+From /tmp/TestSshSignedTags3307894057/001/test_src_and_rslt
+   5311465..54e1612  mybranch   -> origin/mybranch
+ * [new tag]         mytag2     -> mytag2
+2026/05/15 01:46:35 detected branch mybranch change 53114652672d4fd89287020560669e0f9bf9c531 -> 54e16121845f749c4a0c27dc7ea46ac0109e64c5
+2026/05/15 01:46:35 poll source for new commits completed successfully
+2026/05/15 01:46:35 transitioning from state 8: poll source for new commits -> 2: verify branch HEAD
+2026/05/15 01:46:35 GPG verifying tag mytag2 at origin/mybranch
+Good "git" signature for icyci@example.com with RSA key SHA256:Sz5hl8DN9BeryeQoTaAf5XCiOkuZ7P4bg4FxyKP8v/g
+object 54e16121845f749c4a0c27dc7ea46ac0109e64c5
+type commit
+tag mytag2
+tagger icyCI test <icyci@example.com> 1778809595 +0000
+
+signed tag
+2026/05/15 01:46:35 verify completed successfully
+2026/05/15 01:46:35 transitioning from state 2: verify branch HEAD -> 3: lock commit for testing
+To /tmp/TestSshSignedTags3307894057/001/test_src_and_rslt
+   b0268da..d8ceb67  refs/notes/icyci.locked -> refs/notes/icyci.locked
+2026/05/15 01:46:35 successfully pushed git notes lock
+2026/05/15 01:46:35 lock commit for testing completed successfully
+2026/05/15 01:46:35 transitioning from state 3: lock commit for testing -> 4: start test command
+2026/05/15 01:46:35 transitioning from state 4: start test command -> 5: await test completion
+commitI: 1
+2026/05/15 01:46:35 ./src_test.sh completed successfully
+2026/05/15 01:46:35 transitioning from state 5: await test completion -> 6: push test output notes
+To /tmp/TestSshSignedTags3307894057/001/test_src_and_rslt
+   834f55c..a5412f1  refs/notes/icyci.output.stderr -> refs/notes/icyci.output.stderr
+   6691ad6..440b42f  refs/notes/icyci.output.stdout -> refs/notes/icyci.output.stdout
+   445f810..afac3ad  refs/notes/icyci.result.passed -> refs/notes/icyci.result.passed
+2026/05/15 01:46:35 successfully pushed git notes lock
+2026/05/15 01:46:35 push test output notes completed successfully
+2026/05/15 01:46:35 transitioning from state 6: push test output notes -> 7: cleanup test artifacts
+2026/05/15 01:46:35 cleanup test artifacts completed successfully
+2026/05/15 01:46:35 transitioning from state 7: cleanup test artifacts -> 8: poll source for new commits
+2026/05/15 01:46:35 Entering poll loop awaiting new mybranch commits at 54e16121845f749c4a0c27dc7ea46ac0109e64c5
+From /tmp/TestSshSignedTags3307894057/001/test_src_and_rslt
+   b0268da..d8ceb67  refs/notes/icyci.locked -> refs/notes/icyci.locked
+   834f55c..a5412f1  refs/notes/icyci.output.stderr -> refs/notes/icyci.output.stderr
+   6691ad6..440b42f  refs/notes/icyci.output.stdout -> refs/notes/icyci.output.stdout
+   445f810..afac3ad  refs/notes/icyci.result.passed -> refs/notes/icyci.result.passed
+[mybranch df53644] unsigned source commit
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+To /tmp/TestSshSignedTags3307894057/001/test_src_and_rslt
+   54e1612..df53644  mybranch -> mybranch
+ * [new tag]         mytag3 -> mytag3
+From /tmp/TestSshSignedTags3307894057/001/test_src_and_rslt
+   54e1612..df53644  mybranch   -> origin/mybranch
+error: no note found for object df53644531d1eef695fcde53febf1d0953ecc2f5.
+From /tmp/TestSshSignedTags3307894057/001/test_src_and_rslt
+   54e1612..df53644  mybranch   -> origin/mybranch
+ * [new tag]         mytag3     -> mytag3
+2026/05/15 01:46:36 detected branch mybranch change 54e16121845f749c4a0c27dc7ea46ac0109e64c5 -> df53644531d1eef695fcde53febf1d0953ecc2f5
+2026/05/15 01:46:36 poll source for new commits completed successfully
+2026/05/15 01:46:36 transitioning from state 8: poll source for new commits -> 2: verify branch HEAD
+2026/05/15 01:46:36 GPG verifying tag mytag3 at origin/mybranch
+Good "git" signature for icyci@example.com with RSA key SHA256:Sz5hl8DN9BeryeQoTaAf5XCiOkuZ7P4bg4FxyKP8v/g
+object df53644531d1eef695fcde53febf1d0953ecc2f5
+type commit
+tag mytag3
+tagger icyCI test <icyci@example.com> 1778809595 +0000
+
+signed tag
+2026/05/15 01:46:36 verify completed successfully
+2026/05/15 01:46:36 transitioning from state 2: verify branch HEAD -> 3: lock commit for testing
+To /tmp/TestSshSignedTags3307894057/001/test_src_and_rslt
+   d8ceb67..6d0904e  refs/notes/icyci.locked -> refs/notes/icyci.locked
+2026/05/15 01:46:36 successfully pushed git notes lock
+2026/05/15 01:46:36 lock commit for testing completed successfully
+2026/05/15 01:46:36 transitioning from state 3: lock commit for testing -> 4: start test command
+2026/05/15 01:46:36 transitioning from state 4: start test command -> 5: await test completion
+commitI: 2
+2026/05/15 01:46:36 ./src_test.sh completed successfully
+2026/05/15 01:46:36 transitioning from state 5: await test completion -> 6: push test output notes
+To /tmp/TestSshSignedTags3307894057/001/test_src_and_rslt
+   a5412f1..ffcebbd  refs/notes/icyci.output.stderr -> refs/notes/icyci.output.stderr
+   440b42f..1f94dec  refs/notes/icyci.output.stdout -> refs/notes/icyci.output.stdout
+   afac3ad..8f39370  refs/notes/icyci.result.passed -> refs/notes/icyci.result.passed
+2026/05/15 01:46:36 successfully pushed git notes lock
+2026/05/15 01:46:36 push test output notes completed successfully
+2026/05/15 01:46:36 transitioning from state 6: push test output notes -> 7: cleanup test artifacts
+2026/05/15 01:46:36 cleanup test artifacts completed successfully
+2026/05/15 01:46:36 transitioning from state 7: cleanup test artifacts -> 8: poll source for new commits
+2026/05/15 01:46:36 Entering poll loop awaiting new mybranch commits at df53644531d1eef695fcde53febf1d0953ecc2f5
+From /tmp/TestSshSignedTags3307894057/001/test_src_and_rslt
+   d8ceb67..6d0904e  refs/notes/icyci.locked -> refs/notes/icyci.locked
+   a5412f1..ffcebbd  refs/notes/icyci.output.stderr -> refs/notes/icyci.output.stderr
+   440b42f..1f94dec  refs/notes/icyci.output.stdout -> refs/notes/icyci.output.stdout
+   afac3ad..8f39370  refs/notes/icyci.result.passed -> refs/notes/icyci.result.passed
+2026/05/15 01:46:36 Got signal 15 while in state 8
+2026/05/15 01:46:36 Got exit message while in state 8
+2026/05/15 01:46:36 waiting for poll routine to exit
+gpg: keybox '/tmp/TestSshMixedWithGpg1882198057/001/gpg/pubring.kbx' created
+gpg: /tmp/TestSshMixedWithGpg1882198057/001/gpg/trustdb.gpg: trustdb created
+gpg: key 7AB9CA6D43D15753: public key "icyCI test (test user) <icyci@example.com>" imported
+gpg: key 7AB9CA6D43D15753: secret key imported
+gpg: Total number processed: 1
+gpg:               imported: 1
+gpg:       secret keys read: 1
+gpg:   secret keys imported: 1
+Initialized empty Git repository in /tmp/TestSshMixedWithGpg1882198057/001/test_src_and_rslt/.git/
+Switched to a new branch 'mybranch'
+[mybranch (root-commit) fbdb753] signed source commit
+ 1 file changed, 2 insertions(+)
+ create mode 100755 src_test.sh
+2026/05/15 01:46:36 transitioning from state 0: uninitialized -> 1: clone source repository
+error: no note found for object fbdb753683bd0d46821ab0c62bc95600ff9b4f63.
+Cloning into '/tmp/TestSshMixedWithGpg1882198057/001/source'...
+done.
+2026/05/15 01:46:36 clone source repository completed successfully
+2026/05/15 01:46:36 transitioning from state 1: clone source repository -> 2: verify branch HEAD
+fatal: No names found, cannot describe anything.
+2026/05/15 01:46:36 GPG verifying commit at origin/mybranch tip
+gpg: Signature made Fri May 15 01:46:36 2026 UTC
+gpg:                using EDDSA key 8DF04782BF2F7CD04ECA95417AB9CA6D43D15753
+gpg:                issuer "icyci@example.com"
+gpg: Good signature from "icyCI test (test user) <icyci@example.com>" [unknown]
+gpg: WARNING: The key's User ID is not certified with a trusted signature!
+gpg:          There is no indication that the signature belongs to the owner.
+Primary key fingerprint: 8DF0 4782 BF2F 7CD0 4ECA  9541 7AB9 CA6D 43D1 5753
+2026/05/15 01:46:36 verify completed successfully
+2026/05/15 01:46:36 transitioning from state 2: verify branch HEAD -> 3: lock commit for testing
+fatal: couldn't find remote ref refs/notes/icyci.locked
+2026/05/15 01:46:36 ignoring failure to fetch git notes lock
+To /tmp/TestSshMixedWithGpg1882198057/001/test_src_and_rslt
+ * [new reference]   refs/notes/icyci.locked -> refs/notes/icyci.locked
+2026/05/15 01:46:36 successfully pushed git notes lock
+2026/05/15 01:46:36 lock commit for testing completed successfully
+2026/05/15 01:46:36 transitioning from state 3: lock commit for testing -> 4: start test command
+2026/05/15 01:46:36 transitioning from state 4: start test command -> 5: await test completion
+commitI: 0
+2026/05/15 01:46:36 ./src_test.sh completed successfully
+2026/05/15 01:46:36 transitioning from state 5: await test completion -> 6: push test output notes
+fatal: couldn't find remote ref refs/notes/icyci.output.stdout
+2026/05/15 01:46:36 ignoring failure to fetch output git notes
+To /tmp/TestSshMixedWithGpg1882198057/001/test_src_and_rslt
+ * [new reference]   refs/notes/icyci.output.stdout -> refs/notes/icyci.output.stdout
+ * [new reference]   refs/notes/icyci.result.passed -> refs/notes/icyci.result.passed
+ * [new reference]   refs/notes/icyci.output.stderr -> refs/notes/icyci.output.stderr
+2026/05/15 01:46:36 successfully pushed git notes lock
+2026/05/15 01:46:36 push test output notes completed successfully
+2026/05/15 01:46:36 transitioning from state 6: push test output notes -> 7: cleanup test artifacts
+2026/05/15 01:46:36 cleanup test artifacts completed successfully
+2026/05/15 01:46:36 transitioning from state 7: cleanup test artifacts -> 8: poll source for new commits
+2026/05/15 01:46:36 Entering poll loop awaiting new mybranch commits at fbdb753683bd0d46821ab0c62bc95600ff9b4f63
+[mybranch b529249] signed source commit
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+error: no note found for object b529249ac7a1e02c0b8aad1aa3fdeff7ad04f2af.
+From /tmp/TestSshMixedWithGpg1882198057/001/test_src_and_rslt
+   fbdb753..b529249  mybranch   -> origin/mybranch
+2026/05/15 01:46:36 detected branch mybranch change fbdb753683bd0d46821ab0c62bc95600ff9b4f63 -> b529249ac7a1e02c0b8aad1aa3fdeff7ad04f2af
+2026/05/15 01:46:36 poll source for new commits completed successfully
+2026/05/15 01:46:36 transitioning from state 8: poll source for new commits -> 2: verify branch HEAD
+fatal: No names found, cannot describe anything.
+2026/05/15 01:46:36 GPG verifying commit at origin/mybranch tip
+Good "git" signature for icyci@example.com with RSA key SHA256:Sz5hl8DN9BeryeQoTaAf5XCiOkuZ7P4bg4FxyKP8v/g
+2026/05/15 01:46:36 verify completed successfully
+2026/05/15 01:46:36 transitioning from state 2: verify branch HEAD -> 3: lock commit for testing
+To /tmp/TestSshMixedWithGpg1882198057/001/test_src_and_rslt
+   2768ed8..fa7ac3a  refs/notes/icyci.locked -> refs/notes/icyci.locked
+2026/05/15 01:46:36 successfully pushed git notes lock
+2026/05/15 01:46:36 lock commit for testing completed successfully
+2026/05/15 01:46:36 transitioning from state 3: lock commit for testing -> 4: start test command
+2026/05/15 01:46:36 transitioning from state 4: start test command -> 5: await test completion
+commitI: 1
+error: no note found for object b529249ac7a1e02c0b8aad1aa3fdeff7ad04f2af.
+2026/05/15 01:46:37 ./src_test.sh completed successfully
+2026/05/15 01:46:37 transitioning from state 5: await test completion -> 6: push test output notes
+To /tmp/TestSshMixedWithGpg1882198057/001/test_src_and_rslt
+   e715324..27ecbcf  refs/notes/icyci.output.stderr -> refs/notes/icyci.output.stderr
+   b0069fb..50914b6  refs/notes/icyci.output.stdout -> refs/notes/icyci.output.stdout
+   441184e..5217c0f  refs/notes/icyci.result.passed -> refs/notes/icyci.result.passed
+2026/05/15 01:46:37 successfully pushed git notes lock
+2026/05/15 01:46:37 push test output notes completed successfully
+2026/05/15 01:46:37 transitioning from state 6: push test output notes -> 7: cleanup test artifacts
+2026/05/15 01:46:37 cleanup test artifacts completed successfully
+2026/05/15 01:46:37 transitioning from state 7: cleanup test artifacts -> 8: poll source for new commits
+2026/05/15 01:46:37 Entering poll loop awaiting new mybranch commits at b529249ac7a1e02c0b8aad1aa3fdeff7ad04f2af
+[mybranch 93e3131] signed source commit
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+error: no note found for object 93e3131affbe7321672d88c310de67689a3bafd7.
+From /tmp/TestSshMixedWithGpg1882198057/001/test_src_and_rslt
+   b529249..93e3131  mybranch   -> origin/mybranch
+2026/05/15 01:46:37 detected branch mybranch change b529249ac7a1e02c0b8aad1aa3fdeff7ad04f2af -> 93e3131affbe7321672d88c310de67689a3bafd7
+2026/05/15 01:46:37 poll source for new commits completed successfully
+2026/05/15 01:46:37 transitioning from state 8: poll source for new commits -> 2: verify branch HEAD
+fatal: No names found, cannot describe anything.
+2026/05/15 01:46:37 GPG verifying commit at origin/mybranch tip
+Good "git" signature for icyci@example.com with RSA key SHA256:Sz5hl8DN9BeryeQoTaAf5XCiOkuZ7P4bg4FxyKP8v/g
+2026/05/15 01:46:37 verify completed successfully
+2026/05/15 01:46:37 transitioning from state 2: verify branch HEAD -> 3: lock commit for testing
+To /tmp/TestSshMixedWithGpg1882198057/001/test_src_and_rslt
+   fa7ac3a..3552ce1  refs/notes/icyci.locked -> refs/notes/icyci.locked
+2026/05/15 01:46:37 successfully pushed git notes lock
+2026/05/15 01:46:37 lock commit for testing completed successfully
+2026/05/15 01:46:37 transitioning from state 3: lock commit for testing -> 4: start test command
+2026/05/15 01:46:37 transitioning from state 4: start test command -> 5: await test completion
+commitI: 2
+2026/05/15 01:46:37 ./src_test.sh completed successfully
+2026/05/15 01:46:37 transitioning from state 5: await test completion -> 6: push test output notes
+To /tmp/TestSshMixedWithGpg1882198057/001/test_src_and_rslt
+   27ecbcf..41c8155  refs/notes/icyci.output.stderr -> refs/notes/icyci.output.stderr
+   50914b6..a28e844  refs/notes/icyci.output.stdout -> refs/notes/icyci.output.stdout
+   5217c0f..6177c75  refs/notes/icyci.result.passed -> refs/notes/icyci.result.passed
+2026/05/15 01:46:37 successfully pushed git notes lock
+2026/05/15 01:46:37 push test output notes completed successfully
+2026/05/15 01:46:37 transitioning from state 6: push test output notes -> 7: cleanup test artifacts
+2026/05/15 01:46:37 cleanup test artifacts completed successfully
+2026/05/15 01:46:37 transitioning from state 7: cleanup test artifacts -> 8: poll source for new commits
+2026/05/15 01:46:37 Entering poll loop awaiting new mybranch commits at 93e3131affbe7321672d88c310de67689a3bafd7
+2026/05/15 01:46:37 Got signal 15 while in state 8
+2026/05/15 01:46:37 Got exit message while in state 8
+2026/05/15 01:46:37 waiting for poll routine to exit
+gpg: keybox '/tmp/TestAwaitPollReset2417724514/001/gpg/pubring.kbx' created
+gpg: /tmp/TestAwaitPollReset2417724514/001/gpg/trustdb.gpg: trustdb created
+gpg: key 7AB9CA6D43D15753: public key "icyCI test (test user) <icyci@example.com>" imported
+gpg: key 7AB9CA6D43D15753: secret key imported
+gpg: Total number processed: 1
+gpg:               imported: 1
+gpg:       secret keys read: 1
+gpg:   secret keys imported: 1
+Initialized empty Git repository in /tmp/TestAwaitPollReset2417724514/001/test_src_and_rslt/.git/
+Switched to a new branch 'mybranch'
+[mybranch (root-commit) 71d1a11] unsigned source commit
+ 1 file changed, 2 insertions(+)
+ create mode 100755 t.sh
+2026/05/15 01:46:37 transitioning from state 0: uninitialized -> 1: clone source repository
+Cloning into '/tmp/TestAwaitPollReset2417724514/001/source'...
+done.
+2026/05/15 01:46:37 clone source repository completed successfully
+2026/05/15 01:46:37 transitioning from state 1: clone source repository -> 2: verify branch HEAD
+fatal: No names found, cannot describe anything.
+2026/05/15 01:46:37 GPG verifying commit at origin/mybranch tip
+2026/05/15 01:46:37 GPG verification of commit at origin/mybranch failed
+2026/05/15 01:46:37 transitioning from state 2: verify branch HEAD -> 8: poll source for new commits
+2026/05/15 01:46:37 Entering poll loop awaiting new mybranch commits at 71d1a1117fc570dd3d0735c0fe95365be4203a50
+[mybranch c2ca385] signed source commit
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+error: no note found for object c2ca385ce99f92a3f71db049abd0ab75982df9d6.
+From /tmp/TestAwaitPollReset2417724514/001/test_src_and_rslt
+   71d1a11..c2ca385  mybranch   -> origin/mybranch
+2026/05/15 01:46:38 detected branch mybranch change 71d1a1117fc570dd3d0735c0fe95365be4203a50 -> c2ca385ce99f92a3f71db049abd0ab75982df9d6
+2026/05/15 01:46:38 poll source for new commits completed successfully
+2026/05/15 01:46:38 transitioning from state 8: poll source for new commits -> 2: verify branch HEAD
+fatal: No names found, cannot describe anything.
+2026/05/15 01:46:38 GPG verifying commit at origin/mybranch tip
+gpg: Signature made Fri May 15 01:46:38 2026 UTC
+gpg:                using EDDSA key 8DF04782BF2F7CD04ECA95417AB9CA6D43D15753
+gpg:                issuer "icyci@example.com"
+gpg: Good signature from "icyCI test (test user) <icyci@example.com>" [unknown]
+gpg: WARNING: The key's User ID is not certified with a trusted signature!
+gpg:          There is no indication that the signature belongs to the owner.
+Primary key fingerprint: 8DF0 4782 BF2F 7CD0 4ECA  9541 7AB9 CA6D 43D1 5753
+2026/05/15 01:46:38 verify completed successfully
+2026/05/15 01:46:38 transitioning from state 2: verify branch HEAD -> 3: lock commit for testing
+fatal: couldn't find remote ref refs/notes/icyci.locked
+2026/05/15 01:46:38 ignoring failure to fetch git notes lock
+To /tmp/TestAwaitPollReset2417724514/001/test_src_and_rslt
+ * [new reference]   refs/notes/icyci.locked -> refs/notes/icyci.locked
+2026/05/15 01:46:38 successfully pushed git notes lock
+2026/05/15 01:46:38 lock commit for testing completed successfully
+2026/05/15 01:46:38 transitioning from state 3: lock commit for testing -> 4: start test command
+2026/05/15 01:46:38 transitioning from state 4: start test command -> 5: await test completion
+hi_stdout
+2026/05/15 01:46:38 ./t.sh completed successfully
+2026/05/15 01:46:38 transitioning from state 5: await test completion -> 6: push test output notes
+fatal: couldn't find remote ref refs/notes/icyci.output.stdout
+2026/05/15 01:46:38 ignoring failure to fetch output git notes
+To /tmp/TestAwaitPollReset2417724514/001/test_src_and_rslt
+ * [new reference]   refs/notes/icyci.output.stdout -> refs/notes/icyci.output.stdout
+ * [new reference]   refs/notes/icyci.result.passed -> refs/notes/icyci.result.passed
+ * [new reference]   refs/notes/icyci.output.stderr -> refs/notes/icyci.output.stderr
+2026/05/15 01:46:38 successfully pushed git notes lock
+2026/05/15 01:46:38 push test output notes completed successfully
+2026/05/15 01:46:38 transitioning from state 6: push test output notes -> 7: cleanup test artifacts
+2026/05/15 01:46:38 cleanup test artifacts completed successfully
+2026/05/15 01:46:38 transitioning from state 7: cleanup test artifacts -> 8: poll source for new commits
+2026/05/15 01:46:38 Entering poll loop awaiting new mybranch commits at c2ca385ce99f92a3f71db049abd0ab75982df9d6
+2026/05/15 01:46:38 Got signal 15 while in state 8
+2026/05/15 01:46:38 Got exit message while in state 8
+2026/05/15 01:46:38 waiting for poll routine to exit
+gpg: keybox '/tmp/TestSingleShot3561079667/001/gpg/pubring.kbx' created
+gpg: /tmp/TestSingleShot3561079667/001/gpg/trustdb.gpg: trustdb created
+gpg: key 7AB9CA6D43D15753: public key "icyCI test (test user) <icyci@example.com>" imported
+gpg: key 7AB9CA6D43D15753: secret key imported
+gpg: Total number processed: 1
+gpg:               imported: 1
+gpg:       secret keys read: 1
+gpg:   secret keys imported: 1
+Initialized empty Git repository in /tmp/TestSingleShot3561079667/001/test_src_and_rslt/.git/
+Switched to a new branch 'mybranch'
+[mybranch (root-commit) 2a59b62] signed source commit
+ 1 file changed, 2 insertions(+)
+ create mode 100755 t.sh
+2026/05/15 01:46:38 transitioning from state 0: uninitialized -> 1: clone source repository
+error: no note found for object 2a59b622ceab10502ea6c208c6dab8445a979bfa.
+Cloning into '/tmp/TestSingleShot3561079667/001/source'...
+done.
+2026/05/15 01:46:38 clone source repository completed successfully
+2026/05/15 01:46:38 transitioning from state 1: clone source repository -> 2: verify branch HEAD
+fatal: No names found, cannot describe anything.
+2026/05/15 01:46:38 GPG verifying commit at origin/mybranch tip
+gpg: Signature made Fri May 15 01:46:38 2026 UTC
+gpg:                using EDDSA key 8DF04782BF2F7CD04ECA95417AB9CA6D43D15753
+gpg:                issuer "icyci@example.com"
+gpg: Good signature from "icyCI test (test user) <icyci@example.com>" [unknown]
+gpg: WARNING: The key's User ID is not certified with a trusted signature!
+gpg:          There is no indication that the signature belongs to the owner.
+Primary key fingerprint: 8DF0 4782 BF2F 7CD0 4ECA  9541 7AB9 CA6D 43D1 5753
+2026/05/15 01:46:38 verify completed successfully
+2026/05/15 01:46:38 transitioning from state 2: verify branch HEAD -> 3: lock commit for testing
+fatal: couldn't find remote ref refs/notes/icyci.locked
+2026/05/15 01:46:38 ignoring failure to fetch git notes lock
+To /tmp/TestSingleShot3561079667/001/test_src_and_rslt
+ * [new reference]   refs/notes/icyci.locked -> refs/notes/icyci.locked
+2026/05/15 01:46:38 successfully pushed git notes lock
+2026/05/15 01:46:38 lock commit for testing completed successfully
+2026/05/15 01:46:38 transitioning from state 3: lock commit for testing -> 4: start test command
+2026/05/15 01:46:38 transitioning from state 4: start test command -> 5: await test completion
+hi_stdout
+2026/05/15 01:46:38 ./t.sh completed successfully
+2026/05/15 01:46:38 transitioning from state 5: await test completion -> 6: push test output notes
+fatal: couldn't find remote ref refs/notes/icyci.output.stdout
+2026/05/15 01:46:38 ignoring failure to fetch output git notes
+To /tmp/TestSingleShot3561079667/001/test_src_and_rslt
+ * [new reference]   refs/notes/icyci.output.stdout -> refs/notes/icyci.output.stdout
+ * [new reference]   refs/notes/icyci.result.passed -> refs/notes/icyci.result.passed
+ * [new reference]   refs/notes/icyci.output.stderr -> refs/notes/icyci.output.stderr
+2026/05/15 01:46:38 successfully pushed git notes lock
+2026/05/15 01:46:38 push test output notes completed successfully
+2026/05/15 01:46:38 transitioning from state 6: push test output notes -> 7: cleanup test artifacts
+2026/05/15 01:46:38 cleanup test artifacts completed successfully
+[mybranch b377b0d] unsigned source commit
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+2026/05/15 01:46:38 transitioning from state 0: uninitialized -> 1: clone source repository
+Cloning into '/tmp/TestSingleShot3561079667/002/source'...
+done.
+2026/05/15 01:46:38 clone source repository completed successfully
+2026/05/15 01:46:38 transitioning from state 1: clone source repository -> 2: verify branch HEAD
+fatal: No names found, cannot describe anything.
+2026/05/15 01:46:38 GPG verifying commit at origin/mybranch tip
+2026/05/15 01:46:39 GPG verification of commit at origin/mybranch failed
+PASS
+ok  	github.com/ddiss/icyci	32.298s
