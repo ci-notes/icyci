@@ -23,8 +23,10 @@ jobs:
              [[ -n "${{ secrets.ICYCI_RESULTS_REPO_CREDS }}" ]] && \
              [[ -n "${{ secrets.ICYCI_VERIFY_PUBKEY }}" ]]; then
             echo "${{ secrets.ICYCI_VERIFY_PUBKEY }}" | gpg --import
-            go build
+            git config --global user.email "icyci@${HOSTNAME}.local"
+            git config --global user.name "icyci GitHub action"
             git config --global credential.helper 'store --file=/tmp/creds'
+            go build
             echo "${{ secrets.ICYCI_RESULTS_REPO_CREDS }}" > /tmp/creds
             ./icyci -source-repo "$PWD" \
               -source-branch "${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" \
