@@ -11,17 +11,19 @@ jobs:
       - name: install go toolchain
         run: |
           sudo apt-get update -y
-          sudo apt-get install -y --no-install-recommends golang
+          sudo apt-get install -y --no-install-recommends golang gpg2
           sudo lsblk
           df
       - name: selftest
         shell: bash
         run: |
-          # with ICYCI_RESULTS_REPO and _CREDS set we use icyci single-shot to
-          # test icyci and push the captured results.
+          # with ICYCI_RESULTS_REPO[_CREDS] and ICYCI_VERIFY_PUBKEY secrets set
+          # we use icyci single-shot to test and push the captured results.
           if [[ -n "${{ secrets.ICYCI_RESULTS_REPO }}" ]] && \
-             [[ -n "${{ secrets.ICYCI_RESULTS_REPO_CREDS }}" ]]; then
-            go build || exit 1
+             [[ -n "${{ secrets.ICYCI_RESULTS_REPO_CREDS }}" ]] && \
+             [[ -n "${{ secrets.ICYCI_VERIFY_PUBKEY }}" ]]; then
+            echo "${{ secrets.ICYCI_VERIFY_PUBKEY }}" | gpg --import
+            go build
             git config --global credential.helper 'store --file=/tmp/creds'
             echo "${{ secrets.ICYCI_RESULTS_REPO_CREDS }}" > /tmp/creds
             ./icyci -source-repo "$PWD" \
